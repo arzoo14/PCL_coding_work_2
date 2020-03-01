@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Benchmarking 3D &#8212; PCL documentation 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Customizing the PCL build process" href="building pcl.html" />
+    <link rel="prev" title="Adding your own custom PointT type" href="adding custom ptype.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="benchmarking-3d">
+<span id="benchmarking"></span><h1><a class="toc-backref" href="#id1">Benchmarking 3D</a><a class="headerlink" href="#benchmarking-3d" title="Permalink to this headline">¶</a></h1>
+<p>This document introduces benchmarking concepts for 3D algorithms. By
+<em>benchmarking</em> here we refer to the possibility of testing different
+computational pipelines in an <strong>easy manner</strong>. The goal is to test their
+reproductibility with respect to a particular problem of general interest.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#benchmarking-3d" id="id1">Benchmarking 3D</a><ul>
+<li><a class="reference internal" href="#benchmarking-object-recognition" id="id2">Benchmarking Object Recognition</a><ul>
+<li><a class="reference internal" href="#training" id="id3">1. Training</a></li>
+<li><a class="reference internal" href="#keypoints" id="id4">2. Keypoints</a></li>
+<li><a class="reference internal" href="#descriptors" id="id5">3. Descriptors</a></li>
+<li><a class="reference internal" href="#classification" id="id6">4. Classification</a></li>
+<li><a class="reference internal" href="#evaluation" id="id7">5. Evaluation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#object-recognition-api" id="id8">Object Recognition API</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="benchmarking-object-recognition">
+<h2><a class="toc-backref" href="#id2">Benchmarking Object Recognition</a><a class="headerlink" href="#benchmarking-object-recognition" title="Permalink to this headline">¶</a></h2>
+<p>For the general problem of Object Recognition (identification, categorization,
+detection, etc – all fall in the same category here), we identify the
+following steps:</p>
+<div class="section" id="training">
+<h3><a class="toc-backref" href="#id3">1. Training</a><a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
+<p>Users should be able to acquire training data from different inputs, including
+but not limited to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>full triangle meshes (CAD models);</li>
+<li>360-degree full point cloud models;</li>
+<li>partial point cloud views:<ul>
+<li>in clutter;</li>
+<li>cleanly segmented.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="keypoints">
+<h3><a class="toc-backref" href="#id4">2. Keypoints</a><a class="headerlink" href="#keypoints" title="Permalink to this headline">¶</a></h3>
+<p>Computing higher level representation from the object’s appearance (texture + depth) should be done:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>densely</strong> - at every point/vertex in the input data;</li>
+<li>at certain <strong>interest points</strong> (i.e., keypoints).</li>
+</ul>
+</div></blockquote>
+<p>The detected keypoint might also contain some meta-information required by some descriptors, like scale or orientation.</p>
+</div>
+<div class="section" id="descriptors">
+<h3><a class="toc-backref" href="#id5">3. Descriptors</a><a class="headerlink" href="#descriptors" title="Permalink to this headline">¶</a></h3>
+<p>A higher level representation as mentioned before will be herein represented by a <strong>feature descriptor</strong>. Feature descriptors can be:</p>
+<blockquote>
+<div><ul class="simple">
+<li>2D (two-dimensional) – here we refer to those descriptors estimated solely from RGB texture data;</li>
+<li>3D (three-dimensional) – here we refer to those descriptors estimated solely from XYZ/depth data;</li>
+<li>a combination of the above.</li>
+</ul>
+</div></blockquote>
+<p>In addition, feature descriptors can be:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>local</strong> - estimated only at a set of discrete keypoints, using the information from neighboring pixels/points;</li>
+<li><strong>global</strong>, or meta-local - estimated on entire objects or the entire input dataset.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="classification">
+<h3><a class="toc-backref" href="#id6">4. Classification</a><a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h3>
+<p>The distribution of features should be classifiable into distinct, separable
+classes. For local features, we identify two sets of techniques:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>bag of words</strong>;</li>
+<li><strong>voting</strong>;</li>
+<li><strong>supervised voting</strong> (regression from the description to the relative 3D location, e.g. Hough forest).</li>
+</ul>
+</div></blockquote>
+<p>For global features, any general purpose classification technique should work (e.g., SVMs, nearest neighbors, etc).</p>
+<p>In addition to classification, a substep of it could be considered
+<strong>Registration</strong>. Here we refine the classification results using iterative
+closest point techniques for example.</p>
+</div>
+<div class="section" id="evaluation">
+<h3><a class="toc-backref" href="#id7">5. Evaluation</a><a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h3>
+<p>This pipeline should be able to evaluate the algorithm’s performance at
+different tasks. Here are some requested tasks to support:</p>
+<blockquote>
+<div><ul class="simple">
+<li>object id and pose</li>
+<li>object id and segmentation</li>
+<li>object id and bounding box</li>
+<li>category and segmentation</li>
+<li>category and bounding box</li>
+</ul>
+</div></blockquote>
+<p>5.1 Metrics</p>
+<p>This pipeline should provide different metrics, since algorithms excel in
+different areas. Here are some requested metrics:</p>
+<blockquote>
+<div><ul class="simple">
+<li>precision-recall</li>
+<li>time</li>
+<li>average rank of correct id</li>
+<li>area under curve of cumulative histogram of rank of correct id</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="object-recognition-api">
+<h2><a class="toc-backref" href="#id8">Object Recognition API</a><a class="headerlink" href="#object-recognition-api" title="Permalink to this headline">¶</a></h2>
+<p>Here we describe a proposed set of classes that could be easily extended and
+used for the purpose of benchmarking object recognition tasks.</p>
+<ol class="arabic simple">
+<li>Training</li>
+<li>Keypoints</li>
+<li>Descriptors</li>
+<li>Classification</li>
+<li>Evaluation</li>
+</ol>
+<p>The evaluation output needs to be one of the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>object id</li>
+<li>object pose</li>
+<li>object category</li>
+<li>object bounding box</li>
+<li>object mask</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">PCL documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="adding custom ptype.html">Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Benchmarking 3D</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#benchmarking-object-recognition">Benchmarking Object Recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#object-recognition-api">Object Recognition API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building pcl.html">Customizing the PCL build process</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="adding custom ptype.html" title="previous chapter">Adding your own custom <cite>PointT</cite> type</a></li>
+      <li>Next: <a href="building pcl.html" title="next chapter">Customizing the PCL build process</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Arzoo.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/benchmark.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
