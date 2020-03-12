@@ -21,6 +21,7 @@ Contents:
    adding custom ptype
    benchmark
    building pcl
+   test
 
 
 
