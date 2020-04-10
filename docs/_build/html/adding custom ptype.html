@@ -1,44 +1,164 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Adding your own custom PointT type &#8212; PCL documentation 0.0.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adding your own custom PointT type &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Benchmarking 3D" href="benchmark.html" />
-    <link rel="prev" title="Welcome to PCL documentation!" href="index.html" />
+    <link rel="prev" title="Welcome to PCL documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
 
-  </head>
-  <body>
-  
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adding your own custom <cite>PointT</cite> type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-pointt-types">Why <cite>PointT</cite> types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-pointt-types-are-available-in-pcl">What <cite>PointT</cite> types are available in PCL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-are-the-point-types-exposed">How are the point types exposed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-pointt-type">How to add a new <cite>PointT</cite> type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark.html">Benchmarking 3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building pcl.html">Customizing the PCL build process</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Adding your own custom <cite>PointT</cite> type</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/adding custom ptype.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="adding-your-own-custom-pointt-type">
 <span id="adding-custom-ptype"></span><h1><a class="toc-backref" href="#id1">Adding your own custom <cite>PointT</cite> type</a><a class="headerlink" href="#adding-your-own-custom-pointt-type" title="Permalink to this headline">¶</a></h1>
@@ -49,19 +169,20 @@ skip to the last part of the document.</p>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#adding-your-own-custom-pointt-type" id="id1">Adding your own custom <cite>PointT</cite> type</a><ul>
-<li><a class="reference internal" href="#why-pointt-types" id="id2">Why <cite>PointT</cite> types</a></li>
-<li><a class="reference internal" href="#what-pointt-types-are-available-in-pcl" id="id3">What <cite>PointT</cite> types are available in PCL?</a></li>
-<li><a class="reference internal" href="#how-are-the-point-types-exposed" id="id4">How are the point types exposed?</a></li>
-<li><a class="reference internal" href="#how-to-add-a-new-pointt-type" id="id5">How to add a new <cite>PointT</cite> type</a></li>
-<li><a class="reference internal" href="#example" id="id6">Example</a></li>
+<li><p><a class="reference internal" href="#adding-your-own-custom-pointt-type" id="id1">Adding your own custom <cite>PointT</cite> type</a></p>
+<ul>
+<li><p><a class="reference internal" href="#why-pointt-types" id="id2">Why <cite>PointT</cite> types</a></p></li>
+<li><p><a class="reference internal" href="#what-pointt-types-are-available-in-pcl" id="id3">What <cite>PointT</cite> types are available in PCL?</a></p></li>
+<li><p><a class="reference internal" href="#how-are-the-point-types-exposed" id="id4">How are the point types exposed?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-add-a-new-pointt-type" id="id5">How to add a new <cite>PointT</cite> type</a></p></li>
+<li><p><a class="reference internal" href="#example" id="id6">Example</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The current document is valid only for PCL 0.x and 1.x. Note that at the time
+<p class="admonition-title">Note</p>
+<p>The current document is valid only for PCL 0.x and 1.x. Note that at the time
 of this writing we are expecting things to be changed in PCL 2.x.</p>
 </div>
 <p>PCL comes with a variety of pre-defined point types, ranging from SSE-aligned
@@ -82,7 +203,7 @@ debug, think about optimizations, etc.</p>
 <p>One example is represented by simple operations on <cite>XYZ</cite> data. The most
 efficient way for SSE-enabled processors, is to store the 3 dimensions as
 floats, followed by an extra float for padding:</p>
-<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -117,14 +238,14 @@ for the complete list.</p>
 to understand why the existing types were created they way they were. In
 addition, the type that you want, might already be defined for you.</p>
 <ul>
-<li><p class="first"><cite>PointXYZ</cite> - Members: float x, y, z;</p>
+<li><p><cite>PointXYZ</cite> - Members: float x, y, z;</p>
 <p>This is one of the most used data types, as it represents 3D xyz information
 only. The 3 floats are padded with an additional float for SSE alignment. The
 user can either access <cite>points[i].data[0]</cite> or <cite>points[i].x</cite> for accessing
 say, the x coordinate.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -137,7 +258,7 @@ say, the x coordinate.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointXYZI</cite> - Members: float x, y, z, intensity;</p>
+<li><p><cite>PointXYZI</cite> - Members: float x, y, z, intensity;</p>
 <p>Simple XYZ + intensity point type. In an ideal world, these 4 components
 would create a single structure, SSE-aligned. However, because the majority
 of point operations will either set the last component of the <cite>data[4]</cite> array
@@ -149,7 +270,7 @@ component to 0, otherwise the dot product doesn’t make sense, etc.</p>
 Inefficient in terms of storage, but good in terms of memory alignment.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -170,19 +291,19 @@ Inefficient in terms of storage, but good in terms of memory alignment.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointXYZRGBA</cite> - Members: float x, y, z; std::uint32_t rgba;</p>
+<li><p><cite>PointXYZRGBA</cite> - Members: float x, y, z; std::uint32_t rgba;</p>
 <p>Similar to <cite>PointXYZI</cite>, except <cite>rgba</cite> contains the RGBA information packed
 into an unsigned 32-bit integer. Thanks to the <cite>union</cite> declaration, it is
 also possible to access color channels individually by name.</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The nested <cite>union</cite> declaration provides yet another way to look at the RGBA
+<p class="admonition-title">Note</p>
+<p>The nested <cite>union</cite> declaration provides yet another way to look at the RGBA
 data–as a single precision floating point number. This is present for
 historical reasons and should not be used in new code.</p>
 </div>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -210,14 +331,14 @@ historical reasons and should not be used in new code.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointXYZRGB</cite> - float x, y, z; std::uint32_t rgba;</p>
+<li><p><cite>PointXYZRGB</cite> - float x, y, z; std::uint32_t rgba;</p>
 <p>Same as <cite>PointXYZRGBA</cite>.</p>
 </li>
-<li><p class="first"><cite>PointXY</cite> - float x, y;</p>
+<li><p><cite>PointXY</cite> - float x, y;</p>
 <p>Simple 2D x-y point structure.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">x</span><span class="p">;</span>
   <span class="kt">float</span> <span class="n">y</span><span class="p">;</span>
@@ -225,12 +346,12 @@ historical reasons and should not be used in new code.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>InterestPoint</cite> - float x, y, z, strength;</p>
+<li><p><cite>InterestPoint</cite> - float x, y, z, strength;</p>
 <p>Similar to <cite>PointXYZI</cite>, except <cite>strength</cite> contains a measure of the strength
 of the keypoint.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -251,7 +372,7 @@ of the keypoint.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>Normal</cite> - float normal[3], curvature;</p>
+<li><p><cite>Normal</cite> - float normal[3], curvature;</p>
 <p>One of the other most used data types, the <cite>Normal</cite> structure represents the
 surface normal at a given point, and a measure of curvature (which is
 obtained in the same call as a relationship between the eigenvalues of a
@@ -264,7 +385,7 @@ coordinate of the normal vector. Again, <cite>curvature</cite> cannot be stored 
 same structure as it would be overwritten by operations on the normal data.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data_n</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="kt">float</span> <span class="n">normal</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
@@ -286,12 +407,12 @@ same structure as it would be overwritten by operations on the normal data.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointNormal</cite> - float x, y, z; float normal[3], curvature;</p>
+<li><p><cite>PointNormal</cite> - float x, y, z; float normal[3], curvature;</p>
 <p>A point structure that holds XYZ data, together with surface normals and
 curvatures.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -323,16 +444,16 @@ curvatures.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointXYZRGBNormal</cite> - float x, y, z, normal[3], curvature; std::uint32_t rgba;</p>
+<li><p><cite>PointXYZRGBNormal</cite> - float x, y, z, normal[3], curvature; std::uint32_t rgba;</p>
 <p>A point structure that holds XYZ data, and RGBA colors, together with surface
 normals and curvatures.</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Despite the name, this point type does contain the alpha color channel.</p>
+<p class="admonition-title">Note</p>
+<p>Despite the name, this point type does contain the alpha color channel.</p>
 </div>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -379,12 +500,12 @@ normals and curvatures.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointXYZINormal</cite> - float x, y, z, intensity, normal[3], curvature;</p>
+<li><p><cite>PointXYZINormal</cite> - float x, y, z, intensity, normal[3], curvature;</p>
 <p>A point structure that holds XYZ data, and intensity values, together with
 surface normals and curvatures.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -417,12 +538,12 @@ surface normals and curvatures.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointWithRange</cite> - float x, y, z (union with float point[4]), range;</p>
+<li><p><cite>PointWithRange</cite> - float x, y, z (union with float point[4]), range;</p>
 <p>Similar to <cite>PointXYZI</cite>, except <cite>range</cite> contains a measure of the distance
 from the acquisition viewpoint to the point in the world.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -443,12 +564,12 @@ from the acquisition viewpoint to the point in the world.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointWithViewpoint</cite> - float x, y, z, vp_x, vp_y, vp_z;</p>
+<li><p><cite>PointWithViewpoint</cite> - float x, y, z, vp_x, vp_y, vp_z;</p>
 <p>Similar to <cite>PointXYZI</cite>, except <cite>vp_x</cite>, <cite>vp_y</cite>, and <cite>vp_z</cite> contain the
 acquisition viewpoint as a 3D point.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -471,48 +592,48 @@ acquisition viewpoint as a 3D point.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>MomentInvariants</cite> - float j1, j2, j3;</p>
+<li><p><cite>MomentInvariants</cite> - float j1, j2, j3;</p>
 <p>Simple point type holding the 3 moment invariants at a surface patch. See
 <cite>MomentInvariantsEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">j1</span><span class="p">,</span> <span class="n">j2</span><span class="p">,</span> <span class="n">j3</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PrincipalRadiiRSD</cite> - float r_min, r_max;</p>
+<li><p><cite>PrincipalRadiiRSD</cite> - float r_min, r_max;</p>
 <p>Simple point type holding the 2 RSD radii at a surface patch. See
 <cite>RSDEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">r_min</span><span class="p">,</span> <span class="n">r_max</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>Boundary</cite> - std::uint8_t boundary_point;</p>
+<li><p><cite>Boundary</cite> - std::uint8_t boundary_point;</p>
 <p>Simple point type holding whether the point is lying on a surface boundary or
 not. See <cite>BoundaryEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span> <span class="n">boundary_point</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PrincipalCurvatures</cite> - float principal_curvature[3], pc1, pc2;</p>
+<li><p><cite>PrincipalCurvatures</cite> - float principal_curvature[3], pc1, pc2;</p>
 <p>Simple point type holding the principal curvatures of a given point. See
 <cite>PrincipalCurvaturesEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="k">union</span>
   <span class="p">{</span>
@@ -530,48 +651,48 @@ not. See <cite>BoundaryEstimation</cite> for more information.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PFHSignature125</cite> - float pfh[125];</p>
+<li><p><cite>PFHSignature125</cite> - float pfh[125];</p>
 <p>Simple point type holding the PFH (Point Feature Histogram) of a given point.
 See <cite>PFHEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">histogram</span><span class="p">[</span><span class="mi">125</span><span class="p">];</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>FPFHSignature33</cite> - float fpfh[33];</p>
+<li><p><cite>FPFHSignature33</cite> - float fpfh[33];</p>
 <p>Simple point type holding the FPFH (Fast Point Feature Histogram) of a given
 point.  See <cite>FPFHEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">histogram</span><span class="p">[</span><span class="mi">33</span><span class="p">];</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>VFHSignature308</cite> - float vfh[308];</p>
+<li><p><cite>VFHSignature308</cite> - float vfh[308];</p>
 <p>Simple point type holding the VFH (Viewpoint Feature Histogram) of a given
 point.  See <cite>VFHEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">histogram</span><span class="p">[</span><span class="mi">308</span><span class="p">];</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>Narf36</cite> - float x, y, z, roll, pitch, yaw; float descriptor[36];</p>
+<li><p><cite>Narf36</cite> - float x, y, z, roll, pitch, yaw; float descriptor[36];</p>
 <p>Simple point type holding the NARF (Normally Aligned Radius Feature) of a given
 point.  See <cite>NARFEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">;</span>
   <span class="kt">float</span> <span class="n">descriptor</span><span class="p">[</span><span class="mi">36</span><span class="p">];</span>
@@ -579,12 +700,12 @@ point.  See <cite>NARFEstimation</cite> for more information.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>BorderDescription</cite> - int x, y; BorderTraits traits;</p>
+<li><p><cite>BorderDescription</cite> - int x, y; BorderTraits traits;</p>
 <p>Simple point type holding the border type of a given point.  See
 <cite>BorderEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
   <span class="n">BorderTraits</span> <span class="n">traits</span><span class="p">;</span>
@@ -592,12 +713,12 @@ point.  See <cite>NARFEstimation</cite> for more information.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>IntensityGradient</cite> - float gradient[3];</p>
+<li><p><cite>IntensityGradient</cite> - float gradient[3];</p>
 <p>Simple point type holding the intensity gradient of a given point.  See
 <cite>IntensityGradientEstimation</cite> for more information.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="k">union</span>
   <span class="p">{</span>
@@ -613,13 +734,13 @@ point.  See <cite>NARFEstimation</cite> for more information.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>Histogram</cite> - float histogram[N];</p>
+<li><p><cite>Histogram</cite> - float histogram[N];</p>
 <blockquote>
 <div><p>General purpose n-D histogram placeholder.</p>
 </div></blockquote>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="kt">int</span> <span class="n">N</span><span class="o">&gt;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="kt">int</span> <span class="n">N</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="n">Histogram</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">histogram</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
@@ -627,13 +748,13 @@ point.  See <cite>NARFEstimation</cite> for more information.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointWithScale</cite> - float x, y, z, scale;</p>
+<li><p><cite>PointWithScale</cite> - float x, y, z, scale;</p>
 <p>Similar to <cite>PointXYZI</cite>, except <cite>scale</cite> contains the scale at which a certain
 point was considered for a geometric operation (e.g. the radius of the sphere
 for its nearest neighbors computation, the window size, etc).</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">struct</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span>
 <span class="p">{</span>
   <span class="k">union</span>
   <span class="p">{</span>
@@ -650,12 +771,12 @@ for its nearest neighbors computation, the window size, etc).</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><cite>PointSurfel</cite> - float x, y, z, normal[3], rgba, radius, confidence, curvature;</p>
+<li><p><cite>PointSurfel</cite> - float x, y, z, normal[3], rgba, radius, confidence, curvature;</p>
 <p>A complex point type containing XYZ data, surface normals, together with RGB
 information, scale, confidence, and surface curvature.</p>
 </li>
 </ul>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">union</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span>
 <span class="p">{</span>
   <span class="kt">float</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
   <span class="k">struct</span>
@@ -705,7 +826,7 @@ require to compile templated code, thus speeding up compile time. The trick
 involves separating the templated implementations from the headers which
 forward declare our classes and methods, and resolving at link time. Here’s a
 fictitious example:</p>
-<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -739,7 +860,7 @@ fictitious example:</p>
 <p>The above defines the header file which is usually included by all user code.
 As we can see, we’re defining methods and classes, but we’re not implementing
 anything yet.</p>
-<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -772,7 +893,7 @@ anything yet.</p>
 </td></tr></table></div>
 <p>The above defines the actual template implementation of the method
 <cite>Foo::compute</cite>. This should normally be hidden from user code.</p>
-<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -794,7 +915,7 @@ anything yet.</p>
 <p>And finally, the above shows the way the explicit instantiations are done in
 PCL. The macro <cite>PCL_INSTANTIATE</cite> does nothing else but go over a given list of
 types and creates an explicit instantiation for each. From <cite>pcl/include/pcl/impl/instantiate.hpp</cite>:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// PCL_INSTANTIATE: call to instantiate template TEMPLATE for all</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// PCL_INSTANTIATE: call to instantiate template TEMPLATE for all</span>
 <span class="c1">// POINT_TYPES</span>
 
 <span class="cp">#define PCL_INSTANTIATE_IMPL(r, TEMPLATE, POINT_TYPE) \</span>
@@ -805,7 +926,7 @@ types and creates an explicit instantiation for each. From <cite>pcl/include/pcl
 </pre></div>
 </div>
 <p>Where <cite>PCL_XYZ_POINT_TYPES</cite> is (from <cite>pcl/include/pcl/impl/point_types.hpp</cite>):</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Define all point types that include XYZ data</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Define all point types that include XYZ data</span>
 <span class="cp">#define PCL_XYZ_POINT_TYPES   \</span>
 <span class="cp">  (pcl::PointXYZ)             \</span>
 <span class="cp">  (pcl::PointXYZI)            \</span>
@@ -823,7 +944,7 @@ types and creates an explicit instantiation for each. From <cite>pcl/include/pcl
 <p>Basically, if you only want to explicitly instantiate <cite>Foo</cite> for
 <cite>pcl::PointXYZ</cite>, you don’t need to use the macro, as something as simple as the
 following would do:</p>
-<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -841,15 +962,15 @@ following would do:</p>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For more information about explicit instantiations, please see <em>C++ Templates
+<p class="admonition-title">Note</p>
+<p>For more information about explicit instantiations, please see <em>C++ Templates
 - The Complete Guide</em>, by David Vandervoorde and Nicolai M. Josuttis.</p>
 </div>
 </div>
 <div class="section" id="how-to-add-a-new-pointt-type">
 <h2><a class="toc-backref" href="#id5">How to add a new <cite>PointT</cite> type</a><a class="headerlink" href="#how-to-add-a-new-pointt-type" title="Permalink to this headline">¶</a></h2>
 <p>To add a new point type, you first have to define it. For example:</p>
-<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">MyPointType</span>
@@ -862,7 +983,7 @@ following would do:</p>
 implementation of the specific class/algorithm in PCL that you want your new
 point type <cite>MyPointType</cite> to work with. For example, say you want to use
 <cite>pcl::PassThrough</cite>. All you would have to do is:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#define PCL_NO_PRECOMPILE</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PCL_NO_PRECOMPILE</span>
 <span class="cp">#include</span> <span class="cpf">&lt;pcl/filters/passthrough.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;pcl/filters/impl/passthrough.hpp&gt;</span><span class="cp"></span>
 
@@ -873,8 +994,8 @@ point type <cite>MyPointType</cite> to work with. For example, say you want to u
 make sense to try to use explicit instantiations for your <cite>MyPointType</cite> types,
 for any classes that you expose (from PCL our outside PCL).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Starting with PCL-1.7 you need to define PCL_NO_PRECOMPILE before you include
+<p class="admonition-title">Note</p>
+<p>Starting with PCL-1.7 you need to define PCL_NO_PRECOMPILE before you include
 any PCL headers to include the templated algorithms as well.</p>
 </div>
 </div>
@@ -882,7 +1003,7 @@ any PCL headers to include the templated algorithms as well.</p>
 <h2><a class="toc-backref" href="#id6">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>The following code snippet example creates a new point type that contains XYZ
 data (SSE padded), together with a test float.</p>
-<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -959,71 +1080,64 @@ data (SSE padded), together with a test float.</p>
 </div>
 
 
+           </div>
+           
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="benchmark.html" class="btn btn-neutral float-right" title="Benchmarking 3D" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to PCL documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">PCL documentation</a></h1>
+
+    </section>
+
+  </div>
+  
 
 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
 
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Adding your own custom <cite>PointT</cite> type</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#why-pointt-types">Why <cite>PointT</cite> types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#what-pointt-types-are-available-in-pcl">What <cite>PointT</cite> types are available in PCL?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-are-the-point-types-exposed">How are the point types exposed?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-add-a-new-pointt-type">How to add a new <cite>PointT</cite> type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">Benchmarking 3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="building pcl.html">Customizing the PCL build process</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Welcome to PCL documentation!</a></li>
-      <li>Next: <a href="benchmark.html" title="next chapter">Benchmarking 3D</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2020, Arzoo.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/adding custom ptype.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
 
     
+   
 
-    
-  </body>
+</body>
 </html>
