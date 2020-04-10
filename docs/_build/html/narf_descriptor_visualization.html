@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Visualization of the NARF descriptor and descriptor distances &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Visualization of the NARF descriptor and descriptor distances</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/narf_descriptor_visualization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="visualization-of-the-narf-descriptor-and-descriptor-distances">
+<span id="narf-descriptor-visualization"></span><h1>Visualization of the NARF descriptor and descriptor distances<a class="headerlink" href="#visualization-of-the-narf-descriptor-and-descriptor-distances" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial is about the visualization of how the NARF descriptor is
+calculated and to test how the descriptor distances between certain points in a
+range image behave. Compared to the other tuturials, this one is not really
+about the code, but about trying the program and looking at the visualization.
+Of course, nothing keeps you from having a look at it anyway.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>First, create a file called, let’s say, <code class="docutils literal notranslate"><span class="pre">narf_descriptor_visualization.cpp</span></code> in your favorite
+editor, and place the following code inside it:</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>You can now try it with a point cloud file from your hard drive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./narf_descriptor_visualization &lt;point_cloud.pcd&gt;
+</pre></div>
+</div>
+<p>It will take a few second, during which you will see the status in the
+terminal. During this time, a NARF feature is extracted in every point of the
+range image created from the given point cloud. When it is done, a widget
+showing the range image pops up. Now click on a point in the range image. If it
+is a valid image point, three additional widgets will pop up. One visualizing
+the actual descriptor as a row of gray values, one showing a local range image
+patch of the area on which you clicked, overlaid with a star shaped pattern.
+Each beam corresponds to one of the cells in the descriptor. The one facing
+upwards to the first cell and then going clockwise. The basic intuition is,
+that the more the surface changes under the beam, the higher (brighter) the
+value of the corresponding descriptor cell. There is also one or more red
+beams, which mark the extracted dominant orientations of the image patch,
+which, together with the normal, is used to create a unique orientation for the
+feature coordinate frame. The last image visualizes the descriptor distances to
+every other point in the scene. The darker the value, the more similar the
+point is to the clicked image point.</p>
+<p>The result should look similar to this:</p>
+<img alt="_images/narf_descriptor_visualization.png" src="_images/narf_descriptor_visualization.png" />
+<p>Also have a look at:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./narf_descriptor_visualization -h
+</pre></div>
+</div>
+<p>for a list of parameters.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

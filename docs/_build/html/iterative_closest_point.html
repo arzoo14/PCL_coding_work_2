@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to use iterative closest point &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to use iterative closest point</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/iterative_closest_point.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use-iterative-closest-point">
+<span id="iterative-closest-point"></span><h1>How to use iterative closest point<a class="headerlink" href="#how-to-use-iterative-closest-point" title="Permalink to this headline">¶</a></h1>
+<p>This document demonstrates using the Iterative Closest Point algorithm in your
+code which can determine if one PointCloud is just a rigid transformation of
+another by minimizing the distances between the points of two pointclouds and
+rigidly transforming them.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>Now, let’s breakdown this code piece by piece.</p>
+<p>these are the header files that contain the definitions for all of the classes which we will use.</p>
+<p>Creates two pcl::PointCloud&lt;pcl::PointXYZ&gt; boost shared pointers and initializes them. The type of each point is set to PointXYZ in the pcl namespace which is:</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// \brief A point structure representing Euclidean xyz coordinates.</span>
+<span class="k">struct</span> <span class="n">PointXYZ</span>
+<span class="p">{</span>
+  <span class="kt">float</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">y</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">z</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The lines:</p>
+<p>fill in the PointCloud structure with random point values, and set the appropriate parameters (width, height, is_dense).  Also, they output the number of points saved, and their actual data values.</p>
+<p>Then:</p>
+<p>performs a simple rigid transform on the pointcloud and again outputs the data values.</p>
+<p>This creates an instance of an IterativeClosestPoint and gives it some useful information.  “icp.setInputSource(cloud_in);” sets cloud_in as the PointCloud to begin from and “icp.setInputTarget(cloud_out);” sets cloud_out as the PointCloud which we want cloud_in to look like.</p>
+<p>Next,</p>
+<p>Creates a pcl::PointCloud&lt;pcl::PointXYZ&gt; to which the IterativeClosestPoint can save the resultant cloud after applying the algorithm.  If the two PointClouds align correctly (meaning they are both the same cloud merely with some kind of rigid transformation applied to one of them) then icp.hasConverged() = 1 (true).  It then outputs the fitness score of the final transformation and some information about it.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./iterative_closest_point
+</pre></div>
+</div>
+<p>You will see something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Saved</span> <span class="mi">5</span> <span class="n">data</span> <span class="n">points</span> <span class="n">to</span> <span class="nb">input</span><span class="p">:</span>
+ <span class="mf">0.352222</span> <span class="o">-</span><span class="mf">0.151883</span> <span class="o">-</span><span class="mf">0.106395</span>
+<span class="o">-</span><span class="mf">0.397406</span> <span class="o">-</span><span class="mf">0.473106</span> <span class="mf">0.292602</span>
+<span class="o">-</span><span class="mf">0.731898</span> <span class="mf">0.667105</span> <span class="mf">0.441304</span>
+<span class="o">-</span><span class="mf">0.734766</span> <span class="mf">0.854581</span> <span class="o">-</span><span class="mf">0.0361733</span>
+<span class="o">-</span><span class="mf">0.4607</span> <span class="o">-</span><span class="mf">0.277468</span> <span class="o">-</span><span class="mf">0.916762</span>
+<span class="n">size</span><span class="p">:</span><span class="mi">5</span>
+<span class="n">Transformed</span> <span class="mi">5</span> <span class="n">data</span> <span class="n">points</span><span class="p">:</span>
+ <span class="mf">1.05222</span> <span class="o">-</span><span class="mf">0.151883</span> <span class="o">-</span><span class="mf">0.106395</span>
+ <span class="mf">0.302594</span> <span class="o">-</span><span class="mf">0.473106</span> <span class="mf">0.292602</span>
+<span class="o">-</span><span class="mf">0.0318983</span> <span class="mf">0.667105</span> <span class="mf">0.441304</span>
+<span class="o">-</span><span class="mf">0.0347655</span> <span class="mf">0.854581</span> <span class="o">-</span><span class="mf">0.0361733</span>
+      <span class="mf">0.2393</span> <span class="o">-</span><span class="mf">0.277468</span> <span class="o">-</span><span class="mf">0.916762</span>
+<span class="p">[</span><span class="n">pcl</span><span class="p">::</span><span class="n">SampleConsensusModelRegistration</span><span class="p">::</span><span class="n">setInputCloud</span><span class="p">]</span> <span class="n">Estimated</span> <span class="n">a</span> <span class="n">sample</span>
+<span class="n">selection</span> <span class="n">distance</span> <span class="n">threshold</span> <span class="n">of</span><span class="p">:</span> <span class="mf">0.200928</span>
+<span class="p">[</span><span class="n">pcl</span><span class="p">::</span><span class="n">IterativeClosestPoint</span><span class="p">::</span><span class="n">computeTransformation</span><span class="p">]</span> <span class="n">Number</span> <span class="n">of</span>
+<span class="n">correspondences</span> <span class="mi">4</span> <span class="p">[</span><span class="mf">80.000000</span><span class="o">%</span><span class="p">]</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">5</span> <span class="n">points</span> <span class="p">[</span><span class="mf">100.0</span><span class="o">%</span><span class="p">],</span> <span class="n">RANSAC</span> <span class="n">rejected</span><span class="p">:</span>
+<span class="mi">1</span> <span class="p">[</span><span class="mf">20.000000</span><span class="o">%</span><span class="p">]</span><span class="o">.</span>
+<span class="p">[</span><span class="n">pcl</span><span class="p">::</span><span class="n">IterativeClosestPoint</span><span class="p">::</span><span class="n">computeTransformation</span><span class="p">]</span> <span class="n">Convergence</span> <span class="n">reached</span><span class="o">.</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">iterations</span><span class="p">:</span> <span class="mi">1</span> <span class="n">out</span> <span class="n">of</span> <span class="mf">0.</span> <span class="n">Transformation</span> <span class="n">difference</span><span class="p">:</span> <span class="mf">0.700001</span>
+<span class="n">has</span> <span class="n">converged</span><span class="p">:</span><span class="mi">1</span> <span class="n">score</span><span class="p">:</span> <span class="mf">1.95122e-14</span>
+          <span class="mi">1</span>  <span class="mf">4.47035e-08</span> <span class="o">-</span><span class="mf">3.25963e-09</span>          <span class="mf">0.7</span>
+<span class="mf">2.98023e-08</span>            <span class="mi">1</span> <span class="o">-</span><span class="mf">1.08499e-07</span> <span class="o">-</span><span class="mf">2.98023e-08</span>
+<span class="mf">1.30385e-08</span> <span class="o">-</span><span class="mf">1.67638e-08</span>            <span class="mi">1</span>  <span class="mf">1.86265e-08</span>
+          <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

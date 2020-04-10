@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Robust pose estimation of rigid objects &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Robust pose estimation of rigid objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/alignment_prerejective.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="robust-pose-estimation-of-rigid-objects">
+<span id="alignment-prerejective"></span><h1><a class="toc-backref" href="#id17">Robust pose estimation of rigid objects</a><a class="headerlink" href="#robust-pose-estimation-of-rigid-objects" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, we show how to find the alignment pose of a rigid object in a scene with clutter and occlusions.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#robust-pose-estimation-of-rigid-objects" id="id17">Robust pose estimation of rigid objects</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-code" id="id18">The code</a></p></li>
+<li><p><a class="reference internal" href="#the-explanation" id="id19">The explanation</a></p></li>
+<li><p><a class="reference internal" href="#compiling-and-running-the-program" id="id20">Compiling and running the program</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-code">
+<h2><a class="toc-backref" href="#id18">The code</a><a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h2>
+<p>First, download the test models: <code class="xref download docutils literal notranslate"><span class="pre">object</span></code> and <code class="xref download docutils literal notranslate"><span class="pre">scene</span></code>.</p>
+<p>Next, copy and paste the following code into your editor and save it as <code class="docutils literal notranslate"><span class="pre">alignment_prerejective.cpp</span></code> (or download the source file <code class="xref download docutils literal notranslate"><span class="pre">here</span></code>).</p>
+</div>
+<div class="section" id="the-explanation">
+<h2><a class="toc-backref" href="#id19">The explanation</a><a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h2>
+<p>We start by defining convenience types in order not to clutter the code.</p>
+<p>Then we instantiate the necessary data containers, check the input arguments and load the object and scene point clouds. Although we have defined the basic point type to contain normals, we only have those in advance for the object (which is often the case). We will estimate the normal information for the scene below.</p>
+<p>To speed up processing, we use PCL’s <a href="#id1"><span class="problematic" id="id2">:pcl:`VoxelGrid &lt;pcl::VoxelGrid&gt;`</span></a> class to downsample both the object and the scene point clouds to a resolution of 5 mm.</p>
+<p>The missing surface normals for the scene are now estimated using PCL’s <a href="#id3"><span class="problematic" id="id4">:pcl:`NormalEstimationOMP &lt;pcl::NormalEstimationOMP&gt;`</span></a>. The surface normals are required for computing the features below used for matching.</p>
+<p>For each point in the downsampled point clouds, we now use PCL’s <a href="#id5"><span class="problematic" id="id6">:pcl:`FPFHEstimationOMP &lt;pcl::FPFHEstimationOMP&gt;`</span></a> class to compute <em>Fast Point Feature Histogram</em> (FPFH) descriptors used for matching during the alignment process.</p>
+<p>We are now ready to setup the alignment process. We use the class <a href="#id7"><span class="problematic" id="id8">:pcl:`SampleConsensusPrerejective &lt;pcl::SampleConsensusPrerejective&gt;`</span></a>, which implements an efficient RANSAC pose estimation loop. This is achieved by early elimination of bad pose hypothesis using the class <a href="#id9"><span class="problematic" id="id10">:pcl:`CorrespondenceRejectorPoly &lt;pcl::registration::CorrespondenceRejectorPoly&gt;`</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Apart from the usual input point clouds and features, this class takes some additional runtime parameters which have great influence on the performance of the alignment algorithm. The first two have the same meaning as in the alignment class <a href="#id11"><span class="problematic" id="id12">:pcl:`SampleConsensusInitialAlignment &lt;pcl::SampleConsensusInitialAlignment&gt;`</span></a>:</p>
+<ul class="simple">
+<li><p>Number of samples - <em>setNumberOfSamples ()</em>: The number of point correspondences to sample between the object and the scene. At minimum, 3 points are required to calculate a pose.</p></li>
+<li><p>Correspondence randomness - <em>setCorrespondenceRandomness ()</em>: Instead of matching each object FPFH descriptor to its nearest matching feature in the scene, we can choose between the <em>N</em> best matches at random. This increases the iterations necessary, but also makes the algorithm robust towards outlier matches.</p></li>
+<li><p>Polygonal similarity threshold - <em>setSimilarityThreshold ()</em>: The alignment class uses the <a href="#id13"><span class="problematic" id="id14">:pcl:`CorrespondenceRejectorPoly &lt;pcl::registration::CorrespondenceRejectorPoly&gt;`</span></a> class for early elimination of bad poses based on pose-invariant geometric consistencies of the inter-distances between sampled points on the object and the scene. The closer this value is set to 1, the more greedy and thereby fast the algorithm becomes. However, this also increases the risk of eliminating good poses when noise is present.</p></li>
+<li><p>Inlier threshold - <em>setMaxCorrespondenceDistance ()</em>: This is the Euclidean distance threshold used for determining whether a transformed object point is correctly aligned to the nearest scene point or not. In this example, we have used a heuristic value of 1.5 times the point cloud resolution.</p></li>
+<li><p>Inlier fraction - <em>setInlierFraction ()</em>: In many practical scenarios, large parts of the observed object in the scene are not visible, either due to clutter, occlusions or both. In such cases, we need to allow for pose hypotheses that do not align all object points to the scene. The absolute number of correctly aligned points is determined using the inlier threshold, and if the ratio of this number to the total number of points in the object is higher than the specified inlier fraction, we accept a pose hypothesis as valid.</p></li>
+</ul>
+</div>
+<p>Finally, we are ready to execute the alignment process.</p>
+<p>The aligned object is stored in the point cloud <em>object_aligned</em>. If a pose with enough inliers was found (more than 25 % of the total number of object points), the algorithm is said to converge, and we can print and visualize the results.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h2><a class="toc-backref" href="#id20">Compiling and running the program</a><a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h2>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file with the following content (or download it <code class="xref download docutils literal notranslate"><span class="pre">here</span></code>):</p>
+<p>After you have made the executable, you can run it like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./alignment_prerejective chef.pcd rs1.pcd
+</pre></div>
+</div>
+<p>After a few seconds, you will see a visualization and a terminal output similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Alignment</span> <span class="n">took</span> <span class="mi">352</span><span class="n">ms</span><span class="o">.</span>
+
+    <span class="o">|</span>  <span class="mf">0.040</span> <span class="o">-</span><span class="mf">0.929</span> <span class="o">-</span><span class="mf">0.369</span> <span class="o">|</span>
+<span class="n">R</span> <span class="o">=</span> <span class="o">|</span> <span class="o">-</span><span class="mf">0.999</span> <span class="o">-</span><span class="mf">0.035</span> <span class="o">-</span><span class="mf">0.020</span> <span class="o">|</span>
+    <span class="o">|</span>  <span class="mf">0.006</span>  <span class="mf">0.369</span> <span class="o">-</span><span class="mf">0.929</span> <span class="o">|</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.287</span><span class="p">,</span> <span class="mf">0.045</span><span class="p">,</span> <span class="mf">0.126</span> <span class="o">&gt;</span>
+
+<span class="n">Inliers</span><span class="p">:</span> <span class="mi">987</span><span class="o">/</span><span class="mi">3432</span>
+</pre></div>
+</div>
+<p>The visualization window should look something like the below figures. The scene is shown with green color, and the aligned object model is shown with blue color. Note the high number of non-visible object points.</p>
+<div class="figure align-center" id="id15">
+<a class="reference internal image-reference" href="_images/alignment_prerejective_1.png"><img alt="_images/alignment_prerejective_1.png" src="_images/alignment_prerejective_1.png" style="width: 600.0px; height: 337.5px;" /></a>
+<p class="caption"><span class="caption-text"><em>Frontal view</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center" id="id16">
+<a class="reference internal image-reference" href="_images/alignment_prerejective_2.png"><img alt="_images/alignment_prerejective_2.png" src="_images/alignment_prerejective_2.png" style="width: 600.0px; height: 337.5px;" /></a>
+<p class="caption"><span class="caption-text"><em>Side view</em></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

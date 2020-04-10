@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Filter Benchmarking &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Filter Benchmarking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/benchmark_filters.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filter-benchmarking">
+<span id="filterbenchmarking"></span><h1><a class="toc-backref" href="#id1">Filter Benchmarking</a><a class="headerlink" href="#filter-benchmarking" title="Permalink to this headline">¶</a></h1>
+<p>This document introduces benchmarking concepts for filtering algorithms. By
+<em>benchmarking</em> here we refer to the possibility of testing different
+parameters for each filter algorithm on a specific point cloud in an <strong>easy manner</strong>. The goal is to find the best parameters of a certain filter that best describe the original point cloud without removing useful data.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#filter-benchmarking" id="id1">Filter Benchmarking</a></p>
+<ul>
+<li><p><a class="reference internal" href="#benchmarking-filter-algorithms" id="id2">Benchmarking Filter Algorithms</a></p>
+<ul>
+<li><p><a class="reference internal" href="#functionality" id="id3">1. Functionality</a></p></li>
+<li><p><a class="reference internal" href="#filter-types-and-parameters" id="id4">2. Filter Types and Parameters</a></p></li>
+<li><p><a class="reference internal" href="#evaluation" id="id5">3. Evaluation</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="benchmarking-filter-algorithms">
+<h2><a class="toc-backref" href="#id2">Benchmarking Filter Algorithms</a><a class="headerlink" href="#benchmarking-filter-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>To get rid of noisy data in a scan of a 3D scene or object, many filters could be applied to obtain the <em>cleanest</em> representation possible of the object or scene. These filters need to be tuned according to the characteristics of the raw data. A filter evaluation class can be implemented, similar to the <strong>FeatureEvaluationFramework</strong> to find these parameters.</p>
+<div class="section" id="functionality">
+<h3><a class="toc-backref" href="#id3">1. Functionality</a><a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>FilterEvaluationFramework</strong> object could be initialized by the following functions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>setInputCloud: <em>Load test cloud from .pcd file</em>;</p></li>
+<li><p>setFilterTest: <em>Choose the filter algorithm to be tested</em>;</p></li>
+<li><p>setParameters: <em>Specific to the Filter Algorithm</em>;</p></li>
+<li><p>setThreshold: <em>A single or a range of threshold values for the evaluation metric</em>;</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="filter-types-and-parameters">
+<h3><a class="toc-backref" href="#id4">2. Filter Types and Parameters</a><a class="headerlink" href="#filter-types-and-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Provide test classes for all the existing filters implemented in PCL.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>StatisticalOutlierRemoval: <em>meanK and StddevMulThresh</em>;</p></li>
+<li><p>RadiusOutlierRemoval: <em>radiusSearch and MinNeighborsInRadius</em>;</p></li>
+<li><p>VoxelGrid: <em>LeafSize</em>;</p></li>
+<li><p>etc..</p></li>
+</ul>
+</div></blockquote>
+<p>Users should be able to add their custom filter implementations to the framework.</p>
+</div>
+<div class="section" id="evaluation">
+<h3><a class="toc-backref" href="#id5">3. Evaluation</a><a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h3>
+<p>This benchmark should be able to evaluate the filter’s performance with the specified parameters. The Evaluation metrics should answer the following questions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Did the filter remove useful data? (new holes)</p></li>
+<li><p>Is the new filtered cloud a clear representation of the original? (same surface)</p></li>
+<li><p>Computation Time?</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

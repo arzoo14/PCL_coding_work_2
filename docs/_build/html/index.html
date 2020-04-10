@@ -25,6 +25,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -35,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Adding your own custom PointT type" href="adding custom ptype.html" /> 
+    <link rel="next" title="1. PCL Walkthrough" href="walkthrough.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,11 +84,29 @@
               
             
             
-              <p class="caption"><span class="caption-text">Basic Tutorials</span></p>
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="adding custom ptype.html">Adding your own custom <cite>PointT</cite> type</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">Benchmarking 3D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="building pcl.html">Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
 </ul>
 
             
@@ -161,40 +180,154 @@
 <p>The Point Cloud Library (PCL) is a standalone, large scale, open project for 2D/3D image and point cloud processing.</p>
 <p>PCL is released under the terms of the BSD license, and thus free for commercial and research use. We are financially supported by a consortium of commercial companies, with our own non-profit organization, Open Perception. We would also like to thank individual donors and contributors that have been helping the project.</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Basic Tutorials</span></p>
+<p class="caption"><span class="caption-text">Basic Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="adding custom ptype.html">Adding your own custom <cite>PointT</cite> type</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="adding custom ptype.html#why-pointt-types">Why <cite>PointT</cite> types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding custom ptype.html#what-pointt-types-are-available-in-pcl">What <cite>PointT</cite> types are available in PCL?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding custom ptype.html#how-are-the-point-types-exposed">How are the point types exposed?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding custom ptype.html#how-to-add-a-new-pointt-type">How to add a new <cite>PointT</cite> type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding custom ptype.html#example">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#overview">1.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#filters">1.2. Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#features">1.3. Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#keypoints">1.4. Keypoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#registration">1.5. Registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#kd-tree">1.6. Kd-tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#octree">1.7. Octree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#segmentation">1.8. Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#sample-consensus">1.9. Sample Consensus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#surface">1.10. Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#range-image">1.11. Range Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#i-o">1.12. I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#visualization">1.13. Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#common">1.14. Common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#search">1.15. Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthrough.html#binaries">1.16. Binaries</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">Benchmarking 3D</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html#benchmarking-object-recognition">Benchmarking Object Recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html#object-recognition-api">Object Recognition API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_structures.html#compiling-your-first-code-example">2.1. Compiling your first code example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="building pcl.html">Customizing the PCL build process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="building pcl.html#audience">Audience</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building pcl.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building pcl.html#pcl-basic-settings">PCL basic settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building pcl.html#the-explanation">The explanation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building pcl.html#tweaking-basic-settings">Tweaking basic settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building pcl.html#tweaking-advanced-settings">Tweaking advanced settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_pcl_config.html#prerequisites">3.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_pcl_config.html#project-settings">3.2. Project settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_pcl_config.html#the-explanation">3.3. The explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_pcl_config.html#compiling-and-running-the-project">3.4. Compiling and running the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_pcl_config.html#weird-installations">3.5. Weird installations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_posix.html#stable">4.1. Stable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_posix.html#experimental">4.2. Experimental</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_posix.html#dependencies">4.3. Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_posix.html#troubleshooting">4.4. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="building_pcl.html#audience">5.1. Audience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_pcl.html#prerequisites">5.2. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_pcl.html#pcl-basic-settings">5.3. PCL basic settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_pcl.html#the-explanation">5.4. The explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_pcl.html#tweaking-basic-settings">5.5. Tweaking basic settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_pcl.html#tweaking-advanced-settings">5.6. Tweaking advanced settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_pcl.html#detailed-description">5.7. Detailed description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_dependencies_windows.html#requirements">6.1. Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_dependencies_windows.html#building-dependencies">6.2. Building dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_dependencies_windows.html#building-pcl">6.3. Building PCL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_windows.html#requirements">7.1. Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_windows.html#downloading-pcl-source-code">7.2. Downloading PCL source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_windows.html#configuring-pcl">7.3. Configuring PCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_windows.html#building-pcl">7.4. Building PCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_windows.html#installing-pcl">7.5. Installing PCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_windows.html#advanced-topics">7.6. Advanced topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_windows.html#using-pcl">7.7. Using PCL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_macosx.html#prerequisites">8.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_macosx.html#pcl-dependencies">8.2. PCL Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_macosx.html#building-compiling-and-installing-pcl-dependencies">8.3. Building, Compiling and Installing PCL Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_macosx.html#building-pcl">8.4. Building PCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_macosx.html#using-pcl">8.5. Using PCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_pcl_macosx.html#macosx-advanced">8.6. Advanced (Developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installing_homebrew.html#prerequisites">9.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing_homebrew.html#using-the-formula">9.2. Using the formula</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing_homebrew.html#using-pcl">9.3. Using PCL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_with_eclipse.html#prerequisites">10.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_with_eclipse.html#creating-the-eclipse-project-files">10.2. Creating the eclipse project files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_with_eclipse.html#importing-into-eclipse">10.3. Importing into Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_with_eclipse.html#configuring-eclipse">10.4. Configuring Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_with_eclipse.html#setting-the-pcl-code-style-in-eclipse">10.5. Setting the PCL code style in Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_with_eclipse.html#launching-the-program">10.6. Launching the program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_pcl_with_eclipse.html#where-to-get-more-information">10.7. Where to get more information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generate_local_doc.html#dependencies">11.1. Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_local_doc.html#generate-the-documentation">11.2. Generate the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_local_doc.html#installing-and-configuring-apache">11.3. Installing and configuring Apache</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="matrix_transform.html#the-code">12.1. The code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix_transform.html#the-explanation">12.2. The explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix_transform.html#compiling-and-running-the-program">12.3. Compiling and running the program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix_transform.html#more-about-transformations">12.4. More about transformations</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adding_custom_ptype.html#why-pointt-types">1.1. Why <cite>PointT</cite> types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_custom_ptype.html#what-pointt-types-are-available-in-pcl">1.2. What <cite>PointT</cite> types are available in PCL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_custom_ptype.html#how-are-the-point-types-exposed">1.3. How are the point types exposed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_custom_ptype.html#how-to-add-a-new-pointt-type">1.4. How to add a new <cite>PointT</cite> type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adding_custom_ptype.html#example">1.5. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_classes.html#advantages-why-contribute">2.1. Advantages: Why contribute?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_classes.html#example-a-bilateral-filter">2.2. Example: a bilateral filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_classes.html#setting-up-the-structure">2.3. Setting up the structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_classes.html#filling-in-the-class-structure">2.4. Filling in the class structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_classes.html#taking-advantage-of-other-pcl-concepts">2.5. Taking advantage of other PCL concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_classes.html#testing-the-new-class">2.6. Testing the new class</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how_features_work.html#theoretical-primer">1.1. Theoretical primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_features_work.html#terminology">1.2. Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_features_work.html#how-to-pass-the-input">1.3. How to pass the input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_features_work.html#an-example-for-normal-estimation">1.4. An example for normal estimation</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+<li><p><a class="reference internal" href="walkthrough.html#search"><span class="std std-ref">Search</span></a></p></li>
 </ul>
+</div>
 </div>
 
 
@@ -205,7 +338,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="adding custom ptype.html" class="btn btn-neutral float-right" title="Adding your own custom PointT type" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="walkthrough.html" class="btn btn-neutral float-right" title="1. PCL Walkthrough" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

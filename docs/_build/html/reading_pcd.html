@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reading Point Cloud data from PCD files &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Reading Point Cloud data from PCD files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/reading_pcd.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reading-point-cloud-data-from-pcd-files">
+<span id="reading-pcd"></span><h1>Reading Point Cloud data from PCD files<a class="headerlink" href="#reading-point-cloud-data-from-pcd-files" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will learn how to read point cloud data from a PCD file.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>First, create a file called, let’s say, <code class="docutils literal notranslate"><span class="pre">pcd_read.cpp</span></code> in your favorite
+editor, and place the following code inside it:</p>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>Now, let’s break down the code piece by piece.</p>
+<p>creates a PointCloud&lt;PointXYZ&gt; boost shared pointer and initializes it.</p>
+<p>loads the PointCloud data from disk (we assume that test_pcd.pcd has already
+been created from the previous tutorial) into the binary blob.</p>
+<p>Alternatively, you can read a PCLPointCloud2 blob (available only in PCL 1.x). Due
+to the dynamic nature of point clouds, we prefer to read them as binary blobs,
+and then convert to the actual representation that we want to use.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">pcl</span><span class="o">::</span><span class="n">PCLPointCloud2</span> <span class="n">cloud_blob</span><span class="p">;</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">loadPCDFile</span> <span class="p">(</span><span class="s">&quot;test_pcd.pcd&quot;</span><span class="p">,</span> <span class="n">cloud_blob</span><span class="p">);</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">fromPCLPointCloud2</span> <span class="p">(</span><span class="n">cloud_blob</span><span class="p">,</span> <span class="o">*</span><span class="n">cloud</span><span class="p">);</span> <span class="c1">//* convert from pcl/PCLPointCloud2 to pcl::PointCloud&lt;T&gt;</span>
+</pre></div>
+</div>
+<p>reads and converts the binary blob into the templated PointCloud format, here
+using pcl::PointXYZ as the underlying point type.</p>
+<p>Finally:</p>
+<p>is used to show the data that was loaded from file.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pcd_read
+</pre></div>
+</div>
+<p>You will see something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Loaded</span> <span class="mi">5</span> <span class="n">data</span> <span class="n">points</span> <span class="kn">from</span> <span class="nn">test_pcd.pcd</span> <span class="k">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span>
+  <span class="mf">0.35222</span> <span class="o">-</span><span class="mf">0.15188</span> <span class="o">-</span><span class="mf">0.1064</span>
+  <span class="o">-</span><span class="mf">0.39741</span> <span class="o">-</span><span class="mf">0.47311</span> <span class="mf">0.2926</span>
+  <span class="o">-</span><span class="mf">0.7319</span> <span class="mf">0.6671</span> <span class="mf">0.4413</span>
+  <span class="o">-</span><span class="mf">0.73477</span> <span class="mf">0.85458</span> <span class="o">-</span><span class="mf">0.036173</span>
+  <span class="o">-</span><span class="mf">0.4607</span> <span class="o">-</span><span class="mf">0.27747</span> <span class="o">-</span><span class="mf">0.91676</span>
+</pre></div>
+</div>
+<p>Note that if the file test_pcd.pcd does not exist (either it hasn’t been
+created or it has been erased), you should get an error message such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Couldn</span><span class="s1">&#39;t read file test_pcd.pcd</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to incrementally register pairs of clouds &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to incrementally register pairs of clouds</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pairwise_incremental_registration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-incrementally-register-pairs-of-clouds">
+<span id="pairwise-incremental-registration"></span><h1>How to incrementally register pairs of clouds<a class="headerlink" href="#how-to-incrementally-register-pairs-of-clouds" title="Permalink to this headline">¶</a></h1>
+<p>This document demonstrates using the Iterative Closest Point algorithm in order
+to incrementally register a series of point clouds two by two.</p>
+<div class="line-block">
+<div class="line">The idea is to transform all the clouds in the first cloud’s frame.</div>
+<div class="line">This is done by finding the best transform between each consecutive cloud, and accumulating these transforms over the whole set of clouds.</div>
+</div>
+<div class="line-block">
+<div class="line">Your data set should consist of clouds that have been roughly pre-aligned in a common frame (e.g. in a robot’s odometry or map frame) and overlap with one another.</div>
+<div class="line">We provide a set of clouds at <a class="reference external" href="https://github.com/PointCloudLibrary/data/tree/master/tutorials/pairwise">github.com/PointCloudLibrary/data/tree/master/tutorials/pairwise/</a>.</div>
+</div>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Let’s breakdown this code piece by piece.</div>
+<div class="line">We will first make a quick run through the declarations. Then, we will study the registering functions.</div>
+</div>
+<div class="section" id="declarations">
+<h2>Declarations<a class="headerlink" href="#declarations" title="Permalink to this headline">¶</a></h2>
+<p>These are the header files that contain the definitions for all of the classes which we will use.</p>
+<p>Creates global variables for visualization purpose</p>
+<p>Declare a convenient structure that allow us to handle clouds as couple [points - filename]</p>
+<p>Define a new point representation (see <a class="reference internal" href="adding_custom_ptype.html#adding-custom-ptype"><span class="std std-ref">Adding your own custom PointT type</span></a> for more on the subject)</p>
+</div>
+<div class="section" id="registering-functions">
+<h2>Registering functions<a class="headerlink" href="#registering-functions" title="Permalink to this headline">¶</a></h2>
+<p>Let’s see how are our functions organized.</p>
+<div class="line-block">
+<div class="line">The main function checks the user input, loads the data in a vector and starts the pair-registration process..</div>
+<div class="line">After a transform is found for a pair, the pair is transformed into the first cloud’s frame, and the global transformation is updated.</div>
+</div>
+<div class="line-block">
+<div class="line">Loading data is pretty straightforward. We iterate other the program’s arguments.</div>
+<div class="line">For each argument, we check if it links to a pcd file. If so, we create a PCD object that is added to the vector of clouds.</div>
+</div>
+<p>We now arrive to the actual pair registration.</p>
+<div class="line-block">
+<div class="line">First, we optionally down sample our clouds. This is useful in the case of large datasets. Curvature are then computed (for visualization purpose).</div>
+<div class="line">We then create the ICP object, set its parameters and link it to the two clouds we wish to align. Remember to adapt these to your own datasets.</div>
+</div>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Align</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">IterativeClosestPointNonLinear</span><span class="o">&lt;</span><span class="n">PointNormalT</span><span class="p">,</span> <span class="n">PointNormalT</span><span class="o">&gt;</span> <span class="n">reg</span><span class="p">;</span>
+<span class="n">reg</span><span class="p">.</span><span class="n">setTransformationEpsilon</span> <span class="p">(</span><span class="mf">1e-6</span><span class="p">);</span>
+<span class="c1">// Set the maximum distance between two correspondences (src&lt;-&gt;tgt) to 10cm</span>
+<span class="c1">// Note: adjust this based on the size of your datasets</span>
+<span class="n">reg</span><span class="p">.</span><span class="n">setMaxCorrespondenceDistance</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>
+<span class="c1">// Set the point representation</span>
+<span class="n">reg</span><span class="p">.</span><span class="n">setPointRepresentation</span> <span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MyPointRepresentation</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">point_representation</span><span class="p">));</span>
+
+<span class="n">reg</span><span class="p">.</span><span class="n">setInputCloud</span> <span class="p">(</span><span class="n">points_with_normals_src</span><span class="p">);</span>
+<span class="n">reg</span><span class="p">.</span><span class="n">setInputTarget</span> <span class="p">(</span><span class="n">points_with_normals_tgt</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">As this is a tutorial, we wish to display the intermediate of the registration process.</div>
+<div class="line">To this end, the ICP is limited to 2 registration iterations:</div>
+</div>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="p">.</span><span class="n">setMaximumIterations</span> <span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>And is manually iterated (30 times in our case):</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="p">[...]</span>
+        <span class="n">points_with_normals_src</span> <span class="o">=</span> <span class="n">reg_result</span><span class="p">;</span>
+        <span class="c1">// Estimate</span>
+        <span class="n">reg</span><span class="p">.</span><span class="n">setInputCloud</span> <span class="p">(</span><span class="n">points_with_normals_src</span><span class="p">);</span>
+        <span class="n">reg</span><span class="p">.</span><span class="n">align</span> <span class="p">(</span><span class="o">*</span><span class="n">reg_result</span><span class="p">);</span>
+        <span class="p">[...]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>During each iteration, we keep track of and accumulate the transformations returned by the ICP:</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix4f</span> <span class="n">Ti</span> <span class="o">=</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix4f</span><span class="o">::</span><span class="n">Identity</span> <span class="p">(),</span> <span class="n">prev</span><span class="p">,</span> <span class="n">targetToSource</span><span class="p">;</span>
+<span class="p">[...]</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+       <span class="p">[...]</span>
+       <span class="n">Ti</span> <span class="o">=</span> <span class="n">reg</span><span class="p">.</span><span class="n">getFinalTransformation</span> <span class="p">()</span> <span class="o">*</span> <span class="n">Ti</span><span class="p">;</span>
+       <span class="p">[...]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">If the difference between the transform found at iteration N and the one found at iteration N-1 is smaller than the transform threshold passed to ICP,</div>
+<div class="line">we refine the matching process by choosing closer correspondences between the source and the target:</div>
+</div>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+ <span class="p">[...]</span>
+ <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">abs</span> <span class="p">((</span><span class="n">reg</span><span class="p">.</span><span class="n">getLastIncrementalTransformation</span> <span class="p">()</span> <span class="o">-</span> <span class="n">prev</span><span class="p">).</span><span class="n">sum</span> <span class="p">())</span> <span class="o">&lt;</span> <span class="n">reg</span><span class="p">.</span><span class="n">getTransformationEpsilon</span> <span class="p">())</span>
+   <span class="n">reg</span><span class="p">.</span><span class="n">setMaxCorrespondenceDistance</span> <span class="p">(</span><span class="n">reg</span><span class="p">.</span><span class="n">getMaxCorrespondenceDistance</span> <span class="p">()</span> <span class="o">-</span> <span class="mf">0.001</span><span class="p">);</span>
+
+ <span class="n">prev</span> <span class="o">=</span> <span class="n">reg</span><span class="p">.</span><span class="n">getLastIncrementalTransformation</span> <span class="p">();</span>
+ <span class="p">[...]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Once the best transformation has been found, we invert it (to get the transformation from target to source) and apply it to the target cloud.</div>
+<div class="line">The transformed target is then added to the source and returned to the main function with the transformation.</div>
+</div>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Get the transformation from target to source</span>
+<span class="n">targetToSource</span> <span class="o">=</span> <span class="n">Ti</span><span class="p">.</span><span class="n">inverse</span><span class="p">();</span>
+
+<span class="c1">//</span>
+<span class="c1">// Transform target back in source frame</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">transformPointCloud</span> <span class="p">(</span><span class="o">*</span><span class="n">cloud_tgt</span><span class="p">,</span> <span class="o">*</span><span class="n">output</span><span class="p">,</span> <span class="n">targetToSource</span><span class="p">);</span>
+<span class="p">[...]</span>
+<span class="o">*</span><span class="n">output</span> <span class="o">+=</span> <span class="o">*</span><span class="n">cloud_tgt</span><span class="p">;</span>
+<span class="n">final_transform</span> <span class="o">=</span> <span class="n">targetToSource</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Create a file named pairwise_incremental_registration.cpp and paste the full code in it.</p>
+<p>Create CMakeLists.txt file and add the following line in it:</p>
+<p>Copy the files from <a class="reference external" href="https://raw.github.com/PointCloudLibrary/data/master/tutorials/pairwise/">github.com/PointCloudLibrary/data/tree/master/tutorials/pairwise</a> in your working folder.</p>
+<p>After you have made the executable (cmake ., make), you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pairwise_incremental_registration capture000[1-5].pcd
+</pre></div>
+</div>
+<p>You will see something similar to:</p>
+<a class="reference internal image-reference" href="_images/1.png"><img alt="_images/1.png" src="_images/1.png" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/2.png"><img alt="_images/2.png" src="_images/2.png" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/3.png"><img alt="_images/3.png" src="_images/3.png" style="height: 300px;" /></a>
+<p>Visualize the final results by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pcl_viewer 1.pcd 2.pcd 3.pcd 4.pcd
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/4.png"><img alt="_images/4.png" src="_images/4.png" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/5.png"><img alt="_images/5.png" src="_images/5.png" style="height: 300px;" /></a>
+<p>NOTE: if you only see a black screen in your viewer, try adjusting the camera position with your mouse. This may happen with the sample PCD files of this tutorial.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

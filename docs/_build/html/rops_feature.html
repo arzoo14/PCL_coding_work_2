@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RoPs (Rotational Projection Statistics) feature &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>RoPs (Rotational Projection Statistics) feature</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/rops_feature.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rops-rotational-projection-statistics-feature">
+<span id="rops-feature"></span><h1>RoPs (Rotational Projection Statistics) feature<a class="headerlink" href="#rops-rotational-projection-statistics-feature" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will learn how to use the <cite>pcl::ROPSEstimation</cite> class in order to extract points features.
+The feature extraction method implemented in this class was proposed by Yulan Guo, Ferdous Sohel, Mohammed Bennamoun, Min Lu and
+Jianwei Wanalso in their article “Rotational Projection Statistics for 3D Local Surface Description and Object Recognition”</p>
+</div>
+<div class="section" id="theoretical-primer">
+<h1>Theoretical Primer<a class="headerlink" href="#theoretical-primer" title="Permalink to this headline">¶</a></h1>
+<p>The idea of the feature extraction method is as follows.
+Having a mesh and a set of points for which feature must be computed we perform some simple steps. First of all for a given point of interest
+the local surface is cropped. Local surface consists of the points and triangles that are within the given support radius.
+For the given local surface LRF (Local Reference Frame) is computed. LRF is simply a triplet of vectors,
+the comprehensive information about how these vectors are computed you can find in the article.
+What is really important is that using these vectors we can provide the invariance to the rotation of the cloud. To do that, we simply
+translate points of the local surface in such way that point of interest became the origin, after that we rotate local surface so that the
+LRF vectors were aligned with the Ox, Oy and Oz axes. Having this done, we then start the feature extraction.
+For every axis Ox, Oy and Oz the following steps are performed, we will refer to these axes as current axis:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>local surface is rotated around the current axis by a given angle;</p></li>
+<li><p>points of the rotated local surface are projected onto three planes XY, XZ and YZ;</p></li>
+<li><p>for each projection distribution matrix is built, this matrix simply shows how much points fall onto each bin. Number of bins represents the matrix dimension and is the parameter of the algorithm, as well as the support radius;</p></li>
+<li><p>for each distribution matrix central moments are calculated: M11, M12, M21, M22, E. Here E is the Shannon entropy;</p></li>
+<li><p>calculated values are then concatenated to form the sub-feature.</p></li>
+</ul>
+</div></blockquote>
+<p>We iterate through these steps several times. Number of iterations depends on the given number of rotations.
+Sub-features for different axes are concatenated to form the final RoPS descriptor.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>For this tutorial we will use the model from the Queen’s Dataset. You can choose any other point cloud, but in order to make the
+code work you will need to use the triangulation algorithm in order to obtain polygons. You can find the proposed model here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/PointCloudLibrary/data/blob/master/tutorials/min_cut_segmentation_tutorial.pcd">points</a> - contains the point cloud</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">`</span></a>indices - contains indices of the points for which RoPs must be computed</p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">`</span></a>triangles - contains the polygons</p></li>
+</ul>
+</div></blockquote>
+<p>Next what you need to do is to create a file <code class="docutils literal notranslate"><span class="pre">rops_feature.cpp</span></code> in any editor you prefer and copy the following code inside of it:</p>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>Now let’s study out what is the purpose of this code.</p>
+<p>These lines are simply loading the cloud from the .pcd file.</p>
+<p>Here the indices of points for which RoPS feature must be computed are loaded. You can comment it and compute features for every single point in the cloud.
+if you want.</p>
+<p>These lines are loading the information about the polygons. You can replace them with the code for the triangulation if you have only the point cloud
+instead of the mesh.</p>
+<p>These code defines important algorithm parameters: support radius for local surface cropping, number of partition bins
+used to form the distribution matrix and the number of rotations. The last parameter affects the length of the descriptor.</p>
+<p>These lines set up the search method that will be used by the algorithm.</p>
+<p>Here is the place where the instantiation of the <code class="docutils literal notranslate"><span class="pre">pcl::ROPSEstimation</span></code> class takes place. It has two parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>PointInT - type of the input points;</p></li>
+<li><p>PointOutT - type of the output points.</p></li>
+</ul>
+</div></blockquote>
+<p>Immediately after that we set the input all the necessary data needed for the feature computation.</p>
+<p>Here is the place where the computational process is launched.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./rops_feature points.pcd indices.txt triangles.txt
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

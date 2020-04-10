@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PCLPlotter &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>PCLPlotter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pcl_plotter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pclplotter">
+<span id="pcl-plotter"></span><h1>PCLPlotter<a class="headerlink" href="#pclplotter" title="Permalink to this headline">¶</a></h1>
+<p>PCLPlotter provides a very straightforward and easy interface for plotting graphs. One can visualize all sort of important plots -
+from polynomial functions to histograms - inside the library without going to any other software (like MATLAB).
+Please go through the <a class="reference external" href="http://docs.pointclouds.org/trunk/a01175.html">documentation</a> when some specific concepts are introduced in this tutorial to know the exact method signatures.</p>
+<p>The code for the visualization of a plot are usually as simple as the following snippet.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;utility&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="cpf">&lt;pcl/visualization/pcl_plotter.h&gt;</span><span class="cp"></span>
+<span class="c1">//...</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">//defining a plotter</span>
+  <span class="n">pcl</span><span class="o">::</span><span class="n">visualization</span><span class="o">::</span><span class="n">PCLPlotter</span> <span class="o">*</span> <span class="n">plotter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PCLPlotter</span> <span class="p">();</span>
+
+  <span class="c1">//defining the polynomial function, y = x^2. Index of x^2 is 1, rest is 0</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">func1</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+  <span class="n">func1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="c1">//adding the polynomial func1 to the plotter with [-10, 10] as the range in X axis and &quot;y = x^2&quot; as title</span>
+  <span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">func1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">&quot;y = x^2&quot;</span><span class="p">);</span>
+
+  <span class="c1">//display the plot, DONE!</span>
+  <span class="n">plotter</span><span class="o">-&gt;</span><span class="n">plot</span> <span class="p">();</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If this program is compiled and run, you will get the following output</p>
+<a class="reference internal image-reference" href="_images/pcl_plotter_x2.png"><img alt="_images/pcl_plotter_x2.png" src="_images/pcl_plotter_x2.png" style="width: 640px;" /></a>
+<div class="section" id="basic-code-structure">
+<h2>Basic code structure<a class="headerlink" href="#basic-code-structure" title="Permalink to this headline">¶</a></h2>
+<p>The following snippet shows the basic structure of code for using PCLPlotter</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="c1">//1. define a plotter. Change the colorscheme if you want some different colorscheme in auto-coloring.</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">visualization</span><span class="o">::</span><span class="n">PCLPlotter</span> <span class="o">*</span><span class="n">plotter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PCLPlotter</span> <span class="p">(</span><span class="s">&quot;My Plotter&quot;</span><span class="p">);</span>
+
+<span class="p">...</span>
+<span class="c1">//2. add data to be plotted using addPlotData* () functions</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span><span class="o">*</span> <span class="p">();</span>
+
+<span class="p">...</span>
+<span class="c1">//3. add some properties if required</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">setWindowSize</span> <span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">setYTitle</span> <span class="p">(</span><span class="s">&quot;this is my own function&quot;</span><span class="p">);</span>
+
+<span class="p">...</span>
+<span class="c1">//4. display the plot</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">plot</span> <span class="p">()</span>
+</pre></div>
+</div>
+<p>All the subsequent sections will elaborate the above concept in detail.</p>
+</div>
+</div>
+<div class="section" id="auto-coloring">
+<h1>Auto-coloring<a class="headerlink" href="#auto-coloring" title="Permalink to this headline">¶</a></h1>
+<p>You have the choice to add your own color to the plot in addPlotData*() functions. But if left empty, the plotter will auto-color depending upon a color-scheme.
+The default color-scheme is <code class="docutils literal notranslate"><span class="pre">vtkColorSeries::SPECTRUM</span></code> which contains 7 different (normal) hues over the entire spectrum. The other values are <code class="docutils literal notranslate"><span class="pre">vtkColorSeries::WARM</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkColorSeries::COOL</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkColorSeries::BLUES</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkColorSeries::WILD_FLOWER</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkColorSeries::CITRUS</span></code>.
+You can change the colorscheme by  <em>setColorScheme ()</em> function. To reflect the effect of the color-scheme to all the plots call this function before calling any <em>addPlotData*()</em> functions.</p>
+</div>
+<div class="section" id="different-types-of-plot-input">
+<h1>Different types of plot input<a class="headerlink" href="#different-types-of-plot-input" title="Permalink to this headline">¶</a></h1>
+<p>Have a look at the <em>addPlotData()</em> functions in the documentation for their detailed signatures. The prototypes pretty much tell about their functionalities. The following subsections contains some of the important input method of the plot.</p>
+<div class="section" id="point-correspondences">
+<h2>Point-Correspondences<a class="headerlink" href="#point-correspondences" title="Permalink to this headline">¶</a></h2>
+<p>This the most fundamental way of providing input. Provide the point correspondences, that is (x,y) coordinates, for the plot using a vector&lt;pair&gt; in <em>addPlotData</em></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span>
+<span class="n">populateData</span> <span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s">&quot;cos&quot;</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>The other ways of input for point correspondences are two arrays of same length denoting the X and Y values of the correspondences.</p>
+</div>
+<div class="section" id="table">
+<h2>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<p>This is same as the previous one except the fact that the user stores the correspondences in a text file in the form of an space delimited table. This forms a substitute for the plotting using MS Excel. A very simple executable (without decoration) which performs the functionalities of MS Excel Plotter will be the following.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;pcl/visualization/pcl_plotter.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span>
+<span class="nf">main</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">pcl</span><span class="o">::</span><span class="n">visualization</span><span class="o">::</span><span class="n">PCLPlotter</span> <span class="o">*</span> <span class="n">plotter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PCLPlotter</span> <span class="p">();</span>
+  <span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="n">plotter</span><span class="o">-&gt;</span><span class="n">plot</span> <span class="p">();</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="polynomial-and-rational-functions">
+<h2>Polynomial and Rational Functions<a class="headerlink" href="#polynomial-and-rational-functions" title="Permalink to this headline">¶</a></h2>
+<p>Polynomial are defined in terms of vector of coefficients and Rational functions are defined in terms of pair of polynomial (pair of numerator and denominator) . See the definition in the documentation. The following snippet plots the function y = 1/x</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">func1</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">func1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">func2</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">func1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span> <span class="p">(</span><span class="n">func1</span><span class="p">,</span> <span class="n">func2</span><span class="p">),</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">&quot;y = 1/x&quot;</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-custom-explicit-function">
+<h2>A custom explicit function<a class="headerlink" href="#a-custom-explicit-function" title="Permalink to this headline">¶</a></h2>
+<p>User can specify a custom function, <em>f</em> depicting the relation: <em>Y = f(X)</em> in the form of a callback</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="kt">double</span>
+<span class="n">identity</span> <span class="p">(</span><span class="kt">double</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+
+<span class="p">...</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">identity</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="s">&quot;identity&quot;</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-other-properties-and-decorations">
+<h1>Adding other properties and decorations<a class="headerlink" href="#adding-other-properties-and-decorations" title="Permalink to this headline">¶</a></h1>
+<p>One can add other properties of the plot like <em>title</em>, <em>legends</em>, <em>background colours</em> etc. You can call these functions at any time before any display (<em>plot()/spin*()</em>) function call.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">setTitle</span> <span class="p">(</span><span class="s">&quot;My plot&quot;</span><span class="p">);</span> <span class="c1">//global title</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">setXTitle</span> <span class="p">(</span><span class="s">&quot;degrees&quot;</span><span class="p">);</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">setYTitle</span> <span class="p">(</span><span class="s">&quot;cos&quot;</span><span class="p">);</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">setShowLegend</span> <span class="p">(</span><span class="nb">true</span><span class="p">);</span> <span class="c1">//show legends</span>
+<span class="p">...</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">plot</span> <span class="p">();</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="other-functionalities">
+<h1>Other Functionalities<a class="headerlink" href="#other-functionalities" title="Permalink to this headline">¶</a></h1>
+<p>PCLPlotter provides few other important functionalities other than plotting given a well defined plots and correspondences. These includes a histogram plotting functions and all functionalities of the legacy class PCLHistogramVisualizer.</p>
+<div class="section" id="plotting-histogram">
+<h2>‘Plotting’ Histogram<a class="headerlink" href="#plotting-histogram" title="Permalink to this headline">¶</a></h2>
+<p>PCLPlotter provides a very convenient MATLAB like histogram plotting function (<a class="reference external" href="http://www.mathworks.fr/fr/help/matlab/ref/hist.html">hist()</a> in MATLAB). It takes raw data and bins them according to their frequency and plot them as bar chart.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">freqdata</span> <span class="o">=</span> <span class="n">generateNomalDistData</span> <span class="p">();</span>
+
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addHistogramData</span> <span class="p">(</span><span class="n">freqdata</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span> <span class="c1">//number of bins are 10</span>
+
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">plot</span> <span class="p">();</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pclhistogramvisualizer-functions">
+<h2>PCLHistogramVisualizer functions<a class="headerlink" href="#pclhistogramvisualizer-functions" title="Permalink to this headline">¶</a></h2>
+<p>All functionalities of PCLHistogramVisualizer has been rewritten and added to the plotter with their signature retained. See the documentation for method details.</p>
+</div>
+</div>
+<div class="section" id="display">
+<h1>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h1>
+<p>To display all the plots added use the simple function - <em>plot()</em>. PCLPlotter is also provided with the legacy <em>spin*()</em> functions which can be used for animations or updating the plots with time.
+The following snippet shows the functionality.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+
+<span class="c1">//data and callback defined here</span>
+<span class="p">...</span>
+
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">func1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">&quot;y = x^2&quot;</span><span class="p">);</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">spinOnce</span> <span class="p">(</span><span class="mi">2000</span><span class="p">);</span>    <span class="c1">//display the plot for 2 seconds</span>
+
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">clearPlots</span> <span class="p">();</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">identity</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="s">&quot;identity&quot;</span><span class="p">);</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">spinOnce</span> <span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">clearPlots</span> <span class="p">();</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">addPlotData</span> <span class="p">(</span><span class="n">abs</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="s">&quot;abs&quot;</span><span class="p">);</span>
+<span class="n">plotter</span><span class="o">-&gt;</span><span class="n">spinOnce</span> <span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="demo">
+<h1>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h1>
+<p>Following is a complete example depicting many usage of the Plotter. Copy it into a file named <code class="docutils literal notranslate"><span class="pre">pcl_plotter_demo.cpp</span></code>.</p>
+<div class="section" id="compiling-and-running-the-program">
+<h2>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h2>
+<p>Add the following lines to your <cite>CMakeLists.txt</cite> file:</p>
+<p>Compile and run the code by the following commands</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cmake .
+$ make
+$ ./pcl_plotter_demo
+</pre></div>
+</div>
+</div>
+<div class="section" id="video">
+<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<p>The following video shows the the output of the demo.</p>
+<iframe width="480" height="270" src="http://www.youtube.com/embed/2Xgd67nkwzs" frameborder="0" allowfullscreen></iframe></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

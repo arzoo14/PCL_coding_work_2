@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fitting trimmed B-splines to unordered point clouds &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Fitting trimmed B-splines to unordered point clouds</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/bspline_fitting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fitting-trimmed-b-splines-to-unordered-point-clouds">
+<span id="bspline-fitting"></span><h1><a class="toc-backref" href="#id1">Fitting trimmed B-splines to unordered point clouds</a><a class="headerlink" href="#fitting-trimmed-b-splines-to-unordered-point-clouds" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial explains how to run a B-spline fitting algorithm on a
+point-cloud, to obtain a smooth, parametric surface representation.
+The algorithm consists of the following steps:</p>
+<ul class="simple">
+<li><p>Initialization of the B-spline surface by using the Principal Component Analysis (PCA). This
+assumes that the point-cloud has two main orientations, i.e. that it is roughly planar.</p></li>
+<li><p>Refinement and fitting of the B-spline surface.</p></li>
+<li><p>Circular initialization of the B-spline curve. Here we assume that the point-cloud is
+compact, i.e. no separated clusters.</p></li>
+<li><p>Fitting of the B-spline curve.</p></li>
+<li><p>Triangulation of the trimmed B-spline surface.</p></li>
+</ul>
+<p>In this video, the algorithm is applied to the frontal scan of the stanford bunny (204800 points):</p>
+<iframe title="Trimmed B-spline surface fitting" width="480" height="390" src="http://www.youtube.com/embed/trH2kWELvyw?rel=0" frameborder="0" allowfullscreen></iframe><div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#fitting-trimmed-b-splines-to-unordered-point-clouds" id="id1">Fitting trimmed B-splines to unordered point clouds</a></p>
+<ul>
+<li><p><a class="reference internal" href="#theoretical-background" id="id2">Theoretical background</a></p></li>
+<li><p><a class="reference internal" href="#pcl-installation-settings" id="id3">PCL installation settings</a></p></li>
+<li><p><a class="reference internal" href="#the-code" id="id4">The code</a></p></li>
+<li><p><a class="reference internal" href="#the-explanation" id="id5">The explanation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#initialization-of-the-b-spline-surface" id="id6">Initialization of the B-spline surface</a></p></li>
+<li><p><a class="reference internal" href="#refinement-and-fitting-of-the-b-spline-surface" id="id7">Refinement and fitting of the B-spline surface</a></p></li>
+<li><p><a class="reference internal" href="#initialization-of-the-b-spline-curve" id="id8">Initialization of the B-spline curve</a></p></li>
+<li><p><a class="reference internal" href="#fitting-of-the-b-spline-curve" id="id9">Fitting of the B-spline curve</a></p></li>
+<li><p><a class="reference internal" href="#triangulation-of-the-trimmed-b-spline-surface" id="id10">Triangulation of the trimmed B-spline surface</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#some-hints" id="id11">Some hints</a></p></li>
+<li><p><a class="reference internal" href="#compiling-and-running-the-program" id="id12">Compiling and running the program</a></p></li>
+<li><p><a class="reference internal" href="#saving-and-viewing-the-result" id="id13">Saving and viewing the result</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="theoretical-background">
+<h2><a class="toc-backref" href="#id2">Theoretical background</a><a class="headerlink" href="#theoretical-background" title="Permalink to this headline">¶</a></h2>
+<p>Theoretical information on the algorithm can be found in this <a class="reference external" href="http://pointclouds.org/blog/trcs/moerwald/index.php">report</a> and in my <a class="reference external" href="http://users.acin.tuwien.ac.at/tmoerwald/?site=3">PhD thesis</a>.</p>
+</div>
+<div class="section" id="pcl-installation-settings">
+<h2><a class="toc-backref" href="#id3">PCL installation settings</a><a class="headerlink" href="#pcl-installation-settings" title="Permalink to this headline">¶</a></h2>
+<p>Please note that the modules for NURBS and B-splines are not enabled by default.
+Make sure you enable “BUILD_surface_on_nurbs” in your ccmake configuration, by setting it to ON.</p>
+<p>If your license permits, also enable “USE_UMFPACK” for sparse linear solving.
+This requires SuiteSparse (libsuitesparse-dev in Ubuntu) which is faster,
+allows more degrees of freedom (i.e. control points) and more data points.</p>
+<p>The program created during this tutorial is available in
+<em>pcl/examples/surface/example_nurbs_fitting_surface.cpp</em> and is built when
+“BUILD_examples” is set to ON. This will create the binary called <em>pcl_example_nurbs_fitting_surface</em>
+in your <em>bin</em> folder.</p>
+</div>
+<div class="section" id="the-code">
+<h2><a class="toc-backref" href="#id4">The code</a><a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h2>
+<p>The cpp file used in this tutorial can be found in <em>pcl/doc/tutorials/content/sources/bspline_fitting/bspline_fitting.cpp</em>.
+You can find the input file at <em>pcl/test/bunny.pcd</em>.</p>
+</div>
+<div class="section" id="the-explanation">
+<h2><a class="toc-backref" href="#id5">The explanation</a><a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s break down the code piece by piece.
+Lets start with the choice of the parameters for B-spline surface fitting:</p>
+<ul class="simple">
+<li><p><em>order</em> is the polynomial order of the B-spline surface.</p></li>
+<li><p><em>refinement</em> is the number of refinement iterations, where for each iteration control-points
+are inserted, approximately doubling the control points in each parametric direction
+of the B-spline surface.</p></li>
+<li><p><em>iterations</em> is the number of iterations that are performed after refinement is completed.</p></li>
+<li><p><em>mesh_resolution</em> the number of vertices in each parametric direction,
+used for triangulation of the B-spline surface.</p></li>
+</ul>
+<p>Fitting:</p>
+<ul class="simple">
+<li><p><em>interior_smoothness</em> is the smoothness of the surface interior.</p></li>
+<li><p><em>interior_weight</em> is the weight for optimization for the surface interior.</p></li>
+<li><p><em>boundary_smoothness</em> is the smoothness of the surface boundary.</p></li>
+<li><p><em>boundary_weight</em> is the weight for optimization for the surface boundary.</p></li>
+</ul>
+<p>Note, that the boundary in this case is not the trimming curve used later on.
+The boundary can be used when a point-set exists that defines the boundary. Those points
+can be declared in <em>pcl::on_nurbs::NurbsDataSurface::boundary</em>. In that case, when the
+<em>boundary_weight</em> is greater than 0.0, the algorithm tries to align the domain boundaries
+to these points. In our example we are trimming the surface anyway, so there is no need
+for aligning the boundary.</p>
+<div class="section" id="initialization-of-the-b-spline-surface">
+<h3><a class="toc-backref" href="#id6">Initialization of the B-spline surface</a><a class="headerlink" href="#initialization-of-the-b-spline-surface" title="Permalink to this headline">¶</a></h3>
+<p>The command <em>initNurbsPCABoundingBox</em> uses PCA to create a coordinate systems, where the principal
+eigenvectors point into the direction of the maximum, middle and minimum extension of the point-cloud.
+The center of the coordinate system is located at the mean of the points.
+To estimate the extension of the B-spline surface domain, a bounding box is computed in the plane formed
+by the maximum and middle eigenvectors. That bounding box is used to initialize the B-spline surface with
+its minimum number of control points, according to the polynomial degree chosen.</p>
+<p>The surface fitting class <em>pcl::on_nurbs::FittingSurface</em> is initialized with the point data and the initial
+B-spline.</p>
+<p>The <em>on_nurbs::Triangulation</em> class allows easy conversion between the <em>ON_NurbsSurface</em> and the <em>PolygonMesh</em> class,
+for visualization of the B-spline surfaces. Note that NURBS are a generalization of B-splines,
+and are therefore a valid container for B-splines, with all control-point weights = 1.</p>
+</div>
+<div class="section" id="refinement-and-fitting-of-the-b-spline-surface">
+<h3><a class="toc-backref" href="#id7">Refinement and fitting of the B-spline surface</a><a class="headerlink" href="#refinement-and-fitting-of-the-b-spline-surface" title="Permalink to this headline">¶</a></h3>
+<p>At this point of the code we have a B-spline surface with minimal number of control points.
+Typically they are not enough to represent finer details of the underlying geometry
+of the point-cloud. However, if we increase the control-points to our desired level of detail and
+subsequently fit the refined B-spline, we run into problems. For robust fitting B-spline surfaces
+the rule is:
+“The higher the degree of freedom of the B-spline surface, the closer we have to be to the points to be approximated”.</p>
+<p>This is the reason why we iteratively increase the degree of freedom by refinement in both directions (line 85-86),
+and fit the B-spline surface to the point-cloud, getting closer to the final solution.</p>
+<p>After we reached the final level of refinement, the surface is further fitted to the point-cloud
+for a pleasing end result.</p>
+</div>
+<div class="section" id="initialization-of-the-b-spline-curve">
+<h3><a class="toc-backref" href="#id8">Initialization of the B-spline curve</a><a class="headerlink" href="#initialization-of-the-b-spline-curve" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have the surface fitted to the point-cloud, we want to cut off the overlapping regions of the surface.
+To achieve this we project the point-cloud into the parametric domain using the closest points to the B-spline surface.
+In this domain of R^2 we perform the weighted B-spline curve fitting, that creates a closed trimming curve that approximately
+contains all the points.</p>
+<p>The topic of curve fitting goes a bit deeper into the thematics of B-splines. Here we assume that you are
+familiar with the concept of B-splines, knot vectors, control-points, and so forth.
+Please consider the curve being split into supporting regions which is bound by consecutive knots.
+Also note that points that are inside and outside the curve are distinguished.</p>
+<ul class="simple">
+<li><p><em>addCPsAccuracy</em> the distance of the supporting region of the curve to the closest data points has to be below
+this value, otherwise a control point is inserted.</p></li>
+<li><p><em>addCPsIteration</em> inner iterations without inserting control points.</p></li>
+<li><p><em>maxCPs</em> the maximum total number of control-points.</p></li>
+<li><p><em>accuracy</em> the average fitting accuracy of the curve, w.r.t. the supporting regions.</p></li>
+<li><p><em>iterations</em> maximum number of iterations performed.</p></li>
+<li><p><em>closest_point_resolution</em> number of control points that must lie within each supporting region. (0 turns this constraint off)</p></li>
+<li><p><em>closest_point_weight</em> weight for fitting the curve to its closest points.</p></li>
+<li><p><em>closest_point_sigma2</em> threshold for closest points (disregard points that are further away from the curve).</p></li>
+<li><p><em>interior_sigma2</em> threshold for interior points (disregard points that are further away from and lie within the curve).</p></li>
+<li><p><em>smooth_concavity</em> value that leads to inward bending of the curve (0 = no bending; &lt;0 inward bending; &gt;0 outward bending).</p></li>
+<li><p><em>smoothness</em> weight of smoothness term.</p></li>
+</ul>
+<p>The curve is initialized using a minimum number of control points to represent a circle, with the center located
+at the mean of the point-cloud and the radius of the maximum distance of a point to the center.
+Please note that interior weighting is enabled for all points with the command <em>curve_data.interior_weight_function.push_back (true)</em>.</p>
+</div>
+<div class="section" id="fitting-of-the-b-spline-curve">
+<h3><a class="toc-backref" href="#id9">Fitting of the B-spline curve</a><a class="headerlink" href="#fitting-of-the-b-spline-curve" title="Permalink to this headline">¶</a></h3>
+<p>Similar to the surface fitting approach, the curve is iteratively fitted and refined, as shown in the video.
+Note how the curve tends to bend inwards at regions where it is not supported by any points.</p>
+</div>
+<div class="section" id="triangulation-of-the-trimmed-b-spline-surface">
+<h3><a class="toc-backref" href="#id10">Triangulation of the trimmed B-spline surface</a><a class="headerlink" href="#triangulation-of-the-trimmed-b-spline-surface" title="Permalink to this headline">¶</a></h3>
+<p>After the curve fitting terminated, our geometric representation consists of a B-spline surface and a closed
+B-spline curved, defined within the parametric domain of the B-spline surface. This is called trimmed B-spline surface.
+In line 140 we can use the trimmed B-spline to create a triangular mesh. The triangulation algorithm first triangulates
+the whole domain and afterwards removes triangles that lie outside of the trimming curve. Vertices of triangles
+that intersect the trimming curve are clamped to the curve.</p>
+<p>When running this example and switch to wire-frame mode (w), you will notice that the triangles are ordered in
+a rectangular way, which is a result of the rectangular domain of the surface.</p>
+</div>
+</div>
+<div class="section" id="some-hints">
+<h2><a class="toc-backref" href="#id11">Some hints</a><a class="headerlink" href="#some-hints" title="Permalink to this headline">¶</a></h2>
+<p>Please bear in mind that the robustness of this algorithm heavily depends on the underlying data.
+The parameters for B-spline fitting are designed to model the characteristics of this data.</p>
+<ul class="simple">
+<li><p>If you have holes or steps in your data, you might want to work with lower refinement levels and lower accuracy to
+prevent the B-spline from folding and twisting. Moderately increasing of the smoothness might also work.</p></li>
+<li><p>Try to introduce as much pre-conditioning and constraints to the parameters. E.g. if you know, that
+the trimming curve is rather simple, then limit the number of maximum control points.</p></li>
+<li><p>Start simple! Before giving up on gaining control over twisting and bending B-splines, I highly recommend
+to start your fitting trials with a small number of control points (low refinement),
+low accuracy but also low smoothness (B-splines have implicit smoothing property).</p></li>
+</ul>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h2><a class="toc-backref" href="#id12">Compiling and running the program</a><a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h2>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<blockquote>
+<div><p>$ ./bspline_fitting ${PCL_ROOT}/test/bunny.pcd</p>
+</div></blockquote>
+</div>
+<div class="section" id="saving-and-viewing-the-result">
+<h2><a class="toc-backref" href="#id13">Saving and viewing the result</a><a class="headerlink" href="#saving-and-viewing-the-result" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Saving as OpenNURBS (3dm) file</p></li>
+</ul>
+<p>You can save the B-spline surface by using the commands provided by OpenNurbs:</p>
+<p>The files generated can be viewed with the pcl/examples/surface/example_nurbs_viewer_surface.cpp.</p>
+<ul class="simple">
+<li><p>Saving as triangle mesh into a vtk file</p></li>
+</ul>
+<p>You can save the triangle mesh for example by saving into a VTK file by:</p>
+<blockquote>
+<div><p>#include &lt;pcl/io/vtk_io.h&gt;
+…
+pcl::io::saveVTKFile (“mesh.vtk”, mesh);</p>
+</div></blockquote>
+<p>PCL also provides vtk conversion into other formats (PLY, OBJ).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

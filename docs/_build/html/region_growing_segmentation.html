@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Region growing segmentation &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Region growing segmentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/region_growing_segmentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="region-growing-segmentation">
+<span id="id1"></span><h1>Region growing segmentation<a class="headerlink" href="#region-growing-segmentation" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will learn how to use the region growing algorithm implemented in the <code class="docutils literal notranslate"><span class="pre">pcl::RegionGrowing</span></code> class.
+The purpose of the said algorithm is to merge the points that are close enough in terms of the smoothness constraint.
+Thereby, the output of this algorithm is the set of clusters,
+were each cluster is a set of points that are considered to be a part of the same smooth surface.
+The work of this algorithm is based on the comparison of the angles between the points normals.</p>
+</div>
+<div class="section" id="theoretical-primer">
+<h1>Theoretical Primer<a class="headerlink" href="#theoretical-primer" title="Permalink to this headline">¶</a></h1>
+<p>Let’s take a look on how the algorithm works.</p>
+<p>First of all it sorts the points by their curvature value.
+It needs to be done because the region begins its growth from the point that has the minimum curvature value.
+The reason for this is that the point with the minimum curvature is located in the flat area (growth from the flattest area
+allows to reduce the total number of segments).</p>
+<p>So we have the sorted cloud. Until there are unlabeled points in the cloud, algorithm picks up the point with minimum curvature value and starts the growth of the region. This process occurs as follows:</p>
+<blockquote>
+<div><ul>
+<li><p>The picked point is added to the set called seeds.</p></li>
+<li><p>For every seed point algorithm finds neighbouring points.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Every neighbour is tested for the angle between its normal and normal of the current seed point. If the angle is less than threshold value
+then current point is added to the current region.</p></li>
+<li><p>After that every neighbour is tested for the curvature value. If the curvature is less than threshold value then this point is added to the seeds.</p></li>
+<li><p>Current seed is removed from the seeds.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>If the seeds set becomes empty this means that the algorithm has grown the region and the process is repeated from the beginning.
+You can find the pseudocode for the said algorithm below.</p>
+<p>Inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Point cloud</em> = <span class="math notranslate nohighlight">\(\{P\}\)</span></p></li>
+<li><p><em>Point normals</em> = <span class="math notranslate nohighlight">\(\{N\}\)</span></p></li>
+<li><p><em>Points curvatures</em> = <span class="math notranslate nohighlight">\(\{c\}\)</span></p></li>
+<li><p><em>Neighbour finding function</em> <span class="math notranslate nohighlight">\(\Omega(.)\)</span></p></li>
+<li><p><em>Curvature threshold</em> <span class="math notranslate nohighlight">\(c_{th}\)</span></p></li>
+<li><p><em>Angle threshold</em> <span class="math notranslate nohighlight">\(\theta_{th}\)</span></p></li>
+</ul>
+</div></blockquote>
+<p>Initialize:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Region list</em> <span class="math notranslate nohighlight">\({R}\leftarrow{\O}\)</span></p></li>
+<li><p><em>Available points list</em> <span class="math notranslate nohighlight">\(\{A\}\leftarrow\{1,...,|P|\}\)</span></p></li>
+</ul>
+</div></blockquote>
+<p>Algorithm:</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li><p><strong>While</strong> <span class="math notranslate nohighlight">\(\{A\}\)</span> <em>is not empty</em> <strong>do</strong></p>
+<blockquote>
+<div><ul>
+<li><p><em>Current region</em> <span class="math notranslate nohighlight">\(\{R_c\}\leftarrow{\O}\)</span></p></li>
+<li><p><em>Current seeds</em> <span class="math notranslate nohighlight">\(\{S_c\}\leftarrow{\O}\)</span></p></li>
+<li><p><em>Point with minimum curvature in</em> <span class="math notranslate nohighlight">\(\{A\}\rightarrow P_{min}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{S_c\}\leftarrow\{S_c\}\cup P_{min}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{R_c\}\leftarrow\{R_c\}\cup P_{min}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{A\}\leftarrow\{A\}\setminus P_{min}\)</span></p></li>
+<li><p><strong>for</strong> <span class="math notranslate nohighlight">\(i=0\)</span> <em>to</em> <strong>size</strong> ( <span class="math notranslate nohighlight">\(\{S_c\}\)</span> ) <strong>do</strong></p>
+<blockquote>
+<div><ul>
+<li><p><em>Find nearest neighbours of current seed point</em> <span class="math notranslate nohighlight">\(\{B_c\}\leftarrow\Omega(S_c\{i\})\)</span></p></li>
+<li><p><strong>for</strong> <span class="math notranslate nohighlight">\(j=0\)</span> <em>to</em> <strong>size</strong> ( <span class="math notranslate nohighlight">\(\{B_c\}\)</span> ) <strong>do</strong></p>
+<blockquote>
+<div><ul>
+<li><p><em>Current neighbour point</em> <span class="math notranslate nohighlight">\(P_j\leftarrow B_c\{j\}\)</span></p></li>
+<li><p><strong>If</strong> <span class="math notranslate nohighlight">\(\{A\}\)</span> <em>contains</em> <span class="math notranslate nohighlight">\(P_j\)</span> <em>and</em> <span class="math notranslate nohighlight">\(cos^{-1}(|(N\{S_c\{i\}\},N\{S_c\{j\}\})|)&lt;\theta_{th}\)</span> <strong>then</strong></p>
+<blockquote>
+<div><ul>
+<li><p><span class="math notranslate nohighlight">\(\{R_c\}\leftarrow\{R_c\}\cup P_j\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{A\}\leftarrow\{A\}\setminus P_j\)</span></p></li>
+<li><p><strong>If</strong> <span class="math notranslate nohighlight">\(c\{P_j\}&lt;c_{th}\)</span> <strong>then</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{S_c\}\leftarrow\{S_c\}\cup P_j\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>end if</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>end if</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>end for</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>end for</strong></p></li>
+<li><p><em>Add current region to global segment list</em> <span class="math notranslate nohighlight">\(\{R\}\leftarrow\{R\}\cup\{R_c\}\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>end while</strong></p></li>
+<li><p><strong>Return</strong> <span class="math notranslate nohighlight">\(\{R\}\)</span></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>First of all you will need the point cloud for this tutorial.
+<a class="reference external" href="https://raw.github.com/PointCloudLibrary/data/master/tutorials/region_growing_tutorial.pcd">This</a> is a good one for the purposes of the algorithm.
+Next what you need to do is to create a file <code class="docutils literal notranslate"><span class="pre">region_growing_segmentation.cpp</span></code> in any editor you prefer and copy the following code inside of it:</p>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>Now let’s study out what is the purpose of this code. First few lines will be omitted, because they are obvious.</p>
+<p>First lines that are of interest are these:</p>
+<p>They are simply loading the cloud from the .pcd file. No doubt that you saw how it is done hundreds of times, so let’s move on.</p>
+<p>As mentioned before, the algorithm requires normals. Here the <code class="docutils literal notranslate"><span class="pre">pcl::NormalEstimation</span></code> class is used to compute them.
+To learn more about how it is done you should take a look at the <a class="reference internal" href="normal_estimation.html#normal-estimation"><span class="std std-ref">Estimating Surface Normals in a PointCloud</span></a> tutorial in the <strong>Features</strong> section.</p>
+<p>These lines are given only for example. You can safely comment this part. Insofar as <code class="docutils literal notranslate"><span class="pre">pcl::RegionGrowing</span></code> is derived from <code class="docutils literal notranslate"><span class="pre">pcl::PCLBase</span></code>,
+it can work with indices. It means you can point that you need to segment only
+those points that are listed in the indices array instead of the whole point cloud.</p>
+<p>You have finally reached the part where <code class="docutils literal notranslate"><span class="pre">pcl::RegionGrowing</span></code> is instantiated. It is a template class that have two parameters:</p>
+<ul class="simple">
+<li><p>PointT - type of points to use(in the given example it is <code class="docutils literal notranslate"><span class="pre">pcl::PointXYZ</span></code>)</p></li>
+<li><p>NormalT - type of normals to use(in the given example it is <code class="docutils literal notranslate"><span class="pre">pcl::Normal</span></code>)</p></li>
+</ul>
+<p>After that minimum and maximum cluster sizes are set. It means that
+after the segmentation is done all clusters that have less points then was set as minimum(or have more than maximum) will be discarded.
+The default values for minimum and maximum are 1 and ‘as much as possible’ respectively.</p>
+<p>The algorithm needs K nearest search in its internal structure, so here is the place where a search method is provided
+and number of neighbours is set. After that it receives the cloud that must be segmented, point indices and normals.</p>
+<p>This two lines are most important part in the algorithm initialization, because they are responsible for the mentioned smoothness constraint.
+First method sets the angle in radians that will be used as the allowable range for the normals deviation.
+If the deviation between points normals is less than smoothness threshold then they are suggested to be in the same cluster
+(new point - the tested one - will be added to the cluster).
+The second one is responsible for curvature threshold. If two points have a small normals deviation then the disparity between their curvatures is tested.
+And if this value is less than curvature threshold then the algorithm will continue the growth of the cluster using new added point.</p>
+<p>This method simply launches the segmentation algorithm. After its work it will return clusters array.</p>
+<p>These lines are simple enough, so they won’t be commented. They are intended for those who are not familiar with how to work with <code class="docutils literal notranslate"><span class="pre">pcl::PointIndices</span></code>
+and how to access its elements.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pcl::RegionGrowing</span></code> class provides a method that returns the colored cloud where each cluster has its own color.
+So in this part of code the <code class="docutils literal notranslate"><span class="pre">pcl::visualization::CloudViewer</span></code> is instantiated for viewing the result of the segmentation - the same colored cloud.
+You can learn more about cloud visualization in the <a class="reference internal" href="cloud_viewer.html#cloud-viewer"><span class="std std-ref">The CloudViewer</span></a> tutorial.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./region_growing_segmentation
+</pre></div>
+</div>
+<p>After the segmentation the cloud viewer window will be opened and you will see something similar to those images:</p>
+<a class="reference internal image-reference" href="_images/region_growing_segmentation_1.jpg"><img alt="_images/region_growing_segmentation_1.jpg" src="_images/region_growing_segmentation_1.jpg" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/region_growing_segmentation_2.jpg"><img alt="_images/region_growing_segmentation_2.jpg" src="_images/region_growing_segmentation_2.jpg" style="height: 200px;" /></a>
+<p>On the last image you can see that the colored cloud has many red points. This means that these points belong to the clusters
+that were rejected, because they had too much/little points.</p>
+<a class="reference internal image-reference" href="_images/region_growing_segmentation_3.jpg"><img alt="_images/region_growing_segmentation_3.jpg" src="_images/region_growing_segmentation_3.jpg" style="height: 300px;" /></a>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

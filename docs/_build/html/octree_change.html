@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Spatial change detection on unorganized point cloud data &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Spatial change detection on unorganized point cloud data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/octree_change.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spatial-change-detection-on-unorganized-point-cloud-data">
+<span id="octree-change-detection"></span><h1>Spatial change detection on unorganized point cloud data<a class="headerlink" href="#spatial-change-detection-on-unorganized-point-cloud-data" title="Permalink to this headline">¶</a></h1>
+<p>An octree is a tree-based data structure for organizing sparse 3-D data. In this tutorial we will learn how to use the octree implementation for detecting
+spatial changes between multiple unorganized point clouds which could vary in size, resolution, density and point ordering. By recursively comparing
+the tree structures of octrees, spatial changes represented by differences in voxel configuration can be identified.
+Additionally, we explain how to use the pcl octree “double buffering” technique allows us to efficiently process multiple point clouds over time.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code:<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>First, create a file, let’s say, <code class="docutils literal notranslate"><span class="pre">octree_change_detection.cpp</span></code> and place the following inside it:</p>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>Now, let’s discuss the code in detail.</p>
+<p>We fist instantiate the OctreePointCloudChangeDetector class and define its voxel resolution.</p>
+<p>Then we create a point cloud instance cloudA which is initialized with random point data. The generated point data is used to build an octree structure.</p>
+<p>Point cloud cloudA is our reference point cloud and the octree structure describe its spatial distribution. The class OctreePointCloudChangeDetector inherits from
+class Octree2BufBase which enables to keep and manage two octrees in the memory at the same time. In addition, it implements a memory pool that reuses
+already allocated node objects and therefore reduces expensive memory allocation and deallocation operations when generating octrees of multiple point clouds. By calling “octree.switchBuffers()”, we reset the
+octree class while keeping the previous octree structure in memory.</p>
+<p>Now we instantiate a second point cloud “cloudB” and fill it with random point data. This point cloud is used to build a new octree structure.</p>
+<p>In order to retrieve points that are stored at voxels of the current octree structure (based on cloudB) which did not exist in the previous octree structure
+(based on cloudA), we can call the method “getPointIndicesFromNewVoxels” which return a vector of the result point indices.</p>
+<p>Finally, we output the results to the std::cout stream.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./octree_change_detection
+</pre></div>
+</div>
+<p>You will see something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Output</span> <span class="kn">from</span> <span class="nn">getPointIndicesFromNewVoxels</span><span class="p">:</span>
+<span class="mi">0</span><span class="c1"># Index:11  Point:5.56047 56.5082 10.2807</span>
+<span class="mi">1</span><span class="c1"># Index:34  Point:1.27106 63.8973 14.5316</span>
+<span class="mi">2</span><span class="c1"># Index:102  Point:6.42197 60.7727 14.7087</span>
+<span class="mi">3</span><span class="c1"># Index:105  Point:5.64673 57.736 25.7479</span>
+<span class="mi">4</span><span class="c1"># Index:66  Point:22.8585 56.4647 63.9779</span>
+<span class="mi">5</span><span class="c1"># Index:53  Point:52.0745 14.9643 63.5844</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="another-example-application-openni-change-viewer">
+<h1>Another example application: OpenNI change viewer<a class="headerlink" href="#another-example-application-openni-change-viewer" title="Permalink to this headline">¶</a></h1>
+<p>The pcl visualization component contains an openNI change detector example. It displays grabbed point clouds from the OpenNI interface and displays
+detected spatial changes in red.</p>
+<p>Simply execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd visualization/tools
+$ ./openni_change_viewer
+</pre></div>
+</div>
+<p>And you should see something like this:</p>
+<p><img alt="octreeChangeViewer" src="_images/changedetectionViewer.jpg" /></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+<div class="section" id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h1>
+<p>This octree-based change detection enables to analyse “unorganized” point clouds for spatial changes.</p>
+</div>
+<div class="section" id="additional-details">
+<h1>Additional Details<a class="headerlink" href="#additional-details" title="Permalink to this headline">¶</a></h1>
+<p>“Unorganized” point clouds are characterized by non-existing point references between points from different point clouds due to varying size, resolution, density and/or point ordering.
+In case of “organized” point clouds often based on a single 2D depth/disparity images with fixed width and height, a differential analysis of the corresponding 2D depth data might be faster.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

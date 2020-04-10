@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Difference of Normals Based Segmentation &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Difference of Normals Based Segmentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/don_segmentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="difference-of-normals-based-segmentation">
+<span id="don-segmentation"></span><h1><a class="toc-backref" href="#id7">Difference of Normals Based Segmentation</a><a class="headerlink" href="#difference-of-normals-based-segmentation" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will learn how to use Difference of Normals features, implemented in the <code class="docutils literal notranslate"><span class="pre">pcl::DifferenceOfNormalsEstimation</span></code> class, for scale-based segmentation of unorganized point clouds.</p>
+<p>This algorithm performs a scale based segmentation of the given input point cloud, finding points that belong within the scale parameters given.</p>
+<div class="figure align-center" id="id4">
+<img alt="_images/donpipelinesmall.jpg" src="_images/donpipelinesmall.jpg" />
+<p class="caption"><span class="caption-text">Overview of the pipeline in DoN segmentation.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#difference-of-normals-based-segmentation" id="id7">Difference of Normals Based Segmentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#theoretical-primer" id="id8">Theoretical Primer</a></p></li>
+<li><p><a class="reference internal" href="#using-difference-of-normals-for-segmentation" id="id9">Using Difference of Normals for Segmentation</a></p></li>
+<li><p><a class="reference internal" href="#the-data-set" id="id10">The Data Set</a></p></li>
+<li><p><a class="reference internal" href="#the-code" id="id11">The Code</a></p>
+<ul>
+<li><p><a class="reference internal" href="#compiling-and-running-the-program" id="id12">Compiling and running the program</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-explanation" id="id13">The Explanation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#large-small-radius-normal-estimation" id="id14">Large/Small Radius Normal Estimation</a></p></li>
+<li><p><a class="reference internal" href="#difference-of-normals-feature-calculation" id="id15">Difference of Normals Feature Calculation</a></p></li>
+<li><p><a class="reference internal" href="#difference-of-normals-based-filtering" id="id16">Difference of Normals Based Filtering</a></p></li>
+<li><p><a class="reference internal" href="#clustering-the-results" id="id17">Clustering the Results</a></p></li>
+<li><p><a class="reference internal" href="#references-further-information" id="id18">References/Further Information</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="theoretical-primer">
+<h2><a class="toc-backref" href="#id8">Theoretical Primer</a><a class="headerlink" href="#theoretical-primer" title="Permalink to this headline">¶</a></h2>
+<p>The Difference of Normals (DoN) provides a computationally efficient, multi-scale approach to processing large unorganized 3D point clouds. The idea is very simple in concept, and yet surprisingly effective in the segmentation of scenes with a wide variation of scale. For each point <span class="math notranslate nohighlight">\($p$\)</span> in a pointcloud <span class="math notranslate nohighlight">\($P$\)</span>, two unit point normals <span class="math notranslate nohighlight">\($\hat{\mathbf{n}}(\mathbf{p}, r_l), \hat{\mathbf{n}}(\mathbf{p}, r_s)$\)</span> are estimated with different radii, <span class="math notranslate nohighlight">\($r_l &gt; r_s$\)</span> . The normalized (vector) difference of these point normals defines the operator.</p>
+<p>Formally the Difference of Normals operator is defined,</p>
+<blockquote>
+<div><p class="centered">
+<strong><span class="math notranslate nohighlight">\(\mathbf{\Delta}\mathbf{\hat{n}}(p, r_s, r_l) = \frac{\mathbf{\hat{n}}(p, r_s) - \mathbf{\hat{n}}(p, r_l)}{2}\)</span></strong></p></div></blockquote>
+<p>where <span class="math notranslate nohighlight">\($r_s, r_l \in \mathbb{R}$\)</span>, <span class="math notranslate nohighlight">\($r_s&lt;r_l$\)</span>, and <span class="math notranslate nohighlight">\($\mathbf{\hat{n}}(p, r)$\)</span> is the surface normal estimate at point <span class="math notranslate nohighlight">\($p$\)</span>, given the support radius <span class="math notranslate nohighlight">\($r$\)</span>. Notice, the response of the operator is a normalized vector field, and is thus orientable (the resulting direction is a key feature), however the operator’s norm often provides an easier quantity to work with, and is always in the range <span class="math notranslate nohighlight">\((0,1)\)</span>.</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/don_scalenormals.svg"><img alt="Illustration of the effect of support radius on estimated surface normals for a point cloud." src="_images/don_scalenormals.svg" width="60%" /></a>
+<p class="caption"><span class="caption-text">Illustration of the effect of support radius on estimated surface normals for a point cloud.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The primary motivation behind DoN is the observation that surface normals estimated at any given radius reflect the underlying geometry of the surface at the scale of the support radius. Although there are many different methods of estimating the surface normals, normals are always estimated with a support radius (or via a fixed number of neighbours). This support radius determines the scale in the surface structure which the normal represents.</p>
+<p>The above diagram illustrates this effect in 1D. Normals, <span class="math notranslate nohighlight">\($\mathbf{\hat{n}}$\)</span>, and tangents, <span class="math notranslate nohighlight">\($T$\)</span>, estimated with a small support radius <span class="math notranslate nohighlight">\($r_s$\)</span> are affected by small-scale surface structure (and similarly by noise). On the other hand, normals and tangent planes estimated with a large support radius $r_l$ are less affected by small-scale structure, and represent the geometry of larger scale surface structures. In fact a similar set of features is seen in the DoN feature vectors for real-world street curbs in a LiDAR image shown below.</p>
+<div class="figure align-center" id="id6">
+<img alt="_images/don_curb_closeup_small.jpg" src="_images/don_curb_closeup_small.jpg" />
+<p class="caption"><span class="caption-text">Closeup of the DoN feature vectors calculated for a LiDAR pointcloud of a street curb.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>For more comprehensive information, please refer to the article <a class="reference internal" href="#don2012" id="id1"><span>[DON2012]</span></a>.</p>
+</div>
+<div class="section" id="using-difference-of-normals-for-segmentation">
+<h2><a class="toc-backref" href="#id9">Using Difference of Normals for Segmentation</a><a class="headerlink" href="#using-difference-of-normals-for-segmentation" title="Permalink to this headline">¶</a></h2>
+<p>For segmentation we simply perform the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Estimate the normals for every point using a large support radius of <span class="math notranslate nohighlight">\(r_l\)</span></p></li>
+<li><p>Estimate the normals for every point using the small support radius of <span class="math notranslate nohighlight">\(r_s\)</span></p></li>
+<li><p>For every point the normalized difference of normals for every point, as defined above.</p></li>
+<li><p>Filter the resulting vector field to isolate points belonging to the scale/region of interest.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="the-data-set">
+<h2><a class="toc-backref" href="#id10">The Data Set</a><a class="headerlink" href="#the-data-set" title="Permalink to this headline">¶</a></h2>
+<p>For this tutorial we suggest the use of publicly available (creative commons licensed) urban LiDAR data from the <a class="reference internal" href="#kitti" id="id2"><span>[KITTI]</span></a> project. This data is collected from a Velodyne LiDAR scanner mounted on a car, for the purpose of evaluating self-driving cars. To convert the data set to PCL compatible point clouds please see <a class="reference internal" href="#kittipcl" id="id3"><span>[KITTIPCL]</span></a>. Examples and an example data set will be posted here in future as part of the tutorial.</p>
+</div>
+<div class="section" id="the-code">
+<h2><a class="toc-backref" href="#id11">The Code</a><a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h2>
+<p>Next what you need to do is to create a file <code class="docutils literal notranslate"><span class="pre">don_segmentation.cpp</span></code> in any editor you prefer and copy the following code inside of it:</p>
+<div class="section" id="compiling-and-running-the-program">
+<h3><a class="toc-backref" href="#id12">Compiling and running the program</a><a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h3>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>Create a build directory, and build the executable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+</pre></div>
+</div>
+<p>After you have made the executable, you can run it. Simply run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./don_segmentation &lt;inputfile&gt; &lt;smallscale&gt; &lt;largescale&gt; &lt;threshold&gt; &lt;segradius&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-explanation">
+<h2><a class="toc-backref" href="#id13">The Explanation</a><a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="large-small-radius-normal-estimation">
+<h3><a class="toc-backref" href="#id14">Large/Small Radius Normal Estimation</a><a class="headerlink" href="#large-small-radius-normal-estimation" title="Permalink to this headline">¶</a></h3>
+<p>We will skip the code for loading files and parsing command line arguments, and go straight to the first major PCL calls. For our later calls to calculate normals, we need to create a search tree. For organized data (i.e. a depth image), a much faster search tree is the OrganizedNeighbor search tree. For unorganized data, i.e. LiDAR scans, a KDTree is a good option.</p>
+<p>This is perhaps the most important section of code, estimating the normals. This is also the bottleneck computationally, and so we will use the <code class="docutils literal notranslate"><span class="pre">pcl::NormalEstimationOMP</span></code> class which makes use of OpenMP to use many threads to calculate the normal using the multiple cores found in most modern processors.  We could also use the standard single-threaded class <code class="docutils literal notranslate"><span class="pre">pcl::NormalEstimation</span></code>, or even the GPU accelerated class <code class="docutils literal notranslate"><span class="pre">pcl::gpu::NormalEstimation</span></code>. Whatever class we use, it is important to set an arbitrary viewpoint to be used across all the normal calculations - this ensures that normals estimated at different scales share a consistent orientation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For information and examples on estimating normals, normal ambiguity, and the different normal estimation methods in PCL, please read the <a class="reference internal" href="normal_estimation.html#normal-estimation"><span class="std std-ref">Estimating Surface Normals in a PointCloud</span></a> tutorial.</p>
+</div>
+<p>Next we calculate the normals using our normal estimation class for both the large and small radius. It is important to use the <code class="docutils literal notranslate"><span class="pre">NormalEstimation.setRadiusSearch()</span></code> method v.s. the <code class="docutils literal notranslate"><span class="pre">NormalEstimation.setMaximumNeighbours()</span></code> method or equivalent. If the normal estimate is restricted to a set number of neighbours, it may not be based on the complete surface of the given radius, and thus is not suitable for the Difference of Normals features.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For large supporting radii in dense point clouds, calculating the normal would be a very computationally intensive task potentially utilizing thousands of points in the calculation, when hundreds are more than enough for an accurate estimate. A simple method to speed up the calculation is to uniformly subsample the pointcloud when doing a large radius search, see the full example code in the PCL distribution at <code class="docutils literal notranslate"><span class="pre">examples/features/example_difference_of_normals.cpp</span></code> for more details.</p>
+</div>
+</div>
+<div class="section" id="difference-of-normals-feature-calculation">
+<h3><a class="toc-backref" href="#id15">Difference of Normals Feature Calculation</a><a class="headerlink" href="#difference-of-normals-feature-calculation" title="Permalink to this headline">¶</a></h3>
+<p>We can now perform the actual Difference of Normals feature calculation using our normal estimates. The Difference of Normals result is a vector field, so we initialize the point cloud to store the results in as a <code class="docutils literal notranslate"><span class="pre">pcl::PointNormal</span></code> point cloud, and copy the points from our input pointcloud over to it, so we have what may be regarded as an uninitialized vector field for our point cloud.</p>
+<p>We instantiate a new <code class="docutils literal notranslate"><span class="pre">pcl::DifferenceOfNormalsEstimation</span></code> class to take care of calculating the Difference of Normals vector field.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pcl::DifferenceOfNormalsEstimation</span></code> class has 3 template parameters, the first corresponds to the input point cloud type, in this case <code class="docutils literal notranslate"><span class="pre">pcl::PointXYZRGB</span></code>, the second corresponds to the type of the normals estimated for the point cloud, in this case <code class="docutils literal notranslate"><span class="pre">pcl::PointNormal</span></code>, and the third corresponds to the vector field output type, in this case also <code class="docutils literal notranslate"><span class="pre">pcl::PointNormal</span></code>. Next we set the input point cloud and give both of the normals estimated for the point cloud, and check that the requirements for computing the features are satisfied using the <code class="docutils literal notranslate"><span class="pre">pcl::DifferenceOfNormalsEstimation::initCompute()</span></code> method. Finally we compute the features by calling the <code class="docutils literal notranslate"><span class="pre">pcl::DifferenceOfNormalsEstimation::computeFeature()</span></code> method.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pcl::DifferenceOfNormalsEstimation</span></code> class expects the given point cloud and normal point clouds indices to match, i.e. the first point in the input point cloud’s normals should also be the first point in the two normal point clouds.</p>
+</div>
+</div>
+<div class="section" id="difference-of-normals-based-filtering">
+<h3><a class="toc-backref" href="#id16">Difference of Normals Based Filtering</a><a class="headerlink" href="#difference-of-normals-based-filtering" title="Permalink to this headline">¶</a></h3>
+<p>While we now have a Difference of Normals vector field, we still have the complete point set. To begin the segmentation process, we must actually discriminate points based on their Difference of Normals vector result. There are a number of common quantities you may want to try filtering by:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 13%" />
+<col style="width: 14%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantity</p></th>
+<th class="head"><p>PointNormal Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Usage Scenario</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathbf{\Delta}\mathbf{\hat{n}}(p, r_s, r_l)\)</span></p></td>
+<td><p>float normal[3]</p></td>
+<td><p>DoN vector</p></td>
+<td><p>Filtering points by relative DoN angle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(|\mathbf{\Delta}\mathbf{\hat{n}}(p, r_s, r_l)| \in (0,1)\)</span></p></td>
+<td><p>float curvature</p></td>
+<td><p>DoN <span class="math notranslate nohighlight">\(l_2\)</span> norm</p></td>
+<td><p>Filtering points by scale membership, large magnitude
+indicates point has a strong response at then given
+scale parameters</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathbf{\Delta}\mathbf{\hat{n}}(p, r_s, r_l)_x \in (-1,1)\)</span>,</p></td>
+<td><p>float normal[0]</p></td>
+<td><p>DoN vector x component</p></td>
+<td rowspan="3"><p>Filtering points by orientable scale, i.e. building
+facades with large
+large <span class="math notranslate nohighlight">\(|{\mathbf{\Delta}\mathbf{\hat{n}}}_x|\)</span>
+and/or <span class="math notranslate nohighlight">\(|{\mathbf{\Delta}\mathbf{\hat{n}}}_y|\)</span> and
+small <span class="math notranslate nohighlight">\(|{\mathbf{\Delta}\mathbf{\hat{n}}}_z|\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathbf{\Delta}\mathbf{\hat{n}}(p, r_s, r_l)_y \in (-1,1)\)</span>,</p></td>
+<td><p>float normal[1]</p></td>
+<td><p>DoN vector y component</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathbf{\Delta}\mathbf{\hat{n}}(p, r_s, r_l)_z \in (-1,1)\)</span>,</p></td>
+<td><p>float normal[2]</p></td>
+<td><p>DoN vector z component</p></td>
+</tr>
+</tbody>
+</table>
+<p>In this example we will do a simple magnitude threshold, looking for objects of a scale regardless of their orientation in the scene. To do so, we must create a conditional filter:</p>
+<p>After we apply the filter we are left with a reduced pointcloud consisting of the points with a strong response with the given scale parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information on point cloud filtering and building filtering conditions, please read the <a class="reference internal" href="conditional_removal.html#conditional-removal"><span class="std std-ref">Removing outliers using a ConditionalRemoval filter</span></a> tutorial.</p>
+</div>
+</div>
+<div class="section" id="clustering-the-results">
+<h3><a class="toc-backref" href="#id17">Clustering the Results</a><a class="headerlink" href="#clustering-the-results" title="Permalink to this headline">¶</a></h3>
+<p>Finally, we are usually left with a number of objects or regions with good isolation, allowing us to use a simple clustering algorithm to segment the results. In this example we used Euclidean Clustering with a threshold equal to the small radius parameter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information on point cloud clustering, please read the <a class="reference internal" href="cluster_extraction.html#cluster-extraction"><span class="std std-ref">Euclidean Cluster Extraction</span></a> tutorial.</p>
+</div>
+<p>After the segmentation the cloud viewer window will be opened and you will see something similar to those images:</p>
+<a class="reference internal image-reference" href="_images/don_clusters.jpg"><img alt="_images/don_clusters.jpg" src="_images/don_clusters.jpg" style="height: 360px;" /></a>
+</div>
+<div class="section" id="references-further-information">
+<h3><a class="toc-backref" href="#id18">References/Further Information</a><a class="headerlink" href="#references-further-information" title="Permalink to this headline">¶</a></h3>
+<dl class="citation">
+<dt class="label" id="don2012"><span class="brackets"><a class="fn-backref" href="#id1">DON2012</a></span></dt>
+<dd><p>“Difference of Normals as a Multi-Scale Operator in Unorganized Point Clouds” &lt;<a class="reference external" href="http://arxiv.org/abs/1209.1759">http://arxiv.org/abs/1209.1759</a>&gt;.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>&#64;ARTICLE{2012arXiv1209.1759I,
+author = {{Ioannou}, Y. and {Taati}, B. and {Harrap}, R. and {Greenspan}, M.},
+title = “{Difference of Normals as a Multi-Scale Operator in Unorganized Point Clouds}”,
+journal = {ArXiv e-prints},
+archivePrefix = “arXiv”,
+eprint = {1209.1759},
+primaryClass = “cs.CV”,
+keywords = {Computer Science - Computer Vision and Pattern Recognition},
+year = 2012,
+month = sep,
+}</p>
+</div>
+<dl class="citation">
+<dt class="label" id="kitti"><span class="brackets"><a class="fn-backref" href="#id2">KITTI</a></span></dt>
+<dd><p>“The KITTI Vision Benchmark Suite” &lt;<a class="reference external" href="http://www.cvlibs.net/datasets/kitti/">http://www.cvlibs.net/datasets/kitti/</a>&gt;.</p>
+</dd>
+<dt class="label" id="kittipcl"><span class="brackets"><a class="fn-backref" href="#id3">KITTIPCL</a></span></dt>
+<dd><p>“KITTI PCL Toolkit” &lt;<a class="reference external" href="https://github.com/yanii/kitti-pcl">https://github.com/yanii/kitti-pcl</a>&gt;</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9. Installing on Mac OS X using Homebrew" href="installing_homebrew.html" />
+    <link rel="prev" title="7. Compiling PCL from source on Windows" href="compiling_pcl_windows.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">8.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pcl-dependencies">8.2. PCL Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#required">8.2.1. Required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional">8.2.2. Optional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-developers">8.2.3. Advanced (Developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-compiling-and-installing-pcl-dependencies">8.3. Building, Compiling and Installing PCL Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-cmake">8.3.1. Install CMake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-boost">8.3.2. Install Boost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-eigen">8.3.3. Install Eigen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-flann">8.3.4. Install FLANN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-vtk">8.3.5. Install VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-qhull">8.3.6. Install Qhull</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-libusb">8.3.7. Install libusb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-patched-openni-and-sensor">8.3.8. Install Patched OpenNI and Sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-pcl">8.4. Building PCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-pcl">8.5. Using PCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macosx-advanced">8.6. Advanced (Developers)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testing-googletest">8.6.1. Testing (googletest)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-documentation-doxygen">8.6.2. API Documentation (Doxygen)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorials-sphinx">8.6.3. Tutorials (Sphinx)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">8. </span>Compiling PCL and its dependencies from MacPorts and source on Mac OS X</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/compiling_pcl_macosx.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compiling-pcl-and-its-dependencies-from-macports-and-source-on-mac-os-x">
+<span id="compiling-pcl-macosx"></span><h1><a class="toc-backref" href="#id2"><span class="section-number">8. </span>Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a><a class="headerlink" href="#compiling-pcl-and-its-dependencies-from-macports-and-source-on-mac-os-x" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial explains how to build the Point Cloud Library
+<strong>from MacPorts and source</strong> on Mac OS X platforms, and tries to guide you
+through the download and building <em>of all the required dependencies</em>.</p>
+<img alt="Mac OS X logo" class="align-right" src="_images/macosx_logo.png" />
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#compiling-pcl-and-its-dependencies-from-macports-and-source-on-mac-os-x" id="id2">Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></p>
+<ul>
+<li><p><a class="reference internal" href="#prerequisites" id="id3">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#pcl-dependencies" id="id4">PCL Dependencies</a></p>
+<ul>
+<li><p><a class="reference internal" href="#required" id="id5">Required</a></p></li>
+<li><p><a class="reference internal" href="#optional" id="id6">Optional</a></p></li>
+<li><p><a class="reference internal" href="#advanced-developers" id="id7">Advanced (Developers)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#building-compiling-and-installing-pcl-dependencies" id="id8">Building, Compiling and Installing PCL Dependencies</a></p>
+<ul>
+<li><p><a class="reference internal" href="#install-cmake" id="id9">Install CMake</a></p></li>
+<li><p><a class="reference internal" href="#install-boost" id="id10">Install Boost</a></p></li>
+<li><p><a class="reference internal" href="#install-eigen" id="id11">Install Eigen</a></p></li>
+<li><p><a class="reference internal" href="#install-flann" id="id12">Install FLANN</a></p></li>
+<li><p><a class="reference internal" href="#install-vtk" id="id13">Install VTK</a></p></li>
+<li><p><a class="reference internal" href="#install-qhull" id="id14">Install Qhull</a></p></li>
+<li><p><a class="reference internal" href="#install-libusb" id="id15">Install libusb</a></p></li>
+<li><p><a class="reference internal" href="#install-patched-openni-and-sensor" id="id16">Install Patched OpenNI and Sensor</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#building-pcl" id="id17">Building PCL</a></p></li>
+<li><p><a class="reference internal" href="#using-pcl" id="id18">Using PCL</a></p></li>
+<li><p><a class="reference internal" href="#macosx-advanced" id="id19">Advanced (Developers)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#testing-googletest" id="id20">Testing (googletest)</a></p></li>
+<li><p><a class="reference internal" href="#api-documentation-doxygen" id="id21">API Documentation (Doxygen)</a></p></li>
+<li><p><a class="reference internal" href="#tutorials-sphinx" id="id22">Tutorials (Sphinx)</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="prerequisites">
+<span id="macosx-prerequisites"></span><h2><a class="toc-backref" href="#id3"><span class="section-number">8.1. </span>Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Before getting started download and install the following prerequisites for
+Mac OS X:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>XCode</strong> (<a class="reference external" href="https://developer.apple.com/xcode/">https://developer.apple.com/xcode/</a>)</dt><dd><p>Apple’s powerful integrated development environment</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>MacPorts</strong> (<a class="reference external" href="http://www.macports.org">http://www.macports.org</a>)</dt><dd><p>An open-source community initiative to design an easy-to-use
+system for compiling, installing, and upgrading  either command-line, X11 or
+Aqua based open-source software on the Mac OS X operating system.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="pcl-dependencies">
+<span id="macosx-dependencies"></span><h2><a class="toc-backref" href="#id4"><span class="section-number">8.2. </span>PCL Dependencies</a><a class="headerlink" href="#pcl-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>In order to compile every component of the PCL library we need to download and
+compile a series of 3rd party library dependencies.  We’ll cover the building,
+compiling and installing of everything in the following sections:</p>
+<div class="section" id="required">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">8.2.1. </span>Required</a><a class="headerlink" href="#required" title="Permalink to this headline">¶</a></h3>
+<p>The following libraries are <strong>Required</strong> to build PCL.</p>
+<ul>
+<li><dl>
+<dt><strong>CMake</strong> version &gt;= 3.5.0 (<a class="reference external" href="http://www.cmake.org">http://www.cmake.org</a>)</dt><dd><p>Cross-platform, open-source build system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though not a dependency per se, the PCL community relies heavily on CMake
+for the libraries build process.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Boost</strong> version &gt;= 1.46.1 (<a class="reference external" href="http://www.boost.org/">http://www.boost.org/</a>)</dt><dd><p>Provides free peer-reviewed portable C++ source libraries.  Used for shared
+pointers, and threading.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Eigen</strong> version &gt;= 3.0.0 (<a class="reference external" href="http://eigen.tuxfamily.org/">http://eigen.tuxfamily.org/</a>)</dt><dd><p>Unified matrix library.  Used as the matrix backend for SSE optimized math.</p>
+</dd>
+</dl>
+</li>
+<li><p><strong>FLANN</strong> version &gt;= 1.6.8
+(<a class="reference external" href="http://www.cs.ubc.ca/research/flann/">http://www.cs.ubc.ca/research/flann/</a>)
+Library for performing fast approximate nearest neighbor searches in high
+dimensional spaces.  Used in <cite>kdtree</cite> for fast approximate nearest neighbors
+search.</p></li>
+<li><dl class="simple">
+<dt><strong>Visualization ToolKit (VTK)</strong> version &gt;= 5.6.1 (<a class="reference external" href="http://www.vtk.org/">http://www.vtk.org/</a>)</dt><dd><p>Software system for 3D computer graphics, image processing and visualization.
+Used in <cite>visualization</cite> for 3D point cloud rendering and visualization.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="optional">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">8.2.2. </span>Optional</a><a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h3>
+<p>The following libraries are <strong>Optional</strong> and provide extended functionality
+within PCL, ie Kinect support.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Qhull</strong> version &gt;= 2011.1 (<a class="reference external" href="http://www.qhull.org/">http://www.qhull.org/</a>)</dt><dd><p>computes the convex hull, Delaunay triangulation, Voronoi diagram, halfspace
+intersection about a point, furthest-site Delaunay triangulation, and
+furthest-site Voronoi diagram.  Used for convex/concave hull decompositions
+in <cite>surface</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>libusb</strong> (<a class="reference external" href="http://www.libusb.org/">http://www.libusb.org/</a>)</dt><dd><p>A library that gives user level applications uniform access to USB devices
+across many different operating systems.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>PCL Patched OpenNI/Sensor</strong> (<a class="reference external" href="http://www.openni.org/">http://www.openni.org/</a>)</dt><dd><p>The OpenNI Framework provides the interface for physical devices and for
+middleware components. Used to grab point clouds from OpenNI compliant
+devices.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="advanced-developers">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">8.2.3. </span>Advanced (Developers)</a><a class="headerlink" href="#advanced-developers" title="Permalink to this headline">¶</a></h3>
+<p>The following libraries are <strong>Advanced</strong> and provide additional functionality
+for PCL developers:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>googletest</strong> version &gt;= 1.6.0 (<a class="reference external" href="http://code.google.com/p/googletest/">http://code.google.com/p/googletest/</a>)</dt><dd><p>Google’s framework for writing C++ tests on a variety of platforms. Used
+to build test units.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Doxygen</strong> (<a class="reference external" href="http://www.doxygen.org">http://www.doxygen.org</a>)</dt><dd><p>A documentation system for C++, C, Java, Objective-C, Python, IDL (Corba and
+Microsoft flavors), Fortran, VHDL, PHP, C#, and to some extent D.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Sphinx</strong> (<a class="reference external" href="http://sphinx-doc.org/">http://sphinx-doc.org/</a>)</dt><dd><p>A tool that makes it easy to create intelligent and beautiful
+documentation.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="building-compiling-and-installing-pcl-dependencies">
+<span id="macosx-building-prerequisites"></span><h2><a class="toc-backref" href="#id8"><span class="section-number">8.3. </span>Building, Compiling and Installing PCL Dependencies</a><a class="headerlink" href="#building-compiling-and-installing-pcl-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>By now you should have downloaded and installed the latest versions of XCode and
+MacPorts under the <a class="reference internal" href="#macosx-prerequisites"><span class="std std-ref">Prerequisites</span></a> section.  We’ll be installing most
+dependencies available via MacPorts and the rest will be built from source.</p>
+<div class="section" id="install-cmake">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">8.3.1. </span>Install CMake</a><a class="headerlink" href="#install-cmake" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install cmake
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-boost">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">8.3.2. </span>Install Boost</a><a class="headerlink" href="#install-boost" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install boost
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-eigen">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">8.3.3. </span>Install Eigen</a><a class="headerlink" href="#install-eigen" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install eigen3
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-flann">
+<h3><a class="toc-backref" href="#id12"><span class="section-number">8.3.4. </span>Install FLANN</a><a class="headerlink" href="#install-flann" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install flann
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-vtk">
+<h3><a class="toc-backref" href="#id13"><span class="section-number">8.3.5. </span>Install VTK</a><a class="headerlink" href="#install-vtk" title="Permalink to this headline">¶</a></h3>
+<p>To install via MacPorts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install vtk5 +qt4_mac
+</pre></div>
+</div>
+<p>To install from source download the source from
+<a class="reference external" href="http://www.vtk.org/VTK/resources/software.html">http://www.vtk.org/VTK/resources/software.html</a></p>
+<p>Follow the README.html for compiling on UNIX / Cygwin / Mac OSX:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd VTK
+$ mkdir VTK-build
+$ cd VTK-build
+$ ccmake ../VTK
+</pre></div>
+</div>
+<dl>
+<dt>Within the CMake configuration:</dt><dd><p>Press [c] for initial configuration</p>
+<p>Press [t] to get into advanced mode and change the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VTK_USE_CARBON</span><span class="p">:</span><span class="n">OFF</span>
+<span class="n">VTK_USE_COCOA</span><span class="p">:</span><span class="n">ON</span>
+<span class="n">VTK_USE_X</span><span class="p">:</span><span class="n">OFF</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>VTK <em>must</em> be built with Cocoa support and <em>must</em> be installed,
+in order for the visualization module to be able to compile. If you do
+not require visualisation, you may omit this step.</p>
+</div>
+<p>Press [g] to generate the make files.</p>
+<p>Press [q] to quit.</p>
+</dd>
+</dl>
+<p>Then run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make &amp;&amp; make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-qhull">
+<h3><a class="toc-backref" href="#id14"><span class="section-number">8.3.6. </span>Install Qhull</a><a class="headerlink" href="#install-qhull" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install qhull
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-libusb">
+<h3><a class="toc-backref" href="#id15"><span class="section-number">8.3.7. </span>Install libusb</a><a class="headerlink" href="#install-libusb" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install libusb-devel +universal
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-patched-openni-and-sensor">
+<h3><a class="toc-backref" href="#id16"><span class="section-number">8.3.8. </span>Install Patched OpenNI and Sensor</a><a class="headerlink" href="#install-patched-openni-and-sensor" title="Permalink to this headline">¶</a></h3>
+<p>Download the patched versions of OpenNI and Sensor from the PCL downloads page
+<a class="reference external" href="http://pointclouds.org/downloads/macosx.html">http://pointclouds.org/downloads/macosx.html</a></p>
+<p>Extract, build, fix permissions and install OpenNI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ unzip openni_osx.zip -d openni_osx
+$ cd openni_osx/Redist
+$ chmod -R a+r Bin Include Lib
+$ chmod -R a+x Bin Lib
+$ chmod a+x Include/MacOSX Include/Linux-*
+$ sudo ./install
+</pre></div>
+</div>
+<p>In addition the following primesense xml config found within the patched OpenNI
+download needs its permissions fixed and copied to the correct location to for
+the Kinect to work on Mac OS X:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ chmod a+r openni_osx/Redist/Samples/Config/SamplesConfig.xml
+$ sudo cp openni_osx/Redist/Samples/Config/SamplesConfig.xml /etc/primesense/
+</pre></div>
+</div>
+<p>Extract, build, fix permissions and install Sensor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ unzip ps_engine_osx.zip -d ps_engine_osx
+$ cd ps_engine_osx/Redist
+$ chmod -R a+r Bin Lib Config Install
+$ chmod -R a+x Bin Lib
+$ sudo ./install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="building-pcl">
+<span id="macosx-building-pcl"></span><h2><a class="toc-backref" href="#id17"><span class="section-number">8.4. </span>Building PCL</a><a class="headerlink" href="#building-pcl" title="Permalink to this headline">¶</a></h2>
+<p>At this point you should have everything needed installed to build PCL with
+almost no additional configuration.</p>
+<p>Checkout the PCL source from the Github:</p>
+<blockquote>
+<div><p>$ git clone <a class="reference external" href="https://github.com/PointCloudLibrary/pcl">https://github.com/PointCloudLibrary/pcl</a>
+$ cd pcl</p>
+</div></blockquote>
+<p>Create the build directories, configure CMake, build and install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ sudo make install
+</pre></div>
+</div>
+<p>The customization of the build process is out of the scope of this tutorial and
+is covered in greater detail in the <a class="reference internal" href="building_pcl.html#building-pcl"><span class="std std-ref">Customizing the PCL build process</span></a> tutorial.</p>
+</div>
+<div class="section" id="using-pcl">
+<h2><a class="toc-backref" href="#id18"><span class="section-number">8.5. </span>Using PCL</a><a class="headerlink" href="#using-pcl" title="Permalink to this headline">¶</a></h2>
+<p>We finally managed to compile the Point Cloud Library (PCL) for Mac OS X. You
+can start using them in your project by following the <a class="reference internal" href="using_pcl_pcl_config.html#using-pcl-pcl-config"><span class="std std-ref">Using PCL in your own project</span></a> tutorial.</p>
+</div>
+<div class="section" id="macosx-advanced">
+<span id="id1"></span><h2><a class="toc-backref" href="#id19"><span class="section-number">8.6. </span>Advanced (Developers)</a><a class="headerlink" href="#macosx-advanced" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="testing-googletest">
+<h3><a class="toc-backref" href="#id20"><span class="section-number">8.6.1. </span>Testing (googletest)</a><a class="headerlink" href="#testing-googletest" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="api-documentation-doxygen">
+<h3><a class="toc-backref" href="#id21"><span class="section-number">8.6.2. </span>API Documentation (Doxygen)</a><a class="headerlink" href="#api-documentation-doxygen" title="Permalink to this headline">¶</a></h3>
+<p>Install Doxygen via MacPorts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install doxygen
+</pre></div>
+</div>
+<p>Or install the Prebuilt binary for Mac OS X
+(<a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc</a>)</p>
+<p>After installed you can build the documentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make doc
+</pre></div>
+</div>
+</div>
+<div class="section" id="tutorials-sphinx">
+<h3><a class="toc-backref" href="#id22"><span class="section-number">8.6.3. </span>Tutorials (Sphinx)</a><a class="headerlink" href="#tutorials-sphinx" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the API documentation there is also tutorial documentation built
+using Sphinx.  The easiest way to get this installed is using pythons
+<cite>easy_install</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ easy_install -U Sphinx
+</pre></div>
+</div>
+<p>The Sphinx documentation also requires the third party contrib extension
+<cite>sphinxcontrib-doxylink</cite> (<a class="reference external" href="https://pypi.python.org/pypi/sphinxcontrib-doxylink">https://pypi.python.org/pypi/sphinxcontrib-doxylink</a>)
+to reference the Doxygen built documentation.</p>
+<p>To install from source you’ll also need Mercurial:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo port install mercurial
+$ hg clone http://bitbucket.org/birkenfeld/sphinx-contrib
+$ cd sphinx-contrib/doxylink
+$ python setup.py install
+</pre></div>
+</div>
+<p>After installed you can build the tutorials:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make Tutorials
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sphinx can be installed via MacPorts but is a bit of a pain getting all the
+PYTHON_PATH’s in order</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installing_homebrew.html" class="btn btn-neutral float-right" title="9. Installing on Mac OS X using Homebrew" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="compiling_pcl_windows.html" class="btn btn-neutral float-left" title="7. Compiling PCL from source on Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

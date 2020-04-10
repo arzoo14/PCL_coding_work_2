@@ -25,6 +25,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Benchmarking 3D" href="benchmark.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,24 +83,52 @@
               
             
             
-              <p class="caption"><span class="caption-text">Basic Tutorials</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="adding custom ptype.html">Adding your own custom <cite>PointT</cite> type</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">Benchmarking 3D</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Customizing the PCL build process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#audience">Audience</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pcl-basic-settings">PCL basic settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-explanation">The explanation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tweaking-basic-settings">Tweaking basic settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tweaking-advanced-settings">Tweaking advanced settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#building-unit-tests">Building unit tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#general-remarks">General remarks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#detailed-description">Detailed description</a></li>
+              <p class="caption"><span class="caption-text">Newcomers' Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="newcomers guide.html">Newcomers’ Guide</a></li>
 </ul>
-</li>
-</ul>
-</li>
+<p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html#audience">Audience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html#pcl-basic-settings">PCL basic settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html#the-explanation">The explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html#tweaking-basic-settings">Tweaking basic settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html#tweaking-advanced-settings">Tweaking advanced settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html#requirements">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html#building-dependencies">Building dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html#building-pcl">Building PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html#requirements">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html#downloading-pcl-source-code">Downloading PCL source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html#configuring-pcl">Configuring PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html#building-pcl">Building PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html#installing-pcl">Installing PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html#advanced-topics">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html#using-pcl">Using PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html#pcl-dependencies">PCL Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html#building-compiling-and-installing-pcl-dependencies">Building, Compiling and Installing PCL Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html#building-pcl">Building PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html#using-pcl">Using PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html#macosx-advanced">Advanced (Developers)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html#using-the-formula">Using the formula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">Using a matrix to transform a point cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html#the-code">The code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html#the-explanation">The explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html#compiling-and-running-the-program">Compiling and running the program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html#more-about-transformations">More about transformations</a></li>
 </ul>
 
             
@@ -495,13 +523,6 @@ then a sample value is given for reference.</p>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="benchmark.html" class="btn btn-neutral float-left" title="Benchmarking 3D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

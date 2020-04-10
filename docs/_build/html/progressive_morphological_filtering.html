@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Identifying ground returns using ProgressiveMorphologicalFilter segmentation &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Identifying ground returns using ProgressiveMorphologicalFilter segmentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/progressive_morphological_filtering.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="progressive-morphological-filtering">
+<span id="identifying-ground-returns-using-progressivemorphologicalfilter-segmentation"></span><h1>Identifying ground returns using ProgressiveMorphologicalFilter segmentation<a class="headerlink" href="#progressive-morphological-filtering" title="Permalink to this headline">¶</a></h1>
+<p>Implements the Progressive Morphological Filter for segmentation of ground
+points.</p>
+</div>
+<div class="section" id="background">
+<h1>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h1>
+<p>A complete description of the algorithm can be found in the article <a class="reference external" href="http://users.cis.fiu.edu/~chens/PDF/TGRS.pdf">“A
+Progressive Morphological Filter for Removing Nonground Measurements from
+Airborne LIDAR Data”</a> by K.
+Zhang, S.  Chen, D. Whitman, M. Shyu, J. Yan, and C. Zhang.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>First, download the dataset <a class="reference external" href="https://raw.github.com/PointCloudLibrary/data/master/terrain/samp11-utm.pcd">samp11-utm.pcd</a>
+and save it somewhere to disk.</p>
+<p>Then, create a file, let’s say, <code class="docutils literal notranslate"><span class="pre">bare_earth.cpp</span></code> in your favorite editor, and
+place the following inside it:</p>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>Now, let’s break down the code piece by piece.</p>
+<p>The following lines of code will read the point cloud data from disk.</p>
+<p>Then, a <em>pcl::ProgressiveMorphologicalFilter</em> filter is created. The output
+(the indices of ground returns) is computed and stored in <em>ground</em>.</p>
+<p>To extract the ground points, the ground indices are passed into a
+<em>pcl::ExtractIndices</em> filter.</p>
+<p>The ground returns are written to disk for later inspection.</p>
+<p>Then, the filter is called with the same parameters, but with the output
+negated, to obtain the non-ground (object) returns.</p>
+<p>And the data is written back to disk.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./bare_earth
+</pre></div>
+</div>
+<p>You will see something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cloud</span> <span class="n">before</span> <span class="n">filtering</span><span class="p">:</span>
+<span class="n">points</span><span class="p">[]:</span> <span class="mi">38010</span>
+<span class="n">width</span><span class="p">:</span> <span class="mi">38010</span>
+<span class="n">height</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">is_dense</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">sensor</span> <span class="n">origin</span> <span class="p">(</span><span class="n">xyz</span><span class="p">):</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">orientation</span> <span class="p">(</span><span class="n">xyzw</span><span class="p">):</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">Ground</span> <span class="n">cloud</span> <span class="n">after</span> <span class="n">filtering</span><span class="p">:</span>
+<span class="n">points</span><span class="p">[]:</span> <span class="mi">18667</span>
+<span class="n">width</span><span class="p">:</span> <span class="mi">18667</span>
+<span class="n">height</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">is_dense</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">sensor</span> <span class="n">origin</span> <span class="p">(</span><span class="n">xyz</span><span class="p">):</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">orientation</span> <span class="p">(</span><span class="n">xyzw</span><span class="p">):</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">Object</span> <span class="n">cloud</span> <span class="n">after</span> <span class="n">filtering</span><span class="p">:</span>
+<span class="n">points</span><span class="p">[]:</span> <span class="mi">19343</span>
+<span class="n">width</span><span class="p">:</span> <span class="mi">19343</span>
+<span class="n">height</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">is_dense</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">sensor</span> <span class="n">origin</span> <span class="p">(</span><span class="n">xyz</span><span class="p">):</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">orientation</span> <span class="p">(</span><span class="n">xyzw</span><span class="p">):</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can also look at your outputs samp11-utm_inliers.pcd and
+samp11-utm_outliers.pcd:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pcl_viewer samp11-utm_ground.pcd samp11-utm_object.pcd
+</pre></div>
+</div>
+<p>You are now able to see both the ground and object returns in one viewer. You
+should see something similar to this:</p>
+<a class="reference internal image-reference" href="_images/progressive_morphological_filter.png"><img alt="Output Progressive Morphological Filter" class="align-center" src="_images/progressive_morphological_filter.png" style="width: 600px;" /></a>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

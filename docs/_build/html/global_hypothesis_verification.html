@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial: Hypothesis Verification for 3D Object Recognition &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorial: Hypothesis Verification for 3D Object Recognition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/global_hypothesis_verification.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorial-hypothesis-verification-for-3d-object-recognition">
+<span id="global-hypothesis-verification"></span><h1>Tutorial: Hypothesis Verification for 3D Object Recognition<a class="headerlink" href="#tutorial-hypothesis-verification-for-3d-object-recognition" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial aims at explaining how to do 3D object recognition in clutter by verifying model hypotheses
+in cluttered and heavily occluded 3D scenes. After descriptor matching, the tutorial runs one of the
+Correspondence Grouping algorithms available in PCL in order to cluster the set of point-to-point
+correspondences, determining instances of object hypotheses in the scene. On these hypotheses,
+the Global Hypothesis Verification algorithm is applied in order to
+decrease the amount of false positives.</p>
+</div>
+<div class="section" id="suggested-readings-and-prerequisites">
+<h1>Suggested readings and prerequisites<a class="headerlink" href="#suggested-readings-and-prerequisites" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial is the follow-up of a previous tutorial on object recognition: <a class="reference internal" href="correspondence_grouping.html#correspondence-grouping"><span class="std std-ref">3D Object Recognition based on Correspondence Grouping</span></a>
+To understand this tutorial, we suggest first to read and understand that tutorial.</p>
+<p>More details on the Global Hypothesis Verification method can be found here:
+A. Aldoma, F. Tombari, L. Di Stefano, M. Vincze, <cite>A global hypothesis verification method for 3D object recognition</cite>, ECCV 2012</p>
+<p>For more information on 3D Object Recognition in Clutter and on the standard feature-based recognition pipeline, we suggest this tutorial paper:
+A. Aldoma, Z.C. Marton, F. Tombari, W. Wohlkinger, C. Potthast, B. Zeisl, R.B. Rusu, S. Gedikli, M. Vincze, “Point Cloud Library: Three-Dimensional Object Recognition and 6 DOF Pose Estimation”, IEEE Robotics and Automation Magazine, 2012</p>
+</div>
+<div class="section" id="the-code">
+<h1>The Code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>Before starting, you should download from the GitHub folder: <a class="reference external" href="https://github.com/PointCloudLibrary/data/tree/master/tutorials/correspondence_grouping">Correspondence Grouping</a> the example PCD clouds
+used in this tutorial (milk.pcd and milk_cartoon_all_small_clorox.pcd), and place the files in the source older.</p>
+<p>Then copy and paste the following code into your editor and save it as <code class="docutils literal notranslate"><span class="pre">global_hypothesis_verification.cpp</span></code>.</p>
+</div>
+<div class="section" id="walkthrough">
+<h1>Walkthrough<a class="headerlink" href="#walkthrough" title="Permalink to this headline">¶</a></h1>
+<p>Take a look at the various parts of the code to see how it works.</p>
+<div class="section" id="input-parameters">
+<h2>Input Parameters<a class="headerlink" href="#input-parameters" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">showHelp</span></code> function prints out the input parameters accepted by the program. <code class="docutils literal notranslate"><span class="pre">parseCommandLine</span></code> binds the user input with program parameters.</p>
+<p>The only two mandatory parameters are <code class="docutils literal notranslate"><span class="pre">model_filename</span></code> and <code class="docutils literal notranslate"><span class="pre">scene_filename</span></code> (all other parameters are initialized with a default value).
+Other usefuls commands are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--algorithm</span> <span class="pre">(Hough|GC)</span></code> used to switch clustering algorithm. See <a class="reference internal" href="correspondence_grouping.html#correspondence-grouping"><span class="std std-ref">3D Object Recognition based on Correspondence Grouping</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-k</span></code> shows the keypoints used to compute the correspondences</p></li>
+</ul>
+<p>Hypotheses Verification parameters are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--hv_clutter_reg</span> <span class="pre">val:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Clutter</span> <span class="pre">Regularizer</span> <span class="pre">(default</span> <span class="pre">5.0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hv_inlier_th</span> <span class="pre">val:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Inlier</span> <span class="pre">threshold</span> <span class="pre">(default</span> <span class="pre">0.005)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hv_occlusion_th</span> <span class="pre">val:</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Occlusion</span> <span class="pre">threshold</span> <span class="pre">(default</span> <span class="pre">0.01)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hv_rad_clutter</span> <span class="pre">val:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Clutter</span> <span class="pre">radius</span> <span class="pre">(default</span> <span class="pre">0.03)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hv_regularizer</span> <span class="pre">val:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Regularizer</span> <span class="pre">value</span> <span class="pre">(default</span> <span class="pre">3.0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hv_rad_normals</span> <span class="pre">val:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Normals</span> <span class="pre">radius</span> <span class="pre">(default</span> <span class="pre">0.05)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hv_detect_clutter</span> <span class="pre">val:</span>&#160;&#160;&#160;&#160; <span class="pre">TRUE</span> <span class="pre">if</span> <span class="pre">clutter</span> <span class="pre">detect</span> <span class="pre">enabled</span> <span class="pre">(default</span> <span class="pre">true)</span></code></p></li>
+</ul>
+<p>More details on the Global Hypothesis Verification parameters can be found here:
+A. Aldoma, F. Tombari, L. Di Stefano, M. Vincze, <cite>A global hypothesis verification method for 3D object recognition</cite>, ECCV 2012.</p>
+</div>
+<div class="section" id="helpers">
+<h2>Helpers<a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h2>
+<p>This simple struct is used to create <cite>Color</cite> presets for the clouds being visualized.</p>
+</div>
+<div class="section" id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
+<p>The code below implements a full Clustering Pipeline: the input of the pipeline is a pair of point clouds (the <code class="docutils literal notranslate"><span class="pre">model</span></code> and the <code class="docutils literal notranslate"><span class="pre">scene</span></code>), and the output is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="p">::</span><span class="n">Matrix4f</span><span class="p">,</span> <span class="n">Eigen</span><span class="p">::</span><span class="n">aligned_allocator</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="p">::</span><span class="n">Matrix4f</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">rototranslations</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">rototraslations</span></code> represents a list of <cite>coarsely</cite> transformed models (“object hypotheses”) in the scene.</p>
+<p>Take a look at the full pipeline:</p>
+<p>For a full explanation of the above code see <a class="reference external" href="http://pointclouds.org/documentation/tutorials/correspondence_grouping.php">3D Object Recognition based on Correspondence Grouping</a>.</p>
+</div>
+<div class="section" id="model-in-scene-projection">
+<h2>Model-in-Scene Projection<a class="headerlink" href="#model-in-scene-projection" title="Permalink to this headline">¶</a></h2>
+<p>To improve the <cite>coarse</cite> transformation associated to each object hypothesis, we apply some ICP iterations.
+We create a <code class="docutils literal notranslate"><span class="pre">instances</span></code> list to store the “coarse” transformations :</p>
+<p>then, we run ICP on the <code class="docutils literal notranslate"><span class="pre">instances</span></code> wrt. the <code class="docutils literal notranslate"><span class="pre">scene</span></code> to obtain the <code class="docutils literal notranslate"><span class="pre">registered_instances</span></code>:</p>
+</div>
+<div class="section" id="hypotheses-verification">
+<h2>Hypotheses Verification<a class="headerlink" href="#hypotheses-verification" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">GlobalHypothesesVerification</span></code> takes as input a list of <code class="docutils literal notranslate"><span class="pre">registered_instances</span></code> and a <code class="docutils literal notranslate"><span class="pre">scene</span></code> so we can <code class="docutils literal notranslate"><span class="pre">verify()</span></code> them
+to get a <code class="docutils literal notranslate"><span class="pre">hypotheses_mask</span></code>: this is a <cite>bool</cite> array where <code class="docutils literal notranslate"><span class="pre">hypotheses_mask[i]</span></code> is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if <code class="docutils literal notranslate"><span class="pre">registered_instances[i]</span></code> is a
+verified hypothesis, <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> if it has been classified as a False Positive (hence, must be rejected).</p>
+</div>
+<div class="section" id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+<p>The first part of the Visualization code section is pretty simple, with <code class="docutils literal notranslate"><span class="pre">-k</span></code> options the program displays <cite>goog keypoints</cite> in model and in scene
+with a <code class="docutils literal notranslate"><span class="pre">styleViolet</span></code> color.</p>
+<p>Later we iterate on <code class="docutils literal notranslate"><span class="pre">instances</span></code>, and each <code class="docutils literal notranslate"><span class="pre">instances[i]</span></code> will be displayed in <cite>Viewer</cite> with a <code class="docutils literal notranslate"><span class="pre">styleRed</span></code> color.
+Each <code class="docutils literal notranslate"><span class="pre">registered_instances[i]</span></code> will be displayed with two optional colors: <code class="docutils literal notranslate"><span class="pre">styleGreen</span></code> if the current instance is verified (<code class="docutils literal notranslate"><span class="pre">hypotheses_mask[i]</span></code> is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>),  <code class="docutils literal notranslate"><span class="pre">styleCyan</span></code> otherwise.</p>
+</div>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file and add the following lines into it:</p>
+<p>After you have created the executable, you can then launch it following this example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">./</span><span class="n">global_hypothesis_verification</span> <span class="n">milk</span><span class="o">.</span><span class="n">pcd</span> <span class="n">milk_cartoon_all_small_clorox</span><span class="o">.</span><span class="n">pcd</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="Original Scene Image" src="_images/original.png" />
+</div>
+<p>Original Scene Image</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/single.png" src="_images/single.png" />
+<p class="caption"><span class="caption-text">Valid Hypothesis (Green) with simple parameters</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>You can simulate more false positives by using a larger bin size parameter for the Hough Voting Correspondence Grouping algorithm:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">./</span><span class="n">global_hypothesis_verification</span> <span class="n">milk</span><span class="o">.</span><span class="n">pcd</span> <span class="n">milk_cartoon_all_small_clorox</span><span class="o">.</span><span class="n">pcd</span> <span class="o">--</span><span class="n">cg_size</span> <span class="mf">0.035</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="_images/multiple.png" src="_images/multiple.png" />
+<p class="caption"><span class="caption-text">Valid Hypothesis (Green) among 9 false positives</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

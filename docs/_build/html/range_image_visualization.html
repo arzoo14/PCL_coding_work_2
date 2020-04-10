@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to visualize a range image &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to visualize a range image</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/range_image_visualization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-visualize-a-range-image">
+<span id="range-image-visualization"></span><h1>How to visualize a range image<a class="headerlink" href="#how-to-visualize-a-range-image" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial demonstrates how to visualize a range image with two different means. As a point cloud (since RangeImage is derived from PointCloud) in a 3D viewer and as a picture visualizing the range values as colors.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>First, create a file called, let’s say, <code class="docutils literal notranslate"><span class="pre">range_image_visualization.cpp</span></code> in your favorite
+editor, and place the following code inside it:</p>
+</div>
+<div class="section" id="explanation">
+<h1>Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h1>
+<p>In the beginning we do command line parsing, read a point cloud from disc (or create it if not provided) and create a range image. All of these steps are already covered in the ‘How to create a range image from a point cloud’ tutorial.</p>
+<p>The interesting part begins here:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">visualization</span><span class="o">::</span><span class="n">PCLVisualizer</span> <span class="n">viewer</span> <span class="p">(</span><span class="s">&quot;3D Viewer&quot;</span><span class="p">);</span>
+<span class="n">viewer</span><span class="p">.</span><span class="n">setBackgroundColor</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">visualization</span><span class="o">::</span><span class="n">PointCloudColorHandlerCustom</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointWithRange</span><span class="o">&gt;</span> <span class="n">range_image_color_handler</span> <span class="p">(</span><span class="n">range_image_ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">viewer</span><span class="p">.</span><span class="n">addPointCloud</span> <span class="p">(</span><span class="n">range_image_ptr</span><span class="p">,</span> <span class="n">range_image_color_handler</span><span class="p">,</span> <span class="s">&quot;range image&quot;</span><span class="p">);</span>
+<span class="n">viewer</span><span class="p">.</span><span class="n">setPointCloudRenderingProperties</span> <span class="p">(</span><span class="n">pcl</span><span class="o">::</span><span class="n">visualization</span><span class="o">::</span><span class="n">PCL_VISUALIZER_POINT_SIZE</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;range image&quot;</span><span class="p">);</span>
+<span class="c1">//viewer.addCoordinateSystem (1.0f);</span>
+<span class="c1">//pcl::visualization::PointCloudColorHandlerCustom&lt;PointType&gt; point_cloud_color_handler (point_cloud_ptr, 150, 150, 150);</span>
+<span class="c1">//viewer.addPointCloud (point_cloud_ptr, point_cloud_color_handler, &quot;original point cloud&quot;);</span>
+<span class="n">viewer</span><span class="p">.</span><span class="n">initCameraParameters</span> <span class="p">();</span>
+<span class="n">setViewerPose</span><span class="p">(</span><span class="n">viewer</span><span class="p">,</span> <span class="n">range_image</span><span class="p">.</span><span class="n">getTransformationToWorldSystem</span> <span class="p">());</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>This creates the 3D viewer object, sets the background color to white, adds the range image (as a point cloud) with color black and point size 1 and sets the viewing position in the viewer to the sensor position from the range image (using a function defined above the main). The commented part can be used to add a coordinate system and also visualize the original point cloud.</p>
+<p>The next part visualizes the range image in 2D, using color coding for the range values:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">pcl</span><span class="o">::</span><span class="n">visualization</span><span class="o">::</span><span class="n">RangeImageVisualizer</span> <span class="n">range_image_widget</span> <span class="p">(</span><span class="s">&quot;Range image&quot;</span><span class="p">);</span>
+<span class="n">range_image_widget</span><span class="p">.</span><span class="n">setRangeImage</span> <span class="p">(</span><span class="n">range_image</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>Now we can start the main loop to keep the visualization alive, until the viewer window is closed:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">viewer</span><span class="p">.</span><span class="n">wasStopped</span> <span class="p">())</span>
+<span class="p">{</span>
+  <span class="n">range_image_widget</span><span class="p">.</span><span class="n">spinOnce</span> <span class="p">();</span>
+  <span class="n">viewer</span><span class="p">.</span><span class="n">spinOnce</span> <span class="p">();</span>
+  <span class="n">pcl_sleep</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>range_image_widget.spinOnce() handles the current events of the RangeImageVisualizer and viewer.spinOnce() does the same for the 3D viewer.</p>
+<p>Additionally there is the possibility to always update the 2D range image to correspond to the current percpective in the viewer window, which is activated using the command line parameter -l:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">live_update</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">scene_sensor_pose</span> <span class="o">=</span> <span class="n">viewer</span><span class="p">.</span><span class="n">getViewerPose</span><span class="p">();</span>
+    <span class="n">range_image</span><span class="p">.</span><span class="n">createFromPointCloud</span> <span class="p">(</span><span class="n">point_cloud</span><span class="p">,</span> <span class="n">angular_resolution</span><span class="p">,</span> <span class="n">pcl</span><span class="o">::</span><span class="n">deg2rad</span> <span class="p">(</span><span class="mf">360.0f</span><span class="p">),</span> <span class="n">pcl</span><span class="o">::</span><span class="n">deg2rad</span> <span class="p">(</span><span class="mf">180.0f</span><span class="p">),</span>
+                                      <span class="n">scene_sensor_pose</span><span class="p">,</span> <span class="n">pcl</span><span class="o">::</span><span class="n">RangeImage</span><span class="o">::</span><span class="n">LASER_FRAME</span><span class="p">,</span> <span class="n">noise_level</span><span class="p">,</span> <span class="n">min_range</span><span class="p">,</span> <span class="n">border_size</span><span class="p">);</span>
+    <span class="n">range_image_widget</span><span class="p">.</span><span class="n">setRangeImage</span> <span class="p">(</span><span class="n">range_image</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>Here we first get the current viewing position from the viewer window and then recreate the range image.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./range_image_visualization
+</pre></div>
+</div>
+<p>This will use an autogenerated point cloud of a rectangle floating in space. It opens two windows, one a 3D viewer of the point cloud and one a visual version of the range image, where the range values are color coded.</p>
+<p>You can also try it with a point cloud file from your hard drive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./range_image_visualization &lt;point_cloud.pcd&gt;
+</pre></div>
+</div>
+<p>You can also try the -l parameter to update the range image according to the current perspective in the viewer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./range_image_visualization -l &lt;point_cloud.pcd&gt;
+</pre></div>
+</div>
+<p>The output should look similar to this:</p>
+<a class="reference internal image-reference" href="_images/range_image_visualization.png"><img alt="_images/range_image_visualization.png" src="_images/range_image_visualization.png" style="width: 500px;" /></a>
+<p>Unseen areas (range -INFINITY) are shown in pale green and far ranges (range INFINITY - if available in the scan) in pale blue.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

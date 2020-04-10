@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Euclidean Cluster Extraction &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Euclidean Cluster Extraction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/cluster_extraction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="euclidean-cluster-extraction">
+<span id="cluster-extraction"></span><h1><a class="toc-backref" href="#id2">Euclidean Cluster Extraction</a><a class="headerlink" href="#euclidean-cluster-extraction" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will learn how to <strong>extract Euclidean clusters</strong> with the
+<code class="docutils literal notranslate"><span class="pre">pcl::EuclideanClusterExtraction</span></code> class. In order to not complicate the
+tutorial, certain elements of it such as the plane segmentation algorithm,
+will not be explained here. Please check the <a class="reference internal" href="planar_segmentation.html#planar-segmentation"><span class="std std-ref">Plane model segmentation</span></a>
+tutorial for more information.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#euclidean-cluster-extraction" id="id2">Euclidean Cluster Extraction</a></p>
+<ul>
+<li><p><a class="reference internal" href="#theoretical-primer" id="id3">Theoretical Primer</a></p></li>
+<li><p><a class="reference internal" href="#the-code" id="id4">The Code</a></p></li>
+<li><p><a class="reference internal" href="#the-explanation" id="id5">The Explanation</a></p></li>
+<li><p><a class="reference internal" href="#compiling-and-running-the-program" id="id6">Compiling and running the program</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="theoretical-primer">
+<h2><a class="toc-backref" href="#id3">Theoretical Primer</a><a class="headerlink" href="#theoretical-primer" title="Permalink to this headline">¶</a></h2>
+<p>A clustering method needs to divide an unorganized point cloud model <span class="math notranslate nohighlight">\(P\)</span>
+into smaller parts so that the overall processing time for <span class="math notranslate nohighlight">\(P\)</span> is
+significantly reduced. A simple data clustering approach in an Euclidean sense
+can be implemented by making use of a 3D grid subdivision of the space using
+fixed width boxes, or more generally, an octree data structure. This particular
+representation is very fast to build and is useful for situations where either
+a volumetric representation of the occupied space is needed, or the data in
+each resultant 3D box (or octree leaf) can be approximated with a different
+structure. In a more general sense however, we can make use of nearest
+neighbors and implement a clustering technique that is essentially similar to a
+flood fill algorithm.</p>
+<p>Let’s assume we have given a point cloud with a table and objects on top of it.
+We want to find and segment the individual object point clusters lying on the
+plane. Assuming that we use a Kd-tree structure for finding the nearest
+neighbors, the algorithmic steps for that would be (from <a class="reference internal" href="how_features_work.html#rusudissertation" id="id1"><span>[RusuDissertation]</span></a>):</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><em>create a Kd-tree representation for the input point cloud dataset</em> <span class="math notranslate nohighlight">\(P\)</span>;</p></li>
+<li><p><em>set up an empty list of clusters</em> <span class="math notranslate nohighlight">\(C\)</span>, <em>and a queue of the points that need to be checked</em> <span class="math notranslate nohighlight">\(Q\)</span>;</p></li>
+<li><p><em>then for every point</em> <span class="math notranslate nohighlight">\(\boldsymbol{p}_i \in P\)</span>, <em>perform the following steps:</em></p>
+<blockquote>
+<div><ul>
+<li><p><em>add</em> <span class="math notranslate nohighlight">\(\boldsymbol{p}_i\)</span> <em>to the current queue</em> <span class="math notranslate nohighlight">\(Q\)</span>;</p></li>
+<li><p><em>for every point</em> <span class="math notranslate nohighlight">\(\boldsymbol{p}_i \in Q\)</span> <em>do:</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>search for the set</em> <span class="math notranslate nohighlight">\(P^i_k\)</span> <em>of point neighbors of</em> <span class="math notranslate nohighlight">\(\boldsymbol{p}_i\)</span> <em>in a sphere with radius</em> <span class="math notranslate nohighlight">\(r &lt; d_{th}\)</span>;</p></li>
+<li><p><em>for every neighbor</em> <span class="math notranslate nohighlight">\(\boldsymbol{p}^k_i \in P^k_i\)</span>, <em>check if the point has already been processed, and if not add it to</em> <span class="math notranslate nohighlight">\(Q\)</span>;</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>when the list of all points in</em> <span class="math notranslate nohighlight">\(Q\)</span> <em>has been processed, add</em>
+<span class="math notranslate nohighlight">\(Q\)</span> <em>to the list of clusters</em> <span class="math notranslate nohighlight">\(C\)</span>, <em>and reset</em> <span class="math notranslate nohighlight">\(Q\)</span> <em>to an
+empty list</em></p></li>
+</ul>
+</li>
+<li><p><em>the algorithm terminates when all points</em> <span class="math notranslate nohighlight">\(\boldsymbol{p}_i \in P\)</span> <em>have been processed and are now part of the list of point clusters</em> <span class="math notranslate nohighlight">\(C\)</span></p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="the-code">
+<h2><a class="toc-backref" href="#id4">The Code</a><a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h2>
+<p>First, download the dataset <a class="reference external" href="https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_lms400.pcd">table_scene_lms400.pcd</a> and save it somewhere to disk.</p>
+<p>Then, create a file, let’s say, <code class="docutils literal notranslate"><span class="pre">cluster_extraction.cpp</span></code> in your favorite
+editor, and place the following inside it:</p>
+</div>
+<div class="section" id="the-explanation">
+<h2><a class="toc-backref" href="#id5">The Explanation</a><a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s break down the code piece by piece, skipping the obvious.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="c1">// Read in the cloud data</span>
+    <span class="n">pcl</span><span class="o">::</span><span class="n">PCDReader</span> <span class="n">reader</span><span class="p">;</span>
+    <span class="n">pcl</span><span class="o">::</span><span class="n">PointCloud</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointXYZ</span><span class="o">&gt;::</span><span class="n">Ptr</span> <span class="n">cloud</span> <span class="p">(</span><span class="k">new</span> <span class="n">pcl</span><span class="o">::</span><span class="n">PointCloud</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointXYZ</span><span class="o">&gt;</span><span class="p">),</span> <span class="n">cloud_f</span> <span class="p">(</span><span class="k">new</span> <span class="n">pcl</span><span class="o">::</span><span class="n">PointCloud</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointXYZ</span><span class="o">&gt;</span><span class="p">);</span>
+    <span class="n">reader</span><span class="p">.</span><span class="n">read</span> <span class="p">(</span><span class="s">&quot;table_scene_lms400.pcd&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">cloud</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;PointCloud before filtering has: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cloud</span><span class="o">-&gt;</span><span class="n">points</span><span class="p">.</span><span class="n">size</span> <span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; data points.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+              <span class="p">.</span>
+              <span class="p">.</span>
+              <span class="p">.</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">cloud_filtered</span><span class="o">-&gt;</span><span class="n">points</span><span class="p">.</span><span class="n">size</span> <span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">nr_points</span><span class="p">)</span>
+    <span class="p">{</span>
+
+              <span class="p">.</span>
+              <span class="p">.</span>
+              <span class="p">.</span>
+
+            <span class="c1">// Remove the plane inliers, extract the rest</span>
+      <span class="n">extract</span><span class="p">.</span><span class="n">setNegative</span> <span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+      <span class="n">extract</span><span class="p">.</span><span class="n">filter</span> <span class="p">(</span><span class="o">*</span><span class="n">cloud_f</span><span class="p">);</span>
+<span class="n">cloud_filtered</span> <span class="o">=</span> <span class="n">cloud_f</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>The code above is already described in other tutorials, so you can read the
+explanation there (in particular <a class="reference internal" href="planar_segmentation.html#planar-segmentation"><span class="std std-ref">Plane model segmentation</span></a> and
+<a class="reference internal" href="extract_indices.html#extract-indices"><span class="std std-ref">Extracting indices from a PointCloud</span></a>).</p>
+<p>There we are creating a KdTree object for the search method of our extraction
+algorithm.</p>
+<p>Here we are creating a vector of <cite>PointIndices</cite>, which contain the actual index information in a <cite>vector&lt;int&gt;</cite>. The indices of each detected
+cluster are saved here - please take note of the fact that <cite>cluster_indices</cite> is a
+vector containing one instance of PointIndices for each detected cluster. So
+<cite>cluster_indices[0]</cite> contains all indices of the first cluster in our point cloud.</p>
+<p>Here we are creating a EuclideanClusterExtraction object with point type
+PointXYZ since our point cloud is of type PointXYZ. We are also setting the
+parameters and variables for the extraction.  Be careful setting the right
+value for <strong>setClusterTolerance()</strong>. If you take a very small value, it can
+happen that an actual <em>object</em> can be seen as multiple clusters. On the other
+hand, if you set the value too high, it could happen, that multiple <em>objects</em>
+are seen as one cluster. So our recommendation is to just test and try out
+which value suits your dataset.</p>
+<p>We impose that the clusters found must have at least <strong>setMinClusterSize()</strong>
+points and maximum <strong>setMaxClusterSize()</strong> points.</p>
+<p>Now we extracted the clusters out of our point cloud and saved the indices in
+<strong>cluster_indices</strong>. To separate each cluster out of the <cite>vector&lt;PointIndices&gt;</cite>
+we have to iterate through <em>cluster_indices</em>, create a new <cite>PointCloud</cite> for
+each entry and write all points of the current cluster in the <cite>PointCloud</cite>.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h2><a class="toc-backref" href="#id6">Compiling and running the program</a><a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h2>
+<p>Add the following lines to your CMakeLists.txt</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./cluster_extraction
+</pre></div>
+</div>
+<p>You will see something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PointCloud</span> <span class="n">before</span> <span class="n">filtering</span> <span class="n">has</span><span class="p">:</span> <span class="mi">460400</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="n">PointCloud</span> <span class="n">after</span> <span class="n">filtering</span> <span class="n">has</span><span class="p">:</span> <span class="mi">41049</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="p">[</span><span class="n">SACSegmentation</span><span class="p">::</span><span class="n">initSACModel</span><span class="p">]</span> <span class="n">Using</span> <span class="n">a</span> <span class="n">model</span> <span class="n">of</span> <span class="nb">type</span><span class="p">:</span> <span class="n">SACMODEL_PLANE</span>
+<span class="p">[</span><span class="n">SACSegmentation</span><span class="p">::</span><span class="n">initSAC</span><span class="p">]</span> <span class="n">Using</span> <span class="n">a</span> <span class="n">method</span> <span class="n">of</span> <span class="nb">type</span><span class="p">:</span> <span class="n">SAC_RANSAC</span> <span class="k">with</span> <span class="n">a</span> <span class="n">model</span> <span class="n">threshold</span> <span class="n">of</span> <span class="mf">0.020000</span>
+<span class="p">[</span><span class="n">SACSegmentation</span><span class="p">::</span><span class="n">initSAC</span><span class="p">]</span> <span class="n">Setting</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="n">to</span> <span class="mi">100</span>
+<span class="n">PointCloud</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">planar</span> <span class="n">component</span><span class="p">:</span> <span class="mi">20522</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="p">[</span><span class="n">SACSegmentation</span><span class="p">::</span><span class="n">initSACModel</span><span class="p">]</span> <span class="n">Using</span> <span class="n">a</span> <span class="n">model</span> <span class="n">of</span> <span class="nb">type</span><span class="p">:</span> <span class="n">SACMODEL_PLANE</span>
+<span class="p">[</span><span class="n">SACSegmentation</span><span class="p">::</span><span class="n">initSAC</span><span class="p">]</span> <span class="n">Using</span> <span class="n">a</span> <span class="n">method</span> <span class="n">of</span> <span class="nb">type</span><span class="p">:</span> <span class="n">SAC_RANSAC</span> <span class="k">with</span> <span class="n">a</span> <span class="n">model</span> <span class="n">threshold</span> <span class="n">of</span> <span class="mf">0.020000</span>
+<span class="p">[</span><span class="n">SACSegmentation</span><span class="p">::</span><span class="n">initSAC</span><span class="p">]</span> <span class="n">Setting</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="n">to</span> <span class="mi">100</span>
+<span class="n">PointCloud</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">planar</span> <span class="n">component</span><span class="p">:</span> <span class="mi">12429</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="n">PointCloud</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mi">4883</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="n">PointCloud</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mi">1386</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="n">PointCloud</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mi">320</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="n">PointCloud</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mi">290</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+<span class="n">PointCloud</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mi">120</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>You can also look at your outputs cloud_cluster_0.pcd, cloud_cluster_1.pcd,
+cloud_cluster_2.pcd, cloud_cluster_3.pcd and cloud_cluster_4.pcd:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pcl_viewer cloud_cluster_0.pcd cloud_cluster_1.pcd cloud_cluster_2.pcd cloud_cluster_3.pcd cloud_cluster_4.pcd
+</pre></div>
+</div>
+<p>You are now able to see the different clusters in one viewer. You should see
+something similar to this:</p>
+<img alt="Output Cluster Extraction" class="align-center" src="_images/cluster_extraction.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

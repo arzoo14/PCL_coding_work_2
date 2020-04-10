@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Spatial Partitioning and Search Operations with Octrees &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Spatial Partitioning and Search Operations with Octrees</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/octree.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spatial-partitioning-and-search-operations-with-octrees">
+<span id="octree-search"></span><h1>Spatial Partitioning and Search Operations with Octrees<a class="headerlink" href="#spatial-partitioning-and-search-operations-with-octrees" title="Permalink to this headline">¶</a></h1>
+<p>An octree is a tree-based data structure for managing sparse 3-D data. Each internal node has exactly eight children.
+In this tutorial we will learn how to use the octree for spatial partitioning and neighbor search within pointcloud data. Particularly, we explain how to perform a “Neighbors within Voxel Search”, the
+“K Nearest Neighbor Search” and “Neighbors within Radius Search”.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code:<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>First, create a file, let’s say, <code class="docutils literal notranslate"><span class="pre">octree_search.cpp</span></code> and place the following inside it:</p>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>Now, let’s explain the code in detail.</p>
+<p>We fist define and instantiate a shared PointCloud structure and fill it with random points.</p>
+<p>Then we create an octree instance which is initialized with its resolution. This octree keeps a vector of point indices within its leaf nodes.
+The resolution parameter describes the length of the smallest voxels at lowest octree level. The depth of the octree is therefore a function of the resolution as well as
+the spatial dimension of the pointcloud. If a bounding box of the pointcloud is know, it should be assigned to the octree by using the defineBoundingBox method.
+Then we assign a pointer to the PointCloud and add all points to the octree.</p>
+<p>Once the PointCloud is associated with an octree, we can perform search operations. The fist search method used here is “Neighbors within Voxel Search”. It assigns the search point to the corresponding
+leaf node voxel and returns a vector of point indices. These indices relate to points which fall within the same voxel. The distance between
+the search point and the search result depend therefore on the resolution parameter of the octree.</p>
+<p>Next, a K nearest neighbor search is demonstrated. In this example, K is set to 10. The “K Nearest Neighbor Search” method writes the search results into two separate vectors.
+The first one, pointIdxNKNSearch, will contain the search result (indices referring to the associated PointCloud data set). The second vector holds corresponding squared distances
+between the search point and the nearest neighbors.</p>
+<p>The “Neighbors within Radius Search” works very similar to the “K Nearest Neighbor Search”. Its search results are written to two separate vectors describing
+point indices and squares search point distances.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have made the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./octreesearch
+</pre></div>
+</div>
+<p>You will see something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Neighbors</span> <span class="n">within</span> <span class="n">voxel</span> <span class="n">search</span> <span class="n">at</span> <span class="p">(</span><span class="mf">974.82</span> <span class="mf">188.793</span> <span class="mf">138.779</span><span class="p">)</span>
+    <span class="mf">903.656</span> <span class="mf">82.8158</span> <span class="mf">162.392</span>
+    <span class="mf">1007.34</span> <span class="mf">191.035</span> <span class="mf">61.7727</span>
+    <span class="mf">896.88</span> <span class="mf">155.711</span> <span class="mf">58.1942</span>
+<span class="n">K</span> <span class="n">nearest</span> <span class="n">neighbor</span> <span class="n">search</span> <span class="n">at</span> <span class="p">(</span><span class="mf">974.82</span> <span class="mf">188.793</span> <span class="mf">138.779</span><span class="p">)</span> <span class="k">with</span> <span class="n">K</span><span class="o">=</span><span class="mi">10</span>
+    <span class="mf">903.656</span> <span class="mf">82.8158</span> <span class="mf">162.392</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">16853.1</span><span class="p">)</span>
+    <span class="mf">903.18</span> <span class="mf">247.058</span> <span class="mf">54.3528</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mi">15655</span><span class="p">)</span>
+    <span class="mf">861.595</span> <span class="mf">149.96</span> <span class="mf">135.199</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">14340.7</span><span class="p">)</span>
+    <span class="mf">896.88</span> <span class="mf">155.711</span> <span class="mf">58.1942</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mi">13663</span><span class="p">)</span>
+    <span class="mf">995.889</span> <span class="mf">116.224</span> <span class="mf">219.077</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">12157.9</span><span class="p">)</span>
+    <span class="mf">885.852</span> <span class="mf">238.41</span> <span class="mf">160.966</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">10869.5</span><span class="p">)</span>
+    <span class="mf">900.807</span> <span class="mf">220.317</span> <span class="mf">77.1432</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">10270.7</span><span class="p">)</span>
+    <span class="mf">1002.46</span> <span class="mf">117.236</span> <span class="mf">184.594</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">7983.59</span><span class="p">)</span>
+    <span class="mf">1007.34</span> <span class="mf">191.035</span> <span class="mf">61.7727</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">6992.54</span><span class="p">)</span>
+    <span class="mf">930.13</span> <span class="mf">223.335</span> <span class="mf">174.763</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">4485.15</span><span class="p">)</span>
+<span class="n">Neighbors</span> <span class="n">within</span> <span class="n">radius</span> <span class="n">search</span> <span class="n">at</span> <span class="p">(</span><span class="mf">974.82</span> <span class="mf">188.793</span> <span class="mf">138.779</span><span class="p">)</span> <span class="k">with</span> <span class="n">radius</span><span class="o">=</span><span class="mf">109.783</span>
+    <span class="mf">1007.34</span> <span class="mf">191.035</span> <span class="mf">61.7727</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">6992.54</span><span class="p">)</span>
+    <span class="mf">900.807</span> <span class="mf">220.317</span> <span class="mf">77.1432</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">10270.7</span><span class="p">)</span>
+    <span class="mf">885.852</span> <span class="mf">238.41</span> <span class="mf">160.966</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">10869.5</span><span class="p">)</span>
+    <span class="mf">1002.46</span> <span class="mf">117.236</span> <span class="mf">184.594</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">7983.59</span><span class="p">)</span>
+    <span class="mf">930.13</span> <span class="mf">223.335</span> <span class="mf">174.763</span> <span class="p">(</span><span class="n">squared</span> <span class="n">distance</span><span class="p">:</span> <span class="mf">4485.15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="additional-details">
+<h1>Additional Details<a class="headerlink" href="#additional-details" title="Permalink to this headline">¶</a></h1>
+<p>Several octree types are provided by the PCL octree component. They basically differ by their individual leaf node characteristics.</p>
+<ul class="simple">
+<li><p>OctreePointCloudPointVector (equal to OctreePointCloud): This octree can hold a list of point indices at each leaf node.</p></li>
+<li><p>OctreePointCloudSinglePoint: This octree class hold only a single point indices at each leaf node. Only the most recent point index that is assigned to the leaf node is stored.</p></li>
+<li><p>OctreePointCloudOccupancy: This octree does not store any point information at its leaf nodes. It can be used for spatial occupancy checks.</p></li>
+<li><p>OctreePointCloudDensity: This octree counts the amount of points within each leaf node voxel. It allows for spatial density queries.</p></li>
+</ul>
+<p>If octrees needs to be created at high rate, please have a look at the octree double buffering implementation ( Octree2BufBase class ). This class
+keeps two parallel octree structures in the memory at the same time. In addition to search operations, this also enables spatial change detection. Furthermore, an advanced memory management reduces memory allocation
+and deallocation operations during the octree building process. The double buffering octree implementation can be assigned to all OctreePointCloud classes via the template argument “OctreeT”.</p>
+<p>All octrees support serialization and deserialization of the octree structure and the octree data content.</p>
+</div>
+<div class="section" id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h1>
+<p>The PCL octree implementation is a powerful tools for spatial partitioning and search operation.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

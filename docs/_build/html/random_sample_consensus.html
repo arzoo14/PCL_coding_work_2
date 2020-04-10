@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to use Random Sample Consensus model &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to use Random Sample Consensus model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/random_sample_consensus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use-random-sample-consensus-model">
+<span id="random-sample-consensus"></span><h1>How to use Random Sample Consensus model<a class="headerlink" href="#how-to-use-random-sample-consensus-model" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we learn how to use a RandomSampleConsensus with a plane model to obtain the cloud fitting to this model.</p>
+</div>
+<div class="section" id="theoretical-primer">
+<h1>Theoretical Primer<a class="headerlink" href="#theoretical-primer" title="Permalink to this headline">¶</a></h1>
+<p>The abbreviation of “RANdom SAmple Consensus” is RANSAC, and it is an iterative method that is used to estimate parameters of a mathematical model from a set of data containing outliers.  This algorithm was published by Fischler and Bolles in 1981.  The RANSAC algorithm assumes that all of the data we are looking at is comprised of both inliers and outliers.  Inliers can be explained by a model with a particular set of parameter values, while outliers do not fit that model in any circumstance.  Another necessary assumption is that a procedure which can optimally estimate the parameters of the chosen model from the data is available.</p>
+<p>From <a class="reference internal" href="#wikipedia" id="id1"><span>[Wikipedia]</span></a>:</p>
+<blockquote>
+<div><p><em>The input to the RANSAC algorithm is a set of observed data values, a parameterized model which can explain or be fitted to the observations, and some confidence parameters.</em></p>
+<p><em>RANSAC achieves its goal by iteratively selecting a random subset of the original data. These data are hypothetical inliers and this hypothesis is then tested as follows:</em></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><em>A model is fitted to the hypothetical inliers, i.e. all free parameters of the model are reconstructed from the inliers.</em></p></li>
+<li><p><em>All other data are then tested against the fitted model and, if a point fits well to the estimated model, also considered as a hypothetical inlier.</em></p></li>
+<li><p><em>The estimated model is reasonably good if sufficiently many points have been classified as hypothetical inliers.</em></p></li>
+<li><p><em>The model is reestimated from all hypothetical inliers, because it has only been estimated from the initial set of hypothetical inliers.</em></p></li>
+<li><p><em>Finally, the model is evaluated by estimating the error of the inliers relative to the model.</em></p></li>
+</ol>
+</div></blockquote>
+<p><em>This procedure is repeated a fixed number of times, each time producing either a model which is rejected because too few points are classified as inliers or a refined model together with a corresponding error measure. In the latter case, we keep the refined model if its error is lower than the last saved model.</em></p>
+<p><em>…</em></p>
+<p><em>An advantage of RANSAC is its ability to do robust estimation of the model parameters, i.e., it can estimate the parameters with a high degree of accuracy even when a significant number of outliers are present in the data set. A disadvantage of RANSAC is that there is no upper bound on the time it takes to compute these parameters. When the number of iterations computed is limited the solution obtained may not be optimal, and it may not even be one that fits the data in a good way. In this way RANSAC offers a trade-off; by computing a greater number of iterations the probability of a reasonable model being produced is increased. Another disadvantage of RANSAC is that it requires the setting of problem-specific thresholds.</em></p>
+<p><em>RANSAC can only estimate one model for a particular data set. As for any one-model approach when two (or more) models exist, RANSAC may fail to find either one.</em></p>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/random_sample_example1.png"><img alt="_images/random_sample_example1.png" class="align-left" src="_images/random_sample_example1.png" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/random_sample_example2.png"><img alt="_images/random_sample_example2.png" class="align-right" src="_images/random_sample_example2.png" style="height: 200px;" /></a>
+<p>The pictures to the left and right (From <a class="reference internal" href="#wikipedia" id="id2"><span>[Wikipedia]</span></a>) show a simple application of the RANSAC algorithm on a 2-dimensional set of data. The image on our left is a visual representation of a data set containing both inliers and outliers.  The image on our right shows all of the outliers in red, and shows inliers in blue.  The blue line is the result of the work done by RANSAC.  In this case the model that we are trying to fit to the data is a line, and it looks like it’s a fairly good fit to our data.</p>
+</div>
+<div class="section" id="the-code">
+<h1>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h1>
+<p>Create a file, let’s say, <code class="docutils literal notranslate"><span class="pre">random_sample_consensus.cpp</span></code> in your favorite editor and place the following inside:</p>
+</div>
+<div class="section" id="the-explanation">
+<h1>The explanation<a class="headerlink" href="#the-explanation" title="Permalink to this headline">¶</a></h1>
+<p>The following source code initializes two PointClouds and fills one of them with points.  The majority of these points are placed in the cloud according to a model, but a fraction (1/5) of them are given arbitrary locations.</p>
+<p>Next we create a vector of ints that can store the locations of our inlier points from our PointCloud and now we can build our RandomSampleConsensus object using either a plane or a sphere model from our input cloud.</p>
+<p>This last bit of code copies all of the points that fit our model to another cloud and then display either that or our original cloud in the viewer.</p>
+<p>There is some extra code that relates to the display of the PointClouds in the 3D Viewer, but I’m not going to explain that here.</p>
+</div>
+<div class="section" id="compiling-and-running-the-program">
+<h1>Compiling and running the program<a class="headerlink" href="#compiling-and-running-the-program" title="Permalink to this headline">¶</a></h1>
+<p>Add the following lines to your CMakeLists.txt file:</p>
+<p>After you have built the executable, you can run it. Simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./random_sample_consensus
+</pre></div>
+</div>
+<p>to have a viewer window display that shows you the original PointCloud (with outliers) we have created.</p>
+<a class="reference internal image-reference" href="_images/ransac_outliers_plane.png"><img alt="_images/ransac_outliers_plane.png" class="align-center" src="_images/ransac_outliers_plane.png" style="height: 400px;" /></a>
+<p>Hit ‘r’ on your keyboard to scale and center the viewer.  You can then click and drag to rotate the view.  You can tell there is very little organization to this PointCloud and that it contains many outliers.  Pressing ‘q’ on your keyboard will close the viewer and end the program.  Now if you run the program with the following argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./random_sample_consensus -f
+</pre></div>
+</div>
+<p>the program will display only the indices of the original PointCloud which satisfy the particular model we have chosen (in this case plane) as found by RandomSampleConsens in the viewer.</p>
+<a class="reference internal image-reference" href="_images/ransac_inliers_plane.png"><img alt="_images/ransac_inliers_plane.png" class="align-center" src="_images/ransac_inliers_plane.png" style="height: 400px;" /></a>
+<p>Again hit ‘r’ to scale and center the view and then click and drag with the mouse to rotate around the cloud.  You can see there are no longer any points that do not lie with in the plane model in this PointCloud. Hit ‘q’ to exit the viewer and program.</p>
+<p>There is also an example using a sphere in this program.  If you run it with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./random_sample_consensus -s
+</pre></div>
+</div>
+<p>It will generate and display a sphereical cloud and some outliers as well.</p>
+<a class="reference internal image-reference" href="_images/ransac_outliers_sphere.png"><img alt="_images/ransac_outliers_sphere.png" class="align-center" src="_images/ransac_outliers_sphere.png" style="height: 400px;" /></a>
+<p>Then when you run the program with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./random_sample_consensus -sf
+</pre></div>
+</div>
+<p>It will show you the result of applying RandomSampleConsensus to this data set with a spherical model.</p>
+<a class="reference internal image-reference" href="_images/ransac_inliers_sphere.png"><img alt="_images/ransac_inliers_sphere.png" class="align-center" src="_images/ransac_inliers_sphere.png" style="height: 400px;" /></a>
+<dl class="citation">
+<dt class="label" id="wikipedia"><span class="brackets">Wikipedia</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p><a class="reference external" href="http://en.wikipedia.org/wiki/RANSAC">http://en.wikipedia.org/wiki/RANSAC</a></p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

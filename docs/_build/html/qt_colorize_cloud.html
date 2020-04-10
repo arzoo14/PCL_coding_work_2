@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Create a PCL visualizer in Qt to colorize clouds &mdash; PCL DOCUMENTATION 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: dark blue" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PCL DOCUMENTATION
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkthrough.html">1. PCL Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_structures.html">2. Getting Started / Basic Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_pcl_config.html">3. Using PCL in your own project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_posix.html">4. Compiling PCL from source on POSIX compliant systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_pcl.html">5. Customizing the PCL build process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_dependencies_windows.html">6. Building PCL’s dependencies from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_windows.html">7. Compiling PCL from source on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_pcl_macosx.html">8. Compiling PCL and its dependencies from MacPorts and source on Mac OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing_homebrew.html">9. Installing on Mac OS X using Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_pcl_with_eclipse.html">10. Using PCL with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_local_doc.html">11. Generate a local documentation for PCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_transform.html">12. Using a matrix to transform a point cloud</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding_custom_ptype.html">1. Adding your own custom <cite>PointT</cite> type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_new_classes.html">2. Writing a new PCL class</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how_features_work.html">1. How 3D Features work in PCL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PCL DOCUMENTATION</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Create a PCL visualizer in Qt to colorize clouds</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/qt_colorize_cloud.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="create-a-pcl-visualizer-in-qt-to-colorize-clouds">
+<span id="qt-colorize-cloud"></span><h1><a class="toc-backref" href="#id1">Create a PCL visualizer in Qt to colorize clouds</a><a class="headerlink" href="#create-a-pcl-visualizer-in-qt-to-colorize-clouds" title="Permalink to this headline">¶</a></h1>
+<p>Please read and do the <a class="reference external" href="http://www.pointclouds.org/documentation/tutorials/qt_visualizer.php">PCL + Qt tutorial</a> first;
+only the coloring part is explained in details here.</p>
+<p>In this tutorial we will learn how to color clouds by computing a <a class="reference external" href="https://en.wikipedia.org/wiki/Lookup_table">Look Up Table (LUT)</a>,
+compared to the first tutorial this tutorial shows you how to connect multiple slots to one function. It also showcases how to load and save
+files within the Qt interface.</p>
+<div class="line-block">
+<div class="line">The tutorial was tested on Linux Ubuntu 12.04 and 14.04. It also seems to be working fine on Windows 8.1 x64.</div>
+<div class="line">Feel free to push modifications into the git repo to make this code/tutorial compatible with your platform !</div>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#create-a-pcl-visualizer-in-qt-to-colorize-clouds" id="id1">Create a PCL visualizer in Qt to colorize clouds</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-project" id="id2">The project</a></p></li>
+<li><p><a class="reference internal" href="#user-interface-ui" id="id3">User interface (UI)</a></p></li>
+<li><p><a class="reference internal" href="#the-code" id="id4">The code</a></p>
+<ul>
+<li><p><a class="reference internal" href="#pclviewer-h" id="id5">pclviewer.h</a></p></li>
+<li><p><a class="reference internal" href="#pclviewer-cpp" id="id6">pclviewer.cpp</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#compiling-and-running" id="id7">Compiling and running</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-project">
+<h2><a class="toc-backref" href="#id2">The project</a><a class="headerlink" href="#the-project" title="Permalink to this headline">¶</a></h2>
+<p>As for the other tutorial, we use <a class="reference external" href="https://en.wikipedia.org/wiki/CMake">cmake</a> instead of <a class="reference external" href="http://qt-project.org/doc/qt-4.8/qmake-manual.html">qmake</a>.
+This is how I organized the project: the build folder contains all built files and the src folder holds all sources files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── build
+└── src
+    ├── CMakeLists.txt
+    ├── main.cpp
+    ├── pclviewer.cpp
+    ├── pclviewer.h
+    ├── pclviewer.ui
+    └── pcl_visualizer.pro
+</pre></div>
+</div>
+<p>If you want to change this layout you will have to do minor modifications in the code, especially line 2 of <code class="docutils literal notranslate"><span class="pre">pclviewer.cpp</span></code>
+Create the folder tree and download the sources files from <a class="reference external" href="https://github.com/PointCloudLibrary/pcl/tree/master/doc/tutorials/content/sources/qt_colorize_cloud">github</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File paths should not contain any special character or the compilation might fail with a <code class="docutils literal notranslate"><span class="pre">moc:</span> <span class="pre">Cannot</span> <span class="pre">open</span> <span class="pre">options</span> <span class="pre">file</span> <span class="pre">specified</span> <span class="pre">with</span> <span class="pre">&#64;</span></code> error message.</p>
+</div>
+</div>
+<div class="section" id="user-interface-ui">
+<h2><a class="toc-backref" href="#id3">User interface (UI)</a><a class="headerlink" href="#user-interface-ui" title="Permalink to this headline">¶</a></h2>
+<p>The UI looks like this:</p>
+<a class="reference internal image-reference" href="_images/ui.png"><img alt="_images/ui.png" src="_images/ui.png" style="height: 499px;" /></a>
+<p>The vertical spacers are here to make sure everything moves fine when you re-size the window; the QVTK widget size has been set to a minimum size of
+640 x 480 pixel, the layout makes sure that the QVTK widget expands when you re-size the application window.</p>
+</div>
+<div class="section" id="the-code">
+<h2><a class="toc-backref" href="#id4">The code</a><a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s break down the code piece by piece.</p>
+<div class="section" id="pclviewer-h">
+<h3><a class="toc-backref" href="#id5">pclviewer.h</a><a class="headerlink" href="#pclviewer-h" title="Permalink to this headline">¶</a></h3>
+<p>These are the public slots triggered by the buttons in the UI.</p>
+<dl class="simple">
+<dt>These are the protected members of our class;</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">viewer_</span></code> is the visualizer object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cloud_</span></code> holds the point cloud displayed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filtering_axis_</span></code> stores on which axis we want to filter the point cloud. We need this variable because we only have one slot for 3 axes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color_mode_</span></code> stores the color mode for the colorization, we need this variable for the same reason we need <code class="docutils literal notranslate"><span class="pre">filtering_axis_</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">colorCloudDistances</span> <span class="pre">()</span></code> is the member function that actually colorize the point cloud.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="pclviewer-cpp">
+<h3><a class="toc-backref" href="#id6">pclviewer.cpp</a><a class="headerlink" href="#pclviewer-cpp" title="Permalink to this headline">¶</a></h3>
+<p>We initialize the members of our class to default values (note that theses values should match with the UI buttons ticked)</p>
+<p>Here we initialize the UI, window title and generate a random point cloud (500 points), note we don’t care about the color for now.</p>
+<p>Here we set up the QVTK window.</p>
+<p>At this point we connect SLOTS and their functions to ensure that each UI elements has an use.</p>
+<p>We call the coloring function, add the point cloud and refresh the QVTK viewer.</p>
+<p>This functions deals with opening files, it supports both <code class="docutils literal notranslate"><span class="pre">pcd</span></code> and <code class="docutils literal notranslate"><span class="pre">ply</span></code> files.
+The LUT computing will only work if the point cloud is dense (only finite values) so we remove NaN values from the point cloud if needed.</p>
+<div class="line-block">
+<div class="line">This functions deals with saving the displayed file, it supports both <code class="docutils literal notranslate"><span class="pre">pcd</span></code> and <code class="docutils literal notranslate"><span class="pre">ply</span></code> files.</div>
+<div class="line">As said before, if the user doesn’t append an extension to the file name, <code class="docutils literal notranslate"><span class="pre">ply</span></code> will be automatically added.</div>
+</div>
+<p>This function is called whenever one of the three radio buttons X,Y,Z are clicked, it determines which radio button is clicked and changes
+the <code class="docutils literal notranslate"><span class="pre">filtering_axis_</span></code> member accordingly.</p>
+<p>This function is called whenever one of the radio buttons in the color list is clicked, the <code class="docutils literal notranslate"><span class="pre">color_mode_</span></code> member is modified accordingly.
+We also call the coloring function and update the cloud / QVTK widget.</p>
+<div class="line-block">
+<div class="line">This is the core function of the application. We are going to color the cloud following a color scheme.</div>
+</div>
+<p>The point cloud is going to be colored following one direction, we first need to know where it starts and where it ends
+(the minimum &amp; maximum point values along the chosen axis). We first set the initial minimal value to the first point value
+(this is safe because we removed NaN points from the point clouds). The switch case allows us to deal with the 3 different axes.</p>
+<p>We then loop through the whole cloud to find the minimum and maximum values.</p>
+<p>Here we compute the scaling, RGB values are coded from 0 to 255 (as integers), we need to scale our distances so that the
+minimum distance equals 0 (in RGB scale) and the maximum distance 255 (in RGB scale).
+The <code class="docutils literal notranslate"><span class="pre">if</span></code> condition is here in case of a perfectly flat point cloud and avoids exceptions thrown by boost.</p>
+<p>We have computed how much we need to scale the distances to fit the RGB scale, we first need to round the <code class="docutils literal notranslate"><span class="pre">double</span></code> values to the closest <code class="docutils literal notranslate"><span class="pre">integer</span></code>
+because colors are coded as integers.</p>
+<p>This is where we apply the color level we have computed to the point cloud R,G,B values.
+You can do whatever you want here, the simplest option is to apply the 3 channels (R,G,B) to the <code class="docutils literal notranslate"><span class="pre">value</span></code> computed, this means that the
+minimum distance will translate into dark (black = 0,0,0) points and maximal distances into white (255,255,255) points.</p>
+<p>These are examples of coloring schemes, if you are wondering how it works, simply plot the computed values into a spreadsheet software.</p>
+</div>
+</div>
+<div class="section" id="compiling-and-running">
+<h2><a class="toc-backref" href="#id7">Compiling and running</a><a class="headerlink" href="#compiling-and-running" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>There are two options here :</dt><dd><ul class="simple">
+<li><p>You have configured the Qt project (see <a class="reference external" href="http://www.pointclouds.org/documentation/tutorials/qt_visualizer.php#qt-configuration">Qt visualizer tutorial</a>) and you can compile/run just by clicking on the bottom left “Play” button.</p></li>
+<li><p>You didn’t configure the Qt project; just go to the build folder an run <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">../src</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">-j2</span> <span class="pre">&amp;&amp;</span> <span class="pre">./pcl_visualizer</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Note that if you don’t specify a extension when saving the file, the file will be saved as a binary PLY file.</p>
+<a class="reference internal image-reference" href="_images/colorize_cloud.gif"><img alt="_images/colorize_cloud.gif" src="_images/colorize_cloud.gif" style="height: 526px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Arzoo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
